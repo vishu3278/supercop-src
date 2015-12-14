@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Transfer Connect</title>
+<link href="css/metro.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="css/metro-responsive.min.css">
+<link rel="stylesheet" type="text/css" href="css/icomoon.css">
+<link rel="stylesheet" type="text/css" href="css/flexslider.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/metro.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('#menuTrigger').on('click',function(event){
+			event.preventDefault();
+			var menuid = $(this).attr('href');
+			$(document).find(menuid).toggle('fast');
+			console.log(menuid);
+		})
+	})
+</script>
+</head>
+
+<body>
+
+<header class="head">
+  <div class="container">
+    <div class="grid condensed">
+      <div class="row cells12">
+        <div class="cell colspan2">
+        	<a href="index.html" class="logo"><img src="images/logo.png" alt="logo"></a>
+            <a href="#menu" id="menuTrigger" data-role="trigger" class="menu-trigger orange-text"><span class="icon-menu icon-2x"></span></a>
+        </div>
+        <div class="cell colspan10">
+        	<div class="menu-wrapper " id="menu">
+              <ul class="horizontal-menu compact">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="#" class="dropdown-toggle">Company</a>
+                  <ul class="d-menu" data-role="dropdown">
+                    <li><a href="company.html">Who We Are</a></li>
+                    <li><a href="whatwedo.html">What We Do</a></li>
+                  </ul>
+                </li>
+                <li><a href="service.html" >Service</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+          </div>
+          <div class="social-list align-right">
+            <ul class="list inline cycle orange ">
+                <li><a href="#" ><span class="icon-facebook"></span></a></li>
+                <li><a href="#" ><span class="icon-twitter"></span></a></li>
+                <li><a href="#" ><span class="icon-linkedin2"></span></a></li>
+                <li><a href="#" ><span class="icon-google-plus"	></span></a></li>
+             </ul>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<section class="banner inner">
+	<div class="container">
+    	<img src="images/innerb-banner-2.jpg" alt="banner">
+      <div class="banner-text"><h1>What We Do</h1></div>
+  </div>
+</section>
+
+<section class="padding-vert-30">
+  <div class="container ">
+    <div class="grid">
+      <div class="row cells7">
+        <div class="cell colspan5">
+          <h2 class="margin-bottom-20 ">Company</h2>
+          <h4> What We Do</h4>
+          <p>We focus on three fundamentals:<br>
+          </p>
+          <ol>
+            <li>-Quality Services.</li>
+            <li> -Best Service Plans.</li>
+            <li> -Excellent Partnership model.<br>
+            </li>
+          </ol>
+          <p>As we aim to become one of the leading voice provider, so we  invest continuously to improve our Services &amp; expertise to innovation and  evolve your voice business.</p>
+          <h4>Data</h4>
+          <p>Access of internet has become a need of everyone today.  Everything/Services  are available  online.</p>
+So understanding this as basic need of every  customer, we have designed packages of data plans also. Which gives you  seamless experience of connectivity.          </div>
+        <div class="cell colspan2">
+          <h4>Get Call Back</h4>
+          <div class="input-control text"><input type="text" placeholder="Name"></div>
+          <div class="input-control email"><input type="email" placeholder="Email"></div>
+          <div class="input-control text"><input type="text" placeholder="Phone"></div>
+          <div class="input-control textarea cell"><textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea></div>
+          <div class="row">
+            <input type="submit" class="warning uppercase"> <input type="reset" class="uppercase">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<footer class="footer">
+	<div class="container">
+    <div class="grid">
+      <div class="row cells2">
+        <div class="cell">
+          <p>Transfer Connect &copy; 2015 Privacy Policy</p>
+        </div>
+        <div class="cell align-right">
+          <div class="social-list">
+                <ul class="list inline cycle orange ">
+                    <li><a href="#" ><span class="icon-facebook"></span></a></li>
+                    <li><a href="#" ><span class="icon-twitter"></span></a></li>
+                    <li><a href="#" ><span class="icon-linkedin2"></span></a></li>
+                    <li><a href="#" ><span class="icon-google-plus"	></span></a></li>
+                 </ul>
+             </div>
+        </div>
+      </div>
+    </div>
+		
+	</div>
+</footer>
+<script src="js/jquery.flexslider-min.js"></script> 
+<script>
+    $(function(){
+        $("#carousel").carousel({effect:'slowdown', controls:false, height:470});
+		$('.flexslider').flexslider({
+			animation: "slide",
+			animationLoop: true,
+			itemWidth: 220,
+			itemMargin: 0,
+			minItems: 2,
+			maxItems: 4
+		  });
+    });
+</script>
+</body>
+</html>

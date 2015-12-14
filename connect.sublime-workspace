@@ -1,0 +1,650 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"cur",
+				"cur-a	cursor: auto;"
+			],
+			[
+				"max",
+				"max-height"
+			],
+			[
+				"inlin",
+				"inline-block"
+			],
+			[
+				"margin",
+				"margin"
+			],
+			[
+				"f-l",
+				"fl-l	float: left;"
+			],
+			[
+				"bo",
+				"border-color"
+			],
+			[
+				"b",
+				"bgc	background-color: #${1:fff};"
+			],
+			[
+				"bdrs",
+				"bdrs	border-radius"
+			],
+			[
+				"roboto",
+				"roboto-cond"
+			],
+			[
+				"mw",
+				"max-width"
+			],
+			[
+				"mt",
+				"margin-top"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"br",
+				"border-radius"
+			],
+			[
+				"bw",
+				"border-width"
+			],
+			[
+				"tr",
+				"transparent"
+			],
+			[
+				"f",
+				"fz	font-size"
+			],
+			[
+				"wd",
+				"width"
+			],
+			[
+				"mh",
+				"min-height"
+			],
+			[
+				"max-",
+				"max-width"
+			],
+			[
+				"rg",
+				"rgba()"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"pad",
+				"padding-bottom"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"text-",
+				"text-align"
+			],
+			[
+				"fl",
+				"float"
+			],
+			[
+				"ease",
+				"ease-out"
+			],
+			[
+				"fa-goo",
+				"fa-google-plus	fa-google-plus"
+			],
+			[
+				"fa-go",
+				"fa-google-plus	fa-google-plus"
+			],
+			[
+				"fa-tw",
+				"fa-twitter	fa-twitter"
+			],
+			[
+				"fa-fa",
+				"fa-facebook	fa-facebook"
+			],
+			[
+				"glytw",
+				"glyphicon-retweet	glyphicon-retweet"
+			],
+			[
+				"win",
+				"winth"
+			],
+			[
+				"bac",
+				"background"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"over",
+				"overflow-x"
+			],
+			[
+				"border",
+				"border-collapse"
+			],
+			[
+				"dth",
+				"width"
+			],
+			[
+				"float",
+				"float-left"
+			],
+			[
+				"fa-l",
+				"fa-linkedin-square"
+			],
+			[
+				"fa-se",
+				"fa-search	fa-search"
+			],
+			[
+				"glyphict",
+				"glyphicon-tag	glyphicon-tag"
+			],
+			[
+				"gly",
+				"glyphicon"
+			],
+			[
+				"glyphicon-",
+				"glyphicon-lock"
+			],
+			[
+				"glyphicon-st",
+				"glyphicon-star	glyphicon-star"
+			],
+			[
+				"glyphi",
+				"glyphicon-search"
+			],
+			[
+				"glyp",
+				"glyphicon-lock	glyphicon-lock"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 9647,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "less/style.less",
+			"settings":
+			{
+				"buffer_size": 5166,
+				"line_ending": "Windows",
+				"name": "@import 'variable.less';"
+			}
+		},
+		{
+			"file": "less/variable.less",
+			"settings":
+			{
+				"buffer_size": 147,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"packa",
+				"Snippet: fa-chain-broken"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: lis",
+				"Package Control: List Packages"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Disable Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Advanced Install Package"
+			],
+			[
+				"Package Control: list",
+				"Package Control: List Packages"
+			],
+			[
+				"Package Control: up",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: l",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 512.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/programs/xampp/htdocs/mindpriests/html/index.html",
+		"/D/programs/xampp/htdocs/mindpriests/wp-content/themes/mindpriests/css-old/style-new.css",
+		"/H/project/htdocs/connect/less/style.less",
+		"/D/programs/xampp/htdocs/connect/css/style.css",
+		"/D/xampp/htdocs/connect/less/theme.less",
+		"/D/xampp/htdocs/connect/less/flexslider.less",
+		"/D/xampp/htdocs/connect/less/base.less",
+		"/D/xampp/htdocs/connect/less/variables.less",
+		"/D/xampp/htdocs/abhay2/index.html",
+		"/D/xampp/htdocs/abhay2/less/media.less",
+		"/D/xampp/htdocs/abhay2/fonts/font.css",
+		"/D/xampp/htdocs/abhay2/css/semantic.min.css",
+		"/D/xampp/htdocs/abhay2/css/semantic.css",
+		"/D/xampp/htdocs/oyetel/css/style-local.css",
+		"/D/xampp/htdocs/oyetel/contact.html",
+		"/D/xampp/htdocs/oyetel/index.html",
+		"/D/xampp/htdocs/oyetel/country.json",
+		"/D/xampp/htdocs/oyetel/callingrates.json",
+		"/D/xampp/htdocs/oyetel/less/style.less",
+		"/D/xampp/htdocs/imc/css/style.css",
+		"/D/xampp/htdocs/imc/footer.php",
+		"/D/xampp/htdocs/imc/header.php",
+		"/D/projects/htmlpagedesign/html/css/styles.css",
+		"/D/projects/htmlpagedesign/html/js/custom.js",
+		"/G/project/htmlpagedesign/Mentor-Free-HTML5-Bootstrap-Coming-Soon-Template/index.html",
+		"/G/project/htmlpagedesign/Mentor-Free-HTML5-Bootstrap-Coming-Soon-Template/js/custom.js",
+		"/D/xampp/htdocs/tmd/app/webroot/css/lifecoaching_style.css",
+		"/D/xampp/htdocs/tmd/app/View/Trainings/dashboard.ctp",
+		"/D/xampp/htdocs/tmd/app/View/Users/home.ctp",
+		"/D/xampp/htdocs/tmd/app/View/Pages/tdb_training.ctp",
+		"/D/xampp/htdocs/tmd/app/View/Pages/tbd_brainprogram.ctp",
+		"/D/xampp/htdocs/tmd/app/View/Pages/ird_training.ctp",
+		"/D/xampp/htdocs/tmd/app/View/Pages/free_brain_training.ctp",
+		"/D/xampp/htdocs/tmd/app/View/Elements/frm_basic_es_dash.ctp",
+		"/D/xampp/htdocs/tmd/app/View/Users/organizationcoaching.ctp",
+		"/D/xampp/htdocs/tmd/app/View/Users/adves_inspiring_vision.ctp",
+		"/D/xampp/htdocs/tmd/app/View/Trainings/selectcourse.ctp",
+		"/D/xampp/htdocs/imc/download.html",
+		"/D/xampp/htdocs/imc/index.html",
+		"/D/xampp/htdocs/imc/services.html",
+		"/D/xampp/htdocs/marine/css/style.css",
+		"/D/xampp/htdocs/marine/index.html",
+		"/D/xampp/htdocs/oyetel/about.html",
+		"/D/xampp/htdocs/oyenet/index.html",
+		"/D/xampp/htdocs/oyenet/css/responsive.css",
+		"/D/xampp/htdocs/oyenet/css/custom.css",
+		"/D/xampp/htdocs/tmd/app/View/Trainings/iamchoosing.ctp",
+		"/D/xampp/htdocs/tmd/app/View/Elements/lifecoaching/header.ctp",
+		"/D/xampp/htdocs/tmd/app/View/Users/es_inspiring_vision.ctp",
+		"/D/xampp/htdocs/tmd/app/View/Users/user_profile.ctp",
+		"/D/xampp/htdocs/tmd/app/View/Layouts/lifecoaching.ctp",
+		"/D/xampp/htdocs/tmd/app/View/Elements/orgcoaching/header.ctp",
+		"/D/xampp/htdocs/tmd/app/View/Elements/loggedheader.ctp",
+		"/D/xampp/htdocs/tmd/app/View/Elements/home_featured.ctp",
+		"/D/xampp/htdocs/tmd/app/View/Elements/home_header.ctp",
+		"/D/xampp/htdocs/tmd/app/View/Elements/orgcoaching/top_banner.ctp",
+		"/D/xampp/htdocs/tmd/app/View/Layouts/home.ctp",
+		"/D/xampp/htdocs/tmd/app/View/Elements/coach_header.ctp",
+		"/D/xampp/htdocs/tmd/app/View/Elements/course_header.ctp",
+		"/D/xampp/htdocs/tmd/app/View/Layouts/coach.ctp",
+		"/D/xampp/htdocs/tmd/app/View/Layouts/lifecourse.ctp",
+		"/D/xampp/htdocs/marine/about.html",
+		"/D/xampp/htdocs/marine/corp-profile.html",
+		"/D/xampp/htdocs/marine/contact.html",
+		"/D/xampp/htdocs/marine/coming-soon.html",
+		"/D/xampp/htdocs/marine/clients.html",
+		"/D/xampp/htdocs/tmd/app/View/Users/calender.ctp",
+		"/D/xampp/htdocs/tmd/app/View/Layouts/orgcoaching.ctp",
+		"/D/xampp/htdocs/tmd/app/View/Elements/lifecoaching/top_banner.ctp",
+		"/D/xampp/htdocs/tmd/app/View/Pages/about_tmd.ctp",
+		"/D/xampp/htdocs/tmd/app/View/Pages/tmd_basic.ctp",
+		"/D/xampp/htdocs/tmd/app/View/Pages/tmd_empowerment_flash.ctp",
+		"/D/xampp/htdocs/tmd/app/View/Pages/home.ctp",
+		"/D/xampp/htdocs/marine/css/fractionslider.css",
+		"/D/plugins/slider/mostslider-master/demos/image-content-sliding/index.html",
+		"/D/xampp/htdocs/tmd/app/View/Users/lifecoaching.ctp",
+		"/D/xampp/htdocs/tmd/app/View/Users/login.ctp",
+		"/D/xampp/htdocs/tmd/app/View/Elements/lifecoaching/sidebar1.ctp",
+		"/D/plugins/slider/fractionslider/example/index.html",
+		"/D/xampp/htdocs/tmd/app/View/Elements/home_footer.ctp",
+		"/D/plugins/slider/fractionslider/example/css/fractionslider.css",
+		"/D/xampp/htdocs/marine/css/daslide.css",
+		"/D/plugins/slider/ParallaxContentSlider/index3.html",
+		"/D/plugins/slider/ParallaxContentSlider/css/style2.css",
+		"/D/xampp/htdocs/hire/less/colors.css",
+		"/D/xampp/htdocs/hire/less/variables.less",
+		"/D/xampp/htdocs/hire/less/type.less",
+		"/D/xampp/htdocs/hire/less/custom.less",
+		"/D/xampp/htdocs/hire/demo.html",
+		"/C/Users/vishu/AppData/Roaming/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
+		"/D/xampp/htdocs/hire/less/colors.scss",
+		"/D/xampp/htdocs/hire/less/colors.css.map",
+		"/D/xampp/htdocs/hire/index.html"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			".list",
+			"list",
+			"30",
+			"padding",
+			"margin",
+			"class=\"\"",
+			"class=\"item\"",
+			"Testimonials",
+			"div class=\"slide\"",
+			"css",
+			"roboto",
+			"import",
+			"url",
+			"json",
+			"script",
+			"Afghanistan",
+			"script",
+			"destination",
+			"form",
+			"services",
+			"p {",
+			"location",
+			"calling_card",
+			".mar",
+			"banner",
+			"container",
+			"abt_banner",
+			"form-control",
+			".btn",
+			"styled",
+			"training date",
+			"services",
+			"service",
+			"connect",
+			"about",
+			"out l",
+			"about",
+			"Support Locations",
+			"training-sys",
+			"slider",
+			"z-index",
+			".slide",
+			"autoplay",
+			"da-img",
+			"marine",
+			"width",
+			"prettyphoto",
+			"search"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"Downloads"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9647,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2335,
+								2335
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 240.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "less/style.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5166,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4241,
+								4241
+							]
+						],
+						"settings":
+						{
+							"auto_name": "@import 'variable.less';",
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2881.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "less/variable.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 147,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								16,
+								16
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "connect.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 180.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

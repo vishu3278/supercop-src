@@ -1,0 +1,218 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Transfer Connect</title>
+<link href="css/metro.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="css/metro-responsive.min.css">
+
+<link rel="stylesheet" type="text/css" href="css/icomoon.css">
+<link rel="stylesheet" type="text/css" href="css/flexslider.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/metro.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('#menuTrigger').on('click',function(event){
+			event.preventDefault();
+			var menuid = $(this).attr('href');
+			$(document).find(menuid).toggle('fast');
+			console.log(menuid);
+		})
+	})
+</script>
+</head>
+
+<body>
+<header class="head">
+  <div class="container">
+    <div class="grid condensed">
+      <div class="row cells12">
+        <div class="cell colspan2">
+        	<a href="index.html" class="logo"><img src="images/logo.png" alt="logo"></a>
+            <a href="#menu" id="menuTrigger" data-role="trigger" class="menu-trigger orange-text"><span class="icon-menu icon-2x"></span></a>
+        </div>
+        <div class="cell colspan10">
+        	<div class="menu-wrapper " id="menu">
+              <ul class="horizontal-menu compact">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="#" class="dropdown-toggle">Company</a>
+                  <ul class="d-menu" data-role="dropdown">
+                    <li><a href="company.html">Who We Are</a></li>
+                    <li><a href="whatwedo.html">What We Do</a></li>
+                  </ul>
+                </li>
+                <li><a href="service.html" >Service</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <!-- <li class="place-right no-hovered">
+                  <div class="input-control text">
+                    <input type="text" placeholder="Search">
+                    <button class="button"><span class="icon mif-search"></span></button>
+                  </div>
+                </li> -->
+              </ul>
+          </div>
+          <div class="social-list ">
+          	<div class="social-list">
+                <ul class="list inline cycle orange ">
+                    <li><a href="#" ><span class="icon-facebook"></span></a></li>
+                    <li><a href="#" ><span class="icon-twitter"></span></a></li>
+                    <li><a href="#" ><span class="icon-linkedin2"></span></a></li>
+                    <li><a href="#" ><span class="icon-google-plus"	></span></a></li>
+                 </ul>
+             </div>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<section class="banner">
+	<div class="container">
+      <div class="carousel" id="carousel">
+        <div class="slide">
+          <img src="images/banner-img01.jpg" alt="image" width="455" height="425">
+        	<div class="slide-text">
+           <h1 class="orange-text">Secure</h1>
+           <h3 class="black-text">Access to your data</h3>
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime reiciendis eius veniam repudiandae quam aspernatur vel ex fugiat molestiae facere omnis, explicabo fuga reprehenderit voluptates pariatur, autem maiores voluptate. Exercitationem.</p>
+           <button class="button large-button rounded success">Read more about us</button>
+          </div>
+            </div>
+        <div class="slide">
+          <img src="images/banner-img01.jpg" alt="image" width="455" height="425">
+       	  <div class="slide-text">
+       		<h1 class="orange-text">Secure</h1>
+        		<h3 class="black-text">Access to your data</h3>
+        		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, praesentium, excepturi, fugiat, quam cupiditate aliquam veniam non et natus repellendus cum officiis obcaecati magni itaque quaerat quibusdam porro enim nemo.</p>    
+        	</div>
+            
+        	</div>
+      </div>
+  </div>
+</section>
+<section class="orange-bg padding-vert-30">
+  <div class="container align-center">
+    <h1 class=" margin-bottom-40">Our Capabilities</h1>
+    <div class="grid">
+      <div class="row cells3">
+        <div class="cell">
+          <div class="icon margin-top"><span class="icon-earth icon-7x"></span></div>
+          <h4 class="uppercase text-bold">Global Network</h4>
+          <p>As a service provider for the service provider, Transfer Connect understands-that what it takes to help you for supporting your customers' needs.</p>
+          <div class="margin-top-20">
+	          <a href="#" class="button cycle-button"><span class="icon-arrow-right2 "></span></a>
+          </div>
+          </div>
+        <div class="cell">
+          <div class="icon margin-top"><span class="icon-users icon-7x"></span></div>
+          <h4 class="uppercase text-bold">Individual Approach</h4>
+          <p>If you are looking towards the next generation network, so that you can provide more value-added services or new foundation to &hellip;</p>
+          <div class="margin-top-20">
+	          <a href="#" class="button cycle-button"><span class="icon-arrow-right2 "></span></a>
+          </div> </div>
+        <div class="cell">
+          <div class="icon margin-top"><span class=" icon-brightness-contrast icon-7x"></span></div>
+          <h4 class="uppercase text-bold">Voice</h4>
+          <p>Todays voice market provides you excellent market opportunities that can successfully increase you business model. We at transfer connect  &hellip;</p>
+          <div class="margin-top-20">
+	          <a href="#" class="button cycle-button"><span class="icon-arrow-right2 "></span></a>
+          </div> </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="padding-vert-30">
+  <div class="container align-center">
+    <h1 class=" margin30 no-margin-top">Forward Thinking</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, harum repudiandae deserunt minima consectetur obcaecati eos sapiente quo temporibus distinctio explicabo minus blanditiis aut esse accusamus modi soluta quisquam aspernatur!</p>
+    <div class="margin-top-30"><button class="button rounded success large-button uppercase">View Case Studies <span class="icon-arrow-right2"></span></button></div>
+  </div>
+</section>
+<section class="gray8-bg padding-vert">
+  <div class="container">
+    <div class="flexslider" id="carousel2">
+      <ul class="slides">
+        <li><img src="images/brand1.png" alt=""></li>
+        <li><img src="images/brand2.png" alt=""></li>
+        <li><img src="images/brand3.png" alt=""></li>
+        <li><img src="images/brand4.png" alt=""></li>
+        <li><img src="images/brand1.png" alt=""></li>
+        <li><img src="images/brand2.png" alt=""></li>
+        <li><img src="images/brand3.png" alt=""></li>
+        <li><img src="images/brand4.png" alt=""></li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="orange-bg padding-vert-20">
+  <div class="container">
+    <div class="grid ">
+      <div class="row cells2">
+        <div class="cell ">
+          <div class="row cells6">
+          	<div class="cell colspan2">
+              <div class="circle huge white-bg "><span class="icon-bubbles icon-4x v-align-middle orange-text"></span></div>
+            </div>
+            <div class="cell colspan4">
+              <h4 class="uppercase text-bold">Testimonials</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, totam, laborum. Quas quod consequatur facere, dolorem beatae iure nisi perferendis, sequi repudiandae, ipsam sint quis soluta earum. Aspernatur, cum, nobis.</p>
+            </div>
+            
+          </div>
+        </div>
+        <div class="cell">
+          <div class="row cells6">
+            <div class="cell colspan2">
+              <div class="circle huge white-bg "><span class="icon-folder icon-4x v-align-middle orange-text"></span></div>
+            </div>
+            <div class="cell colspan4">
+              <h4 class="uppercase text-bold">About Us</h4>
+              <p>We brings a comprehensive wireless solutions market in-depth knowledge of how to implement them. Our goal is to provide solutions for the right building blocks of all major wireless standards and proprietary systems.</p>
+              <a href="company.html" class="button cycle-button"><span class="icon-arrow-right2 "></span></a>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="footer">
+	<div class="container">
+    <div class="grid">
+      <div class="row cells2">
+        <div class="cell">
+          <p>Transfer Connect &copy; 2015 Privacy Policy</p>
+        </div>
+        <div class="cell align-right">
+          <ul class="list inline cycle orange">
+            <li><a href="#" ><span class="icon-facebook"></span></a></li>
+            <li><a href="#" ><span class="icon-twitter"></span></a></li>
+            <li><a href="#" ><span class="icon-linkedin2"></span></a></li>
+            <li><a href="#" ><span class="icon-google-plus"	></span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+		
+	</div>
+</footer>
+<script src="js/jquery.flexslider-min.js"></script> 
+<script>
+    $(function(){
+        $("#carousel").carousel({effect:'slowdown', controls:false});
+		$('.flexslider').flexslider({
+			animation: "slide",
+			animationLoop: true,
+			itemWidth: 220,
+			itemMargin: 0,
+			minItems: 2,
+			maxItems: 4
+		  });
+    });
+</script>
+</body>
+</html>
