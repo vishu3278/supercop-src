@@ -1,155 +1,158 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<title>Transfer Connect</title>
-<link href="css/metro.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="css/metro-responsive.min.css">
-<link rel="stylesheet" type="text/css" href="css/icomoon.css">
-<link rel="stylesheet" type="text/css" href="css/flexslider.css">
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<script src="js/jquery-2.1.1.min.js"></script>
-<script src="js/metro.min.js"></script>
-<script type="text/javascript">
-	$(function(){
-		$('#menuTrigger').on('click',function(event){
-			event.preventDefault();
-			var menuid = $(this).attr('href');
-			$(document).find(menuid).toggle('fast');
-			console.log(menuid);
-		})
-	})
-</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Transfer Connect</title>
+    <link href="css/metro.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/metro-responsive.min.css">
+    <link rel="stylesheet" type="text/css" href="css/icomoon.css">
+    <link rel="stylesheet" type="text/css" href="css/flexslider.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/metro.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $('#menuTrigger').on('click', function(event) {
+            event.preventDefault();
+            var menuid = $(this).attr('href');
+            $(document).find(menuid).toggle('fast');
+            console.log(menuid);
+        })
+    })
+    </script>
 </head>
 
 <body>
-<header class="head">
-  <div class="container">
-    <div class="grid condensed">
-      <div class="row cells12">
-        <div class="cell colspan2">
-        	<a href="index.html" class="logo"><img src="images/logo.png" alt="logo"></a>
-            <a href="#menu" id="menuTrigger" data-role="trigger" class="menu-trigger orange-text"><span class="icon-menu icon-2x"></span></a>
+    <header class="head">
+        <div class="container">
+            <div class="grid condensed">
+                <div class="row cells12">
+                    <div class="cell colspan2">
+                        <a href="index.html" class="logo"><img src="images/logo.png" alt="logo"></a>
+                        <!-- <a href="#menu" id="menuTrigger" data-role="trigger" class="menu-trigger orange-text"><span class="icon-menu icon-2x"></span></a> -->
+                    </div>
+                    <div class="cell colspan10">
+                        <div class="menu-wrapper " id="menu">
+                            <ul class="horizontal-menu compact">
+                                <li class="active"><a href="index.html">Home</a></li>
+                                <li><a href="#" class="dropdown-toggle">Company</a>
+                                    <ul class="d-menu" data-role="dropdown">
+                                        <li><a href="company.html">Who We Are</a></li>
+                                        <li><a href="whatwedo.html">What We Do</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="service.html">Service</a></li>
+                                <li><a href="support.html">Support</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="social-list align-right">
+                            <ul class="list inline cycle orange ">
+                                <li><a href="#"><span class="icon-facebook"></span></a></li>
+                                <li><a href="#"><span class="icon-twitter"></span></a></li>
+                                <li><a href="#"><span class="icon-linkedin2"></span></a></li>
+                                <li><a href="#"><span class="icon-google-plus"  ></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="cell colspan10">
-        	<div class="menu-wrapper " id="menu">
-              <ul class="horizontal-menu compact">
-                <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="#" class="dropdown-toggle">Company</a>
-                  <ul class="d-menu" data-role="dropdown">
-                    <li><a href="company.html">Who We Are</a></li>
-                    <li><a href="whatwedo.html">What We Do</a></li>
-                  </ul>
-                </li>
-                <li><a href="service.html" >Service</a></li>
-                <li><a href="support.html">Support</a></li>
-                <li><a href="contact.html">Contact</a></li>
-              </ul>
-          </div>
-          <div class="social-list align-right">
-            <ul class="list inline cycle orange ">
-                <li><a href="#" ><span class="icon-facebook"></span></a></li>
-                <li><a href="#" ><span class="icon-twitter"></span></a></li>
-                <li><a href="#" ><span class="icon-linkedin2"></span></a></li>
-                <li><a href="#" ><span class="icon-google-plus"	></span></a></li>
-             </ul>
-         </div>
+    </header>
+    <!-- <section class="banner inner">
+        <div class="container">
+            <img src="images/contact-1.jpg" alt="banner">
+            <div class="banner-text">
+                <h1>Contact</h1></div>
         </div>
-      </div>
-    </div>
-  </div>
-</header>
-
-<section class="banner inner">
-	<div class="container">
-    	<img src="images/contact-1.jpg" alt="banner">
-      <div class="banner-text"><h1>Contact</h1></div>
-  </div>
-</section>
-
-<section class="padding-vert-30">
-  <div class="container ">
-    <h1 class="margin-bottom-20  ">Contacts</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, harum repudiandae deserunt minima consectetur obcaecati eos sapiente quo temporibus distinctio explicabo minus blanditiis aut esse accusamus modi soluta quisquam aspernatur!</p>
-    <div class="google-map">
-    	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d448190.2574535809!2d76.80986932934718!3d28.645151782815457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew+Delhi%2C+Delhi!5e0!3m2!1sen!2sin!4v1444840375203" width="100%" height="360" frameborder="0" style="border:0" allowfullscreen></iframe>
-    </div>
-    <div class="grid">
-      <div class="row ">
-        <div class="cell">
-          
+    </section> -->
+    <section class="padding-vert-30">
+        <div class="container ">
+            <h1 class="margin-bottom-20  ">Contacts</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, harum repudiandae deserunt minima consectetur obcaecati eos sapiente quo temporibus distinctio explicabo minus blanditiis aut esse accusamus modi soluta quisquam aspernatur!</p>
+            <!-- <div class="google-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d448190.2574535809!2d76.80986932934718!3d28.645151782815457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew+Delhi%2C+Delhi!5e0!3m2!1sen!2sin!4v1444840375203" width="100%" height="360" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div> -->
+            <div class="grid">
+                <div class="row ">
+                    <div class="cell">
+                    </div>
+                </div>
+                <div class="row cells5">
+                    <!-- <div class="cell colspan2">
+                        <h4>Contact Info</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, deserunt.</p>
+                        <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis nulla itaque aliquid.</p>
+                        <address>
+                            <strong>Transfer Connect</strong>
+                            <br> Lorem Ipsum, Suite #1
+                            <br> State, Country 101001
+                            <br>
+                        </address>
+                        <address>
+                            <strong>Tel:</strong> (123) 456-7890
+                            <br>
+                            <strong>Email:</strong> info@transferconnnect.com
+                        </address>
+                    </div> -->
+                    <div class="cell colspan3">
+                        <h3>Contact Form</h3>
+                        <div class="row cells3">
+                            <div class="cell">
+                                <div class="input-control text">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="cell">
+                                <div class="input-control email">
+                                    <input type="email">
+                                </div>
+                            </div>
+                            <div class="cell">
+                                <div class="input-control text">
+                                    <input type="number" id="number" name="number">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <input type="submit" class="warning uppercase">
+                            <input type="reset" class="uppercase">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="row cells5">
-        <div class="cell colspan2">
-          <h4>Contact Info</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, deserunt.</p>
-          <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis nulla itaque aliquid.</p>
-          <address>
-                <strong>Transfer Connect</strong><br>
-                Lorem Ipsum, Suite #1<br>
-                State, Country 101001<br>
-            </address>
-            <address>
-              <strong>Tel:</strong> (123) 456-7890 <br>
-              <strong>Email:</strong> info@transferconnnect.com
-            </address>
+    </section>
+    <!-- <footer class="footer">
+        <div class="container">
+            <div class="grid">
+                <div class="row cells2">
+                    <div class="cell">
+                        <p>Transfer Connect &copy; 2015 Privacy Policy</p>
+                    </div>
+                    <div class="cell ">
+                        <div class="social-list">
+                            <ul class="list inline cycle orange ">
+                                <li><a href="#"><span class="icon-facebook"></span></a></li>
+                                <li><a href="#"><span class="icon-twitter"></span></a></li>
+                                <li><a href="#"><span class="icon-linkedin2"></span></a></li>
+                                <li><a href="#"><span class="icon-google-plus"  ></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="cell colspan3">
-          <h4>Contact Form</h4>
-          <div class="row cells3">
-            <div class="cell"><div class="input-control text"><input type="text"></div></div>
-            <div class="cell"><div class="input-control email"><input type="email"></div></div>
-            <div class="cell"><div class="input-control text"><input type="text"></div></div>
-          </div>
-          
-          <div class="input-control textarea cell"><textarea name="" id="" cols="30" rows="10"></textarea></div>
-          <div class="row">
-            <input type="submit" class="warning uppercase"> <input type="reset" class="uppercase">
-          </div>
-          
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-	<div class="container">
-    <div class="grid">
-      <div class="row cells2">
-        <div class="cell">
-          <p>Transfer Connect &copy; 2015 Privacy Policy</p>
-        </div>
-        <div class="cell ">
-          <div class="social-list">
-                <ul class="list inline cycle orange ">
-                    <li><a href="#" ><span class="icon-facebook"></span></a></li>
-                    <li><a href="#" ><span class="icon-twitter"></span></a></li>
-                    <li><a href="#" ><span class="icon-linkedin2"></span></a></li>
-                    <li><a href="#" ><span class="icon-google-plus"	></span></a></li>
-                 </ul>
-             </div>
-        </div>
-      </div>
-    </div>
-		
-	</div>
-</footer>
-<script src="js/jquery.flexslider-min.js"></script> 
-<script>
-    $(function(){
-        $("#carousel").carousel({effect:'slowdown', controls:false, height:470});
-		$('.flexslider').flexslider({
-			animation: "slide",
-			animationLoop: true,
-			itemWidth: 220,
-			itemMargin: 0,
-			minItems: 2,
-			maxItems: 4
-		  });
+    </footer> -->
+    
+    <script type="text/javascript">
+    $(function() {
+        
     });
-</script>
+    </script>
 </body>
+
 </html>
