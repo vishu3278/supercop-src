@@ -21,10 +21,25 @@
             console.log(menuid);
         })
     })
+
+    document.addEventListener('deviceready', onDeviceReady, false);
+    function onDeviceReady (argument) {
+      var options      = new ContactFindOptions();
+      options.filter   = "";
+      options.multiple = true;
+      filter["name"];
+      // var fields       = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
+      navigator.contacts.find(fields, onSuccess, onError, options);
+    }
+
+    function onSuccess (contacts) {
+      alert(contacts.length);
+    }
+
     </script>
 </head>
 
-<body>
+<body >
     <header class="head">
         <div class="container">
             <div class="grid condensed">
