@@ -3,16 +3,16 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.helloworld"
+        id        = "com.connect.wow"
         version   = "1.0.0">
 
     <name>Connect</name>
 
     <description>
-        Sample application to test contact plugin.
+        Sample application to test plugins.
     </description>
 
-    <author href="http://wowitsolutions.com" email="vishu3278@gmail.com">
+    <author href="https://wowitsolutions.com" email="vishu3278@gmail.com">
         WOW Team
     </author>
 
@@ -126,9 +126,9 @@
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
-    <platform name="ios">
+    <!-- <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
-    </platform>
+    </platform> -->
 
 </widget>
