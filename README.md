@@ -1,2 +1,2 @@
-# connect
-connect mobile app from static web
+# connect app
+test plugins for android
