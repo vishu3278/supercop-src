@@ -54,15 +54,15 @@
             // var phot = JSON.stringify(contacts[i].photos);
             /*var item = '<div class="list"><img src="' + contacts[i].photos[0].value + '" class="list-icon" alt=""><span class="list-title">' + contacts[i].name.formatted + '</span>'+contacts[i].phoneNumbers[0].value+'<br>'+contacts[i].emails[0].value+'</div>';*/
             // citems.push(item);
-            citems.push(contacts[i].name.formatted);
+            $("#contactList").append('<div class="list">'+contacts[i].name.formatted+'</div>');
             for (var j = 0; j < contacts[i].phoneNumbers.length; j++) {
-                // contacts[i].phoneNumbers[j].value;
                 if (contacts[i].phoneNumbers[j].type == "mobile") {
-                    citems.push(contacts[i].phoneNumbers[j].value );
+                    // citems.push(contacts[i].phoneNumbers[j].value );
+                    $("#contactList").append('<div class="list">'+contacts[i].phoneNumbers[j].value+'</div>');
                 };
             };
             
-            // citems.push(JSON.stringify(contacts[i].phoneNumbers));
+            citems.push(JSON.stringify(contacts[i].phoneNumbers));
         };
         // $("#loader").hide();
         $("#contactList").append(citems.join(' -|- '));
