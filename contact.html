@@ -48,12 +48,12 @@
                 eml = contacts[i].emails[j].pref;
             };*/
             // var jscont = JSON.stringify(contacts[i]);
-            var phno = contacts[i].phoneNumbers;
+            /*var phno = contacts[i].phoneNumbers;
             var emls = contacts[i].emails;
-            var phot = contacts[i].photos;
+            var phot = contacts[i].photos;*/
 
             // var phot = JSON.stringify(contacts[i].photos);
-            var item = '<div class="list"><img src="' + phot + '" class="list-icon" alt=""><span class="list-title">' + contacts[i].name.formatted + '</span>'+phno+'<br>'+emls+'</div>';
+            var item = '<div class="list"><img src="' + contacts[i].photos + '" class="list-icon" alt=""><span class="list-title">' + contacts[i].name.formatted + '</span>'+contacts[i].phoneNumbers[0].value+'<br>'+contacts[i].emails[0].value+'</div>';
             // citems.push(item);
             // $("#contactList").append('<div class="list">'+contacts[i].name.formatted+'</div>');
             /*for (var j = 0; j < contacts[i].phoneNumbers.length; j++) {
