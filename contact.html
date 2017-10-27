@@ -54,9 +54,9 @@
         var options = new ContactFindOptions();
         options.filter = "";
         options.multiple = true;
-        // options.desiredFields = [navigator.contacts.fieldType.id];
+        // options.desiredFields = [navigator.contacts.fieldType.emails];
         options.hasPhoneNumber = true;
-        var fields = [navigator.contacts.fieldType.name, navigator.contacts.fieldType.photos, navigator.contacts.fieldType.emails];
+        var fields = ['*'];
         navigator.contacts.find(fields, onSuccess, onError, options);
     }
     </script>
