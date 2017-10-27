@@ -36,6 +36,7 @@
             var item = '<div class="list"><img src="'+contacts[i].photos+'" class="list-icon" alt=""><span class="list-title">'+contacts[i].name.formatted+'</span></div>';
             citems.push(item);
         };
+        $("#contactList").html(citems.join(''));
     };
 
     function onError(contactError) {
