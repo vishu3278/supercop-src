@@ -52,6 +52,8 @@
             var emls = contacts[i].emails;
             var phot = contacts[i].photos;*/
 
+            console.log(contacts[i].phoneNumbers);
+
             // var phot = JSON.stringify(contacts[i].photos);
             var item = '<div class="list"><img src="' + contacts[i].photos + '" class="list-icon" alt=""><span class="list-title">' + contacts[i].name.formatted + '</span>'+contacts[i].phoneNumbers[0].value+'<br>'+contacts[i].emails[0].value+'</div>';
             // citems.push(item);
