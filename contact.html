@@ -33,9 +33,14 @@
     var citems = [];
 
     function onSuccess(contacts) {
-        alert('Found ' + contacts.length + ' contacts.');
+        // alert('Found ' + contacts.length + ' contacts.');
+        $.Notify({
+            caption: 'Success !',
+            content: 'Found ' + contacts.length + ' contacts.',
+            type: 'success'
+        });
         for (var i = 0; i < contacts.length; i++) {
-            var item = '<div class="list"><img src="' + contacts[i].photos + '" class="list-icon" alt=""><span class="list-title">' + contacts[i].name.formatted + '</span></div>';
+            var item = '<div class="list"><img src="' + contacts[i].photos + '" class="list-icon" alt=""><span class="list-title">' + contacts[i].name.formatted + '</span>'+contacts[i].emails+'</div>';
             citems.push(item);
         };
         $("#contactList").html(citems.join(''));
@@ -71,11 +76,11 @@
     </header>
     <section class="padding-vert-30">
         <div class="container">
-            <div id="contactList" class="listview">
+            <div id="contactList" class="listview" data-role="listview">
                 <div class="list">
                     <img src="" class="list-icon" alt="">
                     <!-- <span class="mif-user"></span> -->
-                    <span class="list-title"></span>
+                    <span class="list-title">List title</span>Other items
                 </div>
             </div>
         </div>
