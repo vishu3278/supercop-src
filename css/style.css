@@ -335,6 +335,20 @@ p {
   background-color: transparent;
   border-color: transparent;
 }
+.relative {
+  position: relative;
+  z-index: 1;
+}
+#loader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+}
 @media screen and (max-width: 767px) {
   .head .menu-wrapper {
     display: none;
@@ -355,7 +369,8 @@ p {
   .head .menu-wrapper li ul {
     position: static;
     float: none;
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
     background-color: rgba(250, 104, 0, 0.8);
     clear: both;
     max-width: none;
