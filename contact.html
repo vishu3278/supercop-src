@@ -44,10 +44,10 @@
             /*var eml=null;
             for (var j = 0; j < contacts[i].emails.length; j++) {
                 eml = contacts[i].emails[j].pref;
-            };
-            var item = '<div class="list"><img src="' + contacts[i].photos + '" class="list-icon" alt=""><span class="list-title">' + contacts[i].name.formatted + '</span>'+eml+'</div>';
-            citems.push(item);*/
-            citems.push(JSON.stringify(contacts[i]));
+            };*/
+            var item = '<div class="list"><img src="' + contacts[i].photos + '" class="list-icon" alt=""><span class="list-title">' + contacts[i].name.formatted + '</span>'+contacts[i].phoneNumbers[0].value+'</div>';
+            citems.push(item);
+            // citems.push(JSON.stringify(contacts[i]));
         };
         $("#contactList").html(citems.join(''));
     };
