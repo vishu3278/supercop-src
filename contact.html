@@ -35,11 +35,13 @@
 
     function onSuccess(contacts) {
         // alert('Found ' + contacts.length + ' contacts.');
-        $.Notify({
+        /*$.Notify({
             caption: 'Success !',
             content: 'Found ' + contacts.length + ' contacts.',
             type: 'success'
-        });
+        });*/
+        $("#contactList").html("<h3>"+contacts.length+" contacts found.</h3>");
+
         for (var i = 0; i < contacts.length; i++) {
             /*var eml=null;
             for (var j = 0; j < contacts[i].emails.length; j++) {
@@ -63,7 +65,7 @@
             // citems.push(JSON.stringify(contacts[i].phoneNumbers));
         };
         // $("#loader").hide();
-        $("#contactList").html(citems.join(' -|- '));
+        $("#contactList").append(citems.join(' -|- '));
     };
 
     function onError(contactError) {
@@ -101,11 +103,11 @@
         </div> -->
         <div class="container">
             <div id="contactList" class="listview" data-role="listview">
-                <div class="list">
+                <!-- <div class="list">
                     <img src="" class="list-icon" alt="">
-                    <!-- <span class="mif-user"></span> -->
+                    <span class="mif-user"></span>
                     <span class="list-title">List title</span>Other items
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
