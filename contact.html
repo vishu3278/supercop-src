@@ -40,7 +40,13 @@
             type: 'success'
         });
         for (var i = 0; i < contacts.length; i++) {
-            var item = '<div class="list"><img src="' + contacts[i].photos + '" class="list-icon" alt=""><span class="list-title">' + contacts[i].name.formatted + '</span>'+contacts[i].emails+'</div>';
+            var email;
+            if (contacts[i].emails) {
+                for (var j = 0; j < contacts[i].emails.length; j++) {
+                    email = contacts[i].emails[j];
+                };
+            };
+            var item = '<div class="list"><img src="' + contacts[i].photos + '" class="list-icon" alt=""><span class="list-title">' + contacts[i].name.formatted + '</span>'+email+'</div>';
             citems.push(item);
         };
         $("#contactList").html(citems.join(''));
