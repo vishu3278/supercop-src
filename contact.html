@@ -49,9 +49,10 @@
             };*/
 
             var jsphone = JSON.stringify(contacts[i].phoneNumbers);
-            var jsphot = JSON.stringify(contacts[i].photos);
-            var jsemls = JSON.stringify(contacts[i].emails);
-            var item = '<div class="list"><img src="' + contacts[i].photos + '" class="list-icon" alt=""><span class="list-title">' + contacts[i].name.formatted + '</span><br>Phone: '+jsphone+'<br>Email:'+jsemls+'</div>';
+            var jsphoto = JSON.stringify(contacts[i].photos);
+            var jsemail = JSON.stringify(contacts[i].emails);
+
+            var item = '<div class="list"><img src="' + contacts[i].photos + '" class="list-icon" alt=""><span class="list-title">' + contacts[i].name.formatted + '</span><br>Phone: '+jsphone+'<br>Email:'+jsemail+'</div>';
 
             citems.push(item);
             // $("#contactList").append('<div class="list">'+contacts[i].name.formatted+'</div>');
