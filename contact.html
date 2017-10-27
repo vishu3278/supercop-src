@@ -8,7 +8,7 @@
     <link href="css/metro.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="css/metro-responsive.min.css">
     <link rel="stylesheet" type="text/css" href="css/icomoon.css">
-    <link rel="stylesheet" type="text/css" href="css/metro-icons.css" >
+    <link rel="stylesheet" type="text/css" href="css/metro-icons.css">
     <link rel="stylesheet" type="text/css" href="css/flexslider.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script type="text/javascript" src="cordova.js"></script>
@@ -25,15 +25,17 @@
     })
 
     document.addEventListener('deviceready', onDeviceReady, false);
-    function onDeviceReady (argument) {
-      searchContact();
+
+    function onDeviceReady(argument) {
+        searchContact();
     }
 
     var citems = [];
+
     function onSuccess(contacts) {
         alert('Found ' + contacts.length + ' contacts.');
         for (var i = 0; i < contacts.length; i++) {
-            var item = '<div class="list"><img src="'+contacts[i].photos+'" class="list-icon" alt=""><span class="list-title">'+contacts[i].name.formatted+'</span></div>';
+            var item = '<div class="list"><img src="' + contacts[i].photos + '" class="list-icon" alt=""><span class="list-title">' + contacts[i].name.formatted + '</span></div>';
             citems.push(item);
         };
         $("#contactList").html(citems.join(''));
@@ -43,57 +45,44 @@
         alert('Some error occured!');
     };
 
-    function searchContact () {
+    function searchContact() {
         var options = new ContactFindOptions();
         options.filter = "";
         options.multiple = true;
         // options.desiredFields = [navigator.contacts.fieldType.id];
         options.hasPhoneNumber = true;
-        var fields = [navigator.contacts.fieldType.name, navigator.contacts.fieldType.photos,navigator.contacts.fieldType.emails];
+        var fields = [navigator.contacts.fieldType.name, navigator.contacts.fieldType.photos, navigator.contacts.fieldType.emails];
         navigator.contacts.find(fields, onSuccess, onError, options);
     }
-    
-
-
     </script>
 </head>
 
-<body >
+<body>
     <header class="head">
-        <div class="container">
-            <div class="grid condensed">
-                <div class="row cells12">
-                    <div class="cell colspan2">
-                        <a href="index.html" class="logo"><img src="images/logo.png" alt="logo"></a>
-                        <!-- <a href="#menu" id="menuTrigger" data-role="trigger" class="menu-trigger orange-text"><span class="icon-menu icon-2x"></span></a> -->
-                    </div>
-                    
-                </div>
-            </div>
+        <div class="app-bar orange fixed-top" data-role="appbar">
+            <a class="app-bar-element" href="...">WOW</a>
+            <span class="app-bar-divider"></span>
+            <ul class="app-bar-menu green place-right">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </div>
     </header>
-    <!-- <section class="banner inner">
-        <div class="container">
-            <img src="images/contact-1.jpg" alt="banner">
-            <div class="banner-text">
-                <h1>Contact</h1></div>
-        </div>
-    </section> -->
     <section class="padding-vert-30">
         <div class="container">
             <div id="contactList" class="listview">
                 <div class="list">
-                    <!-- <img src="" class="list-icon" alt=""> -->
-                    <span class="mif-user"></span>
+                    <img src="" class="list-icon" alt="">
+                    <!-- <span class="mif-user"></span> -->
                     <span class="list-title"></span>
                 </div>
             </div>
         </div>
     </section>
-    
     <script type="text/javascript">
     $(function() {
-        
+
     });
     </script>
 </body>
