@@ -46,13 +46,16 @@
                 eml = contacts[i].emails[j].pref;
             };*/
             // var jscont = JSON.stringify(contacts[i]);
-            /*var phno = contacts[i].phoneNumbers;
-            var emls = contacts[i].emails;*/
+            var phno = contacts[i].phoneNumbers;
+            var emls = contacts[i].emails;
 
             // var phot = JSON.stringify(contacts[i].photos);
             /*var item = '<div class="list"><img src="' + contacts[i].photos[0].value + '" class="list-icon" alt=""><span class="list-title">' + contacts[i].name.formatted + '</span>'+contacts[i].phoneNumbers[0].value+'<br>'+contacts[i].emails[0].value+'</div>';*/
             // citems.push(item);
-            citems.push(JSON.stringify(contacts[i].phoneNumbers));
+            if (contacts[i].phoneNumbers.type == "mobile") {
+                citems.push(contacts[i].name.formatted +' && '+ contacts[i].phoneNumbers.value );
+            };
+            // citems.push(JSON.stringify(contacts[i].phoneNumbers));
         };
         // $("#loader").hide();
         $("#contactList").html(citems.join(' | '));
