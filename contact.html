@@ -52,13 +52,18 @@
             // var phot = JSON.stringify(contacts[i].photos);
             /*var item = '<div class="list"><img src="' + contacts[i].photos[0].value + '" class="list-icon" alt=""><span class="list-title">' + contacts[i].name.formatted + '</span>'+contacts[i].phoneNumbers[0].value+'<br>'+contacts[i].emails[0].value+'</div>';*/
             // citems.push(item);
-            if (contacts[i].phoneNumbers.type == "mobile") {
-                citems.push(contacts[i].name.formatted +' && '+ contacts[i].phoneNumbers.value );
+            citems.push(contacts[i].name.formatted);
+            for (var j = 0; j < phno.length; j++) {
+                // contacts[i].phoneNumbers[j].value;
+                if (contacts[i].phoneNumbers[j].type == "mobile") {
+                    citems.push(contacts[i].phoneNumbers[j].value );
+                };
             };
+            
             // citems.push(JSON.stringify(contacts[i].phoneNumbers));
         };
         // $("#loader").hide();
-        $("#contactList").html(citems.join(' | '));
+        $("#contactList").html(citems.join(' -|- '));
     };
 
     function onError(contactError) {
