@@ -51,7 +51,7 @@
             var jsphone = JSON.stringify(contacts[i].phoneNumbers);
             // var phot = JSON.stringify(contacts[i].photos);
             var item = '<div class="list"><img src="' + contacts[i].photos + '" class="list-icon" alt=""><span class="list-title">' + contacts[i].name.formatted + '</span><br>Phone: '+jsphone+'<br>Email:</div>';
-            // citems.push(item);
+            citems.push(item);
             // $("#contactList").append('<div class="list">'+contacts[i].name.formatted+'</div>');
             /*for (var j = 0; j < contacts[i].phoneNumbers.length; j++) {
                 if (contacts[i].phoneNumbers[j].type == "mobile") {
