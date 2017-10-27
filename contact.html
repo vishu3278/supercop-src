@@ -45,15 +45,17 @@
             for (var j = 0; j < contacts[i].emails.length; j++) {
                 eml = contacts[i].emails[j].pref;
             };*/
-            var phno = contacts[i].phoneNumbers;
-            var emls = contacts[i].emails;
+            // var jscont = JSON.stringify(contacts[i]);
+            /*var phno = contacts[i].phoneNumbers;
+            var emls = contacts[i].emails;*/
+
             // var phot = JSON.stringify(contacts[i].photos);
-            var item = '<div class="list"><img src="' + contacts[i].photos[0].value + '" class="list-icon" alt=""><span class="list-title">' + contacts[i].name.formatted + '</span>'+contacts[i].phoneNumbers[0].value+'<br>'+contacts[i].emails[0].value+'</div>';
-            citems.push(item);
-            // citems.push(JSON.stringify(contacts[i]));
+            /*var item = '<div class="list"><img src="' + contacts[i].photos[0].value + '" class="list-icon" alt=""><span class="list-title">' + contacts[i].name.formatted + '</span>'+contacts[i].phoneNumbers[0].value+'<br>'+contacts[i].emails[0].value+'</div>';*/
+            // citems.push(item);
+            citems.push(JSON.stringify(contacts[i].phoneNumbers));
         };
-        $("#loader").hide();
-        $("#contactList").html(citems.join(''));
+        // $("#loader").hide();
+        $("#contactList").html(citems.join(' | '));
     };
 
     function onError(contactError) {
