@@ -31,6 +31,7 @@
     }
 
     var citems = [];
+    var cjson;
 
     function onSuccess(contacts) {
         // alert('Found ' + contacts.length + ' contacts.');
@@ -40,12 +41,13 @@
             type: 'success'
         });
         for (var i = 0; i < contacts.length; i++) {
-            var eml;
+            /*var eml=null;
             for (var j = 0; j < contacts[i].emails.length; j++) {
                 eml = contacts[i].emails[j].pref;
             };
             var item = '<div class="list"><img src="' + contacts[i].photos + '" class="list-icon" alt=""><span class="list-title">' + contacts[i].name.formatted + '</span>'+eml+'</div>';
-            citems.push(item);
+            citems.push(item);*/
+            citems.push(JSON.stringify(contacts[i]));
         };
         $("#contactList").html(citems.join(''));
     };
@@ -60,8 +62,9 @@
         options.multiple = true;
         // options.desiredFields = [navigator.contacts.fieldType.name, navigator.contacts.fieldType.emails, navigator.contacts.fieldType.photos ];
         options.hasPhoneNumber = true;
-        var fields = [navigator.contacts.fieldType.name,];
-        navigator.contacts.find(fields, onSuccess, onError, options);
+        // var fields = [navigator.contacts.fieldType.name,];
+        var filter = ["name"];
+        navigator.contacts.find(filter, onSuccess, onError, options);
     }
     </script>
 </head>
@@ -79,6 +82,9 @@
         </div>
     </header>
     <section class="padding-vert-30">
+        <div class="bg-dark">
+            <div data-role="preloader" data-type="square"></div>
+        </div>
         <div class="container">
             <div id="contactList" class="listview" data-role="listview">
                 <div class="list">
