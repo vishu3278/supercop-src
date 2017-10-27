@@ -40,7 +40,11 @@
             type: 'success'
         });
         for (var i = 0; i < contacts.length; i++) {
-            var item = '<div class="list"><img src="' + contacts[i].photos + '" class="list-icon" alt=""><span class="list-title">' + contacts[i].name.formatted + '</span>'+contacts[i].emails+'</div>';
+            var eml;
+            for (var j = 0; j < contacts[i].emails.length; j++) {
+                eml = contacts[i].emails[j].pref;
+            };
+            var item = '<div class="list"><img src="' + contacts[i].photos + '" class="list-icon" alt=""><span class="list-title">' + contacts[i].name.formatted + '</span>'+eml+'</div>';
             citems.push(item);
         };
         $("#contactList").html(citems.join(''));
@@ -54,9 +58,9 @@
         var options = new ContactFindOptions();
         options.filter = "";
         options.multiple = true;
-        options.desiredFields = [navigator.contacts.fieldType.name, navigator.contacts.fieldType.emails, navigator.contacts.fieldType.photos ];
+        // options.desiredFields = [navigator.contacts.fieldType.name, navigator.contacts.fieldType.emails, navigator.contacts.fieldType.photos ];
         options.hasPhoneNumber = true;
-        var fields = ["*"];
+        var fields = [navigator.contacts.fieldType.name,];
         navigator.contacts.find(fields, onSuccess, onError, options);
     }
     </script>
