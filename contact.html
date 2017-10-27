@@ -53,7 +53,7 @@
             var phot = contacts[i].photos;
 
             // var phot = JSON.stringify(contacts[i].photos);
-            var item = '<div class="list"><img src="' + contacts[i].photos[0].value + '" class="list-icon" alt=""><span class="list-title">' + contacts[i].name.formatted + '</span>'+JSON.stringify(contacts[i].phoneNumbers)+'<br>'+JSON.stringify(contacts[i].emails)+'</div>';
+            var item = '<div class="list"><img src="' + JSON.stringify(contacts[i].photos) + '" class="list-icon" alt=""><span class="list-title">' + contacts[i].name.formatted + '</span>'+JSON.stringify(contacts[i].phoneNumbers)+'<br>'+JSON.stringify(contacts[i].emails)+'</div>';
             // citems.push(item);
             // $("#contactList").append('<div class="list">'+contacts[i].name.formatted+'</div>');
             /*for (var j = 0; j < contacts[i].phoneNumbers.length; j++) {
