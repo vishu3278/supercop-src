@@ -25,17 +25,11 @@
 
   document.addEventListener('deviceready', onDeviceReady, false);
     function onDeviceReady (argument) {
-      var options      = new ContactFindOptions();
-      options.filter   = "";
-      options.multiple = true;
-      filter["name"];
-      // var fields       = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
-      navigator.contacts.find(fields, onSuccess, onError, options);
-    }
-
-    function onSuccess (contacts) {
-      alert(contacts.length);
-      alert(JSON.stringify(contacts));
+      $.Notify({
+        caption: 'Ready',
+        content: 'Device ready',
+        type: 'info'
+    });
     }
     
 </script>
@@ -90,7 +84,7 @@
 	<div class="container">
       <div class="carousel" id="carousel">
         <div class="slide">
-          <img src="images/banner-img01.jpg" alt="image" width="455" height="425">
+          <!-- <img src="images/banner-img01.jpg" alt="image" width="455" height="425"> -->
         	<div class="slide-text">
            <h1 class="orange-text">Secure</h1>
            <h3 class="black-text">Access to your data</h3>
@@ -99,7 +93,7 @@
           </div>
             </div>
         <div class="slide">
-          <img src="images/banner-img01.jpg" alt="image" width="455" height="425">
+          <!-- <img src="images/banner-img01.jpg" alt="image" width="455" height="425"> -->
        	  <div class="slide-text">
        		<h1 class="orange-text">Secure</h1>
         		<h3 class="black-text">Access to your data</h3>
