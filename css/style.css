@@ -207,9 +207,6 @@ p {
   max-height: 200px;
   float: right;
 }
-.banner .slide {
-  height: 470px;
-}
 .banner .slide .slide-text {
   float: left;
   width: 46%;
@@ -237,7 +234,6 @@ p {
 }
 @media screen and (max-width: 767px) {
   .banner .slide {
-    height: 600px;
     text-align: center;
   }
   .banner .slide .slide-text {
