@@ -56,15 +56,25 @@
                     phone = contacts[i].phoneNumbers[j].value;
                 };
             };*/
-            /*for (var k = 0; k < contacts[i].emails.length; k++) {
-                if (contacts[i].emails[k]) {
+            if (contacts[i].emails) {
+                for (var k = 0; k < contacts[i].emails.length; k++) {
                     email = contacts[i].emails[k].value;
                 };
-            };*/
+                
+            };
+            
+            if (contacts[i].phoneNumbers) {
+
+                for (var j = 0; j < contacts[i].phoneNumbers.length; j++) {
+                    // html += "<li>Type: " + contacts[i].phoneNumbers[j].type + "<br/>" +
+                    phone = contacts[i].phoneNumbers[j].value;
+                        // "Preferred: " + contacts[i].phoneNumbers[j].pref + "</li>";
+                }
+            }
             
             /*var item = '<div class="list"><img src="' + contacts[i].photos + '" class="list-icon" alt=""><span class="list-title">' + contacts[i].name.formatted + '</span><br>Phone: '+phone+'<br>Email:'+email+'</div>';*/
 
-            var item = "<div class='list'><span class='list-title'>"+contacts[i].name.formatted +"</span> "+ contacts[i].id +",<br> "+ email +"</div>" ;
+            var item = "<div class='list'><span class='list-title'>"+contacts[i].name.formatted +"</span> "+ phone +",<br> "+ email +"</div>" ;
 
             citems.push(item);
             // citems.push(JSON.stringify(contacts[i]));
