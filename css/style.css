@@ -1,13 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,600);
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 300;
-}
+/* h1, h2, h3, h4, h5, h6 { font-family: @raleway; font-weight: 300;} */
 address,
 p {
   line-height: 1.5;
@@ -206,6 +197,9 @@ p {
 .banner.inner img {
   max-height: 200px;
   float: right;
+}
+.banner .slide {
+  height: 300px;
 }
 .banner .slide .slide-text {
   float: left;
