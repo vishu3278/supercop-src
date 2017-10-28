@@ -1,9 +1,9 @@
 @import 'variable.less';
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,600);
+// @import url(https://fonts.googleapis.com/css?family=Raleway:300,600);
 
 // .bg-orange{ background-color: #ddccdd;}
 
-h1, h2, h3, h4, h5, h6 { font-family: @raleway; font-weight: 300;}
+/* h1, h2, h3, h4, h5, h6 { font-family: @raleway; font-weight: 300;} */
 address, p {line-height: 1.5;}
 .container { width: 1140px;
 	@media screen {
@@ -63,6 +63,7 @@ address, p {line-height: 1.5;}
 		&-40 { margin-top: 40px; margin-bottom: 40px;}
 		&-50 { margin-top: 50px; margin-bottom: 50px;}
 	}
+	&-auto { margin-left: auto; margin-right: auto; float: none;}
 }
 
 .padding {
@@ -107,7 +108,7 @@ address, p {line-height: 1.5;}
 	&.inner { background-color: @orange;
 		img { max-height: 200px; float: right;}
 	}
-	.slide{ height: 470px; 
+	.slide{ height: 300px;
 		.slide-text { float: left; width: 46%; margin-top: 50px; padding-right: 1%; color: lighten(@black, 20%);
 			h1 { font-size: 84px; font-weight: 300; text-transform: uppercase;}
 			h3 { font-size: 30px; font-weight: 600; text-transform: uppercase;}
@@ -116,7 +117,7 @@ address, p {line-height: 1.5;}
 		button, .button { text-transform: uppercase;}
 		@media screen {
 			@media (max-width:767px){
-				&{height: 600px; text-align: center;}
+				&{text-align: center;}
 				.slide-text { width: 100%; float: none; margin-top: 10px;
 					h1 {font-size: 64px;}
 					h3 {font-size: 24px;}
