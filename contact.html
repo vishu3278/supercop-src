@@ -51,7 +51,7 @@
             var phone=null;
             var email=null;
 
-            for (var j = 0; j < contacts[i].phoneNumbers.length; j++) {
+            /*for (var j = 0; j < contacts[i].phoneNumbers.length; j++) {
                 if (contacts[i].phoneNumbers[j]) {
                     phone = contacts[i].phoneNumbers[j].value;
                 };
@@ -60,11 +60,11 @@
                 if (contacts[i].emails[k]) {
                     email = contacts[i].emails[k].value;
                 };
-            };
+            };*/
             
             /*var item = '<div class="list"><img src="' + contacts[i].photos + '" class="list-icon" alt=""><span class="list-title">' + contacts[i].name.formatted + '</span><br>Phone: '+phone+'<br>Email:'+email+'</div>';*/
 
-            var item = contacts[i].name.formatted +", "+ phone +", "+ email;
+            var item = contacts[i].name.formatted +", "+ contacts[i].id ;
 
             citems.push(item);
             // citems.push(JSON.stringify(contacts[i]));
@@ -77,7 +77,7 @@
         var options = new ContactFindOptions();
         options.filter = "";
         options.multiple = true;
-        options.desiredFields = [navigator.contacts.fieldType.name, navigator.contacts.fieldType.emails, navigator.contacts.fieldType.phoneNumbers, navigator.contacts.fieldType.photos ];
+        // options.desiredFields = [navigator.contacts.fieldType.name, navigator.contacts.fieldType.emails, navigator.contacts.fieldType.phoneNumbers, navigator.contacts.fieldType.photos ];
         // options.hasPhoneNumber = true;
         var fields = ["*"];
         navigator.contacts.find(fields, onSuccess, onError, options);
