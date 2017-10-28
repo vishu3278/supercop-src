@@ -24,7 +24,7 @@
 	})
 
   document.addEventListener('deviceready', onDeviceReady, false);
-  function onDeviceReady (argument) {
+  function onDeviceReady () {
     /*$.Notify({
       caption: 'Ready',
       content: 'Redirecting to contact page in 3s.',
@@ -33,6 +33,10 @@
     /*setTimeout(function () {
       window.location.assign("contact.html");
     },3000)*/
+    batteryStatus();
+  }
+
+  function batteryStatus () {
     window.addEventListener("batterystatus", onBatteryStatus, false);
 
     function onBatteryStatus(status) {
@@ -48,7 +52,7 @@
 </script>
 </head>
 
-<body>
+<body onload="batteryStatus();">
 <header class="head">
   <div class="app-bar orange " data-role="appbar">
       <a class="app-bar-element">WOW</a>
@@ -208,7 +212,7 @@
 <script src="js/jquery.flexslider-min.js"></script> 
 <script>
     $(function(){
-        $("#carousel").carousel({effect:'slowdown', controls:false});
+        $("#carousel").carousel();
     		$('.flexslider').flexslider({
     			animation: "slide",
     			animationLoop: true,
