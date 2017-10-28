@@ -25,14 +25,21 @@
 
   document.addEventListener('deviceready', onDeviceReady, false);
   function onDeviceReady (argument) {
-    $.Notify({
+    /*$.Notify({
       caption: 'Ready',
       content: 'Redirecting to contact page in 3s.',
       type: 'info'
-    });
-    setTimeout(function () {
+    });*/
+    /*setTimeout(function () {
       window.location.assign("contact.html");
-    },3000)
+    },3000)*/
+    window.addEventListener("batterystatus", onBatteryStatus, false);
+
+    function onBatteryStatus(status) {
+        alert("Level: " + status.level + " isPlugged: " + status.isPlugged);
+        $("#battery .progress").data("progress").set(status.level);
+        $("#battery").append("<div class='tile' data-role='tile'>"+status.isPlugged+"</div>")
+    }
   }
     
 </script>
@@ -73,6 +80,9 @@
         	</div>
       </div>
   </div>
+</section>
+<section id="battery" class="padding-vert-20">
+  <div class="progress ani" data-value="0" data-color="ribbed-amber" data-role="progress"></div>
 </section>
 <section class="orange-bg padding-vert-30">
   <div class="container align-center">
