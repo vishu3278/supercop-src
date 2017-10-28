@@ -48,24 +48,20 @@
                 eml = contacts[i].emails[j].pref;
             };*/
 
-            var item = '<div class="list"><img src="' + contacts[i].photos + '" class="list-icon" alt=""><span class="list-title">' + contacts[i].name.formatted + '</span><br>Phone: '+contacts[i].phoneNumbers[0].value+'<br>Email:'+contacts[i].emails[0].value+'</div>';
+            // var item = '<div class="list"><img src="' + contacts[i].photos + '" class="list-icon" alt=""><span class="list-title">' + contacts[i].name.formatted + '</span><br>Phone: '+contacts[i].phoneNumbers[0].value+'<br>Email:'+contacts[i].emails[0].value+'</div>';
 
-            citems.push(item);
             // $("#contactList").append('<div class="list">'+contacts[i].name.formatted+'</div>');
-            /*for (var j = 0; j < contacts[i].phoneNumbers.length; j++) {
+            for (var j = 0; j < contacts[i].phoneNumbers.length; j++) {
                 if (contacts[i].phoneNumbers[j].type == "mobile") {
                     $("#contactList").append('<div class="list"><img src="' + contacts[i].photos[i].value + '" class="list-icon" alt=""><span class="list-title">' + contacts[i].name.formatted + '</span>'+contacts[i].phoneNumbers[j].value+'</div>');
                 };
-            };*/
+            };
             
+            citems.push(item);
             // citems.push(JSON.stringify(contacts[i]));
         };
         // $("#loader").hide();
-        $("#contactList").append(citems.join('=|='));
-    };
-
-    function onError(contactError) {
-        alert('Some error occured!');
+        $("#contactList").append(citems.join(''));
     };
 
     function searchContact() {
@@ -76,6 +72,9 @@
         // options.hasPhoneNumber = true;
         var fields = ["*"];
         navigator.contacts.find(fields, onSuccess, onError, options);
+    }
+    function onError (contactError) {
+        alert("Error = " + contactError.code);
     }
     </script>
 </head>
