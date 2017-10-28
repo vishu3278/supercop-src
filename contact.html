@@ -50,6 +50,7 @@
 
             var phone=null;
             var email=null;
+            var photo = "images/placeholder-user-photo.png";
 
             /*for (var j = 0; j < contacts[i].phoneNumbers.length; j++) {
                 if (contacts[i].phoneNumbers[j]) {
@@ -62,14 +63,19 @@
                 };
                 
             };
-            
-            if (contacts[i].phoneNumbers) {
 
+            if (contacts[i].phoneNumbers) {
                 for (var j = 0; j < contacts[i].phoneNumbers.length; j++) {
                     // html += "<li>Type: " + contacts[i].phoneNumbers[j].type + "<br/>" +
                     phone = contacts[i].phoneNumbers[j].value;
                         // "Preferred: " + contacts[i].phoneNumbers[j].pref + "</li>";
                 }
+            };
+
+            if (contacts[i].photos) {
+                for (var n = 0; n < contacts[i].photos.length; n++) {
+                    photo = contacts[i].photos[n].value;
+                };
             }
             
             /*var item = '<div class="list"><img src="' + contacts[i].photos + '" class="list-icon" alt=""><span class="list-title">' + contacts[i].name.formatted + '</span><br>Phone: '+phone+'<br>Email:'+email+'</div>';*/
