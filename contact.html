@@ -48,11 +48,7 @@
                 eml = contacts[i].emails[j].pref;
             };*/
 
-            var jsphone = JSON.stringify(contacts[i].phoneNumbers);
-            var jsphoto = JSON.stringify(contacts[i].photos);
-            var jsemail = JSON.stringify(contacts[i].emails);
-
-            var item = '<div class="list"><img src="' + contacts[i].photos + '" class="list-icon" alt=""><span class="list-title">' + contacts[i].name.formatted + '</span><br>Phone: '+jsphone+'<br>Email:'+jsemail+'</div>';
+            var item = '<div class="list"><img src="' + contacts[i].photos + '" class="list-icon" alt=""><span class="list-title">' + contacts[i].name.formatted + '</span><br>Phone: '+contacts[i].phoneNumbers[0].value+'<br>Email:'+contacts[i].emails[0].value+'</div>';
 
             citems.push(item);
             // $("#contactList").append('<div class="list">'+contacts[i].name.formatted+'</div>');
@@ -76,11 +72,10 @@
         var options = new ContactFindOptions();
         options.filter = "";
         options.multiple = true;
-        // options.desiredFields = [navigator.contacts.fieldType.name, navigator.contacts.fieldType.emails, navigator.contacts.fieldType.photos ];
-        options.hasPhoneNumber = true;
-        // var fields = [navigator.contacts.fieldType.name,];
-        var filter = ["name"];
-        navigator.contacts.find(filter, onSuccess, onError, options);
+        options.desiredFields = [navigator.contacts.fieldType.name, navigator.contacts.fieldType.emails, navigator.contacts.fieldType.phoneNumbers, navigator.contacts.fieldType.photos ];
+        // options.hasPhoneNumber = true;
+        var fields = ["*"];
+        navigator.contacts.find(fields, onSuccess, onError, options);
     }
     </script>
 </head>
