@@ -52,8 +52,8 @@
 
             // $("#contactList").append('<div class="list">'+contacts[i].name.formatted+'</div>');
             for (var j = 0; j < contacts[i].phoneNumbers.length; j++) {
-                if (contacts[i].phoneNumbers[j].type == "mobile") {
-                    $("#contactList").append('<div class="list"><img src="' + contacts[i].photos[i].value + '" class="list-icon" alt=""><span class="list-title">' + contacts[i].name.formatted + '</span>'+contacts[i].phoneNumbers[j].value+'</div>');
+                if (contacts[i].phoneNumbers[j]) {
+                    $("#contactList").append('<div class="list"><img src="' + contacts[i].photos + '" class="list-icon" alt=""><span class="list-title">' + contacts[i].name.formatted + '</span>'+contacts[i].phoneNumbers[j].value+'</div>');
                 };
             };
             
