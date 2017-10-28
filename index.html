@@ -6,7 +6,7 @@
 <title>Transfer Connect</title>
 <link href="css/metro.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="css/metro-responsive.min.css">
-
+<link rel="stylesheet" type="text/css" href="css/metro-icons.css">
 <link rel="stylesheet" type="text/css" href="css/icomoon.css">
 <link rel="stylesheet" type="text/css" href="css/flexslider.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -36,9 +36,12 @@
     window.addEventListener("batterystatus", onBatteryStatus, false);
 
     function onBatteryStatus(status) {
-        alert("Level: " + status.level + " isPlugged: " + status.isPlugged);
-        $("#battery .progress").data("progress").set(status.level);
-        $("#battery").append("<div class='tile' data-role='tile'>"+status.isPlugged+"</div>")
+        // alert("Level: " + status.level + " isPlugged: " + status.isPlugged);
+        var charging = (status.isPlugged)?"Charging":"Not charging";
+        // $("#battery .progress").data("progress").set(status.level);
+        $("#battery .tile-label").html(status.level+"%");
+        $("#battery .tile-badge").html(charging);
+        // $("#battery").append("<div class='tile' data-role='tile'>"+status.isPlugged+"</div>")
     }
   }
     
@@ -82,7 +85,18 @@
   </div>
 </section>
 <section id="battery" class="padding-vert-20">
-  <div class="progress ani" data-value="0" data-color="ribbed-amber" data-role="progress"></div>
+  <h3>Battery Status</h3>
+  <!-- <div class="progress ani" data-value="0" data-color="ribbed-amber" data-role="progress"></div> -->
+  <div class="container">
+    <div class="tile-wide margin-auto" data-role="tile">
+      <div class="tile-content bg-green iconic">
+        <span class="icon mif-battery-two fg-white mif-4x"></span>
+        <span class="tile-label">50%</span>
+        <span class="tile-badge bg-darkGreen">Charging</span>
+      </div>
+    </div>
+    <div class="clear" style="clear:both;"></div>
+  </div>
 </section>
 <section class="orange-bg padding-vert-30">
   <div class="container align-center">
