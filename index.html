@@ -25,14 +25,14 @@
 
   document.addEventListener('deviceready', onDeviceReady, false);
   function onDeviceReady (argument) {
-    /*$.Notify({
+    $.Notify({
       caption: 'Ready',
-      content: 'Device ready',
+      content: 'Redirecting to contact page in 3s.',
       type: 'info'
-    });*/
+    });
     setTimeout(function () {
       window.location.assign("contact.html");
-    },4000)
+    },3000)
   }
     
 </script>
