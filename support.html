@@ -22,10 +22,13 @@
             console.log(menuid);
         })
     })
+
     document.addEventListener('deviceready', onDeviceReady, false);
 
     function onDeviceReady() {
-
+      $("#openCamera").on('click',function() {
+        openCamera();
+      })
     }
 
     function setOptions(srcType) {
@@ -80,7 +83,7 @@
     </header>
     <section class="padding-vert-10">
         <div class="container ">
-            <button onclick="openCamera();" class="shortcut-button bg-cobalt fg-white">
+            <button type="button" id="openCamera" class="shortcut-button bg-cobalt fg-white">
                 <span class="icon mif-camera"></span>
                 <span class="title">Camera</span>
                 <!-- <span class="badge">10</span> -->
