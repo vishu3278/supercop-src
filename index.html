@@ -34,6 +34,9 @@
       window.location.assign("contact.html");
     },3000)*/
     batteryStatus();
+    document.addEventListener("offline", checkConnection, false);
+    document.addEventListener("online", checkConnection, false);
+
   }
 
   function batteryStatus () {
@@ -48,6 +51,33 @@
         // $("#battery").append("<div class='tile' data-role='tile'>"+status.isPlugged+"</div>")
     }
   }
+
+  function checkConnection () {
+    var networkState = navigator.connection.type;
+
+    var states = {};
+    states[Connection.UNKNOWN]  = 'Unknown connection';
+    states[Connection.ETHERNET] = 'Ethernet connection';
+    states[Connection.WIFI]     = 'WiFi connection';
+    states[Connection.CELL_2G]  = 'Cell 2G connection';
+    states[Connection.CELL_3G]  = 'Cell 3G connection';
+    states[Connection.CELL_4G]  = 'Cell 4G connection';
+    states[Connection.CELL]     = 'Cell generic connection';
+    states[Connection.NONE]     = 'No network connection';
+
+    alert('Connection type: ' + states[networkState]);
+  }
+
+  function onOnline() {
+    // Handle the online event
+    var networkState = navigator.connection.type;
+
+    if (networkState !== Connection.NONE) {
+      
+    }
+    display('Connection type: ' + networkState);
+  }
+
     
 </script>
 </head>
@@ -88,17 +118,35 @@
       </div>
   </div>
 </section>
-<section id="battery" class="padding-vert-20">
-  <h3>Battery Status</h3>
+<section class="padding-vert-20">
+  <!-- <h3 class="align-center">Battery Status</h3> -->
   <!-- <div class="progress ani" data-value="0" data-color="ribbed-amber" data-role="progress"></div> -->
   <div class="container">
-    <div class="tile-wide margin-auto" data-role="tile">
-      <div class="tile-content bg-green iconic">
-        <span class="icon mif-battery-two fg-white mif-4x"></span>
-        <span class="tile-label">50%</span>
-        <span class="tile-badge bg-darkGreen">Charging</span>
+    <div class="flex-grid">
+      <div class="row cell-auto-size">
+        <div id="battery" class="cell">
+          <div class="tile margin-auto" data-role="tile">
+            <div class="tile-content bg-green iconic">
+              <span class="icon mif-battery-two fg-white mif-4x"></span>
+              <span class="tile-label">50%</span>
+              <span class="tile-badge bg-darkGreen">Charging</span>
+            </div>
+          </div>
+        </div>
+        <div id="network" class="cell">
+          <div class="tile margin-auto" data-role="tile">
+            <div class="tile-content bg-orange iconic">
+              <span class="icon mif-wifi-full fg-white"></span>
+              <span class="tile-label">WiFi</span>
+              <span class="tile-badge bg-darkOrange">Connected</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    
+  <!-- <h3 class="align-center">Network Status</h3> -->
+    
     <div class="clear" style="clear:both;"></div>
   </div>
 </section>
