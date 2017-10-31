@@ -60,9 +60,7 @@
     }
 
     function displayImage(imgUri) {
-
-      var elem = document.getElementById('imageFile');
-      elem.src = imgUri;
+      $("#camPic").attr("src",imgUri);
     }
 
     </script>
@@ -82,7 +80,7 @@
     </header>
     <section class="padding-vert-10">
         <div class="container ">
-            <button class="shortcut-button bg-cobalt fg-white">
+            <button onclick="openCamera();" class="shortcut-button bg-cobalt fg-white">
                 <span class="icon mif-camera"></span>
                 <span class="title">Camera</span>
                 <!-- <span class="badge">10</span> -->
