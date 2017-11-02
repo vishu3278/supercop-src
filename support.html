@@ -51,7 +51,7 @@
     }
 
     function cameraSuccess(imageData) {
-        $("#camPic").attr("src","data:image/jpeg;base64,"+imageData);
+        $("#camPic").attr("src", imageData);
     }
     function cameraError(error) {
           alert("Unable to obtain picture: " + error, "app");
