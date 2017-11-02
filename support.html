@@ -15,20 +15,22 @@
     <script src="js/metro.min.js"></script>
     <script type="text/javascript">
     $(function() {
-        $('#menuTrigger').on('click', function(event) {
+/*        $('#menuTrigger').on('click', function(event) {
             event.preventDefault();
             var menuid = $(this).attr('href');
             $(document).find(menuid).toggle('fast');
             console.log(menuid);
-        })
+        })*/
         $("#openCamera").on('click',function() {
+          alert("button clicked.");
           openCamera();
         })
-    })
+    });
 
     document.addEventListener('deviceready', onDeviceReady, false);
 
     function onDeviceReady (argument) {
+      alert(navigator.camera);
 
       var options = {
           // Some common settings are 20, 50, and 100
