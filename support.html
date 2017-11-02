@@ -21,15 +21,10 @@
             $(document).find(menuid).toggle('fast');
             console.log(menuid);
         })
+        $("#openCamera").on('click',function() {
+          openCamera();
+        })
     })
-
-    document.addEventListener('deviceready', onDeviceReady, false);
-
-    function onDeviceReady() {
-      $("#openCamera").on('click',function() {
-        openCamera();
-      })
-    }
 
     function setOptions(srcType) {
       var options = {
