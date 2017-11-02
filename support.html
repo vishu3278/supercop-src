@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="css/icomoon.css">
     <link rel="stylesheet" type="text/css" href="css/flexslider.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="cordova.js"></script>
     <script src="js/jquery-2.1.1.min.js"></script>
     <script src="js/metro.min.js"></script>
     <script type="text/javascript">
@@ -31,20 +32,17 @@
 
     function onDeviceReady (argument) {
       alert(navigator.camera);
-
-      var options = {
-          // Some common settings are 20, 50, and 100
-          quality: 50,
-          destinationType: Camera.DestinationType.DATA_URI,
-          // In this app, dynamically set the picture source, Camera or photo gallery
-          sourceType: Camera.PictureSourceType.CAMERA,
-          encodingType: Camera.EncodingType.JPEG,
-          mediaType: Camera.MediaType.PICTURE,
-          allowEdit: true,
-          correctOrientation: true  //Corrects Android orientation quirks
-      }
-
       
+    }
+
+    var options = {
+        quality: 50,
+        destinationType: 1,
+        sourceType: 0,
+        encodingType: 0,
+        mediaType: 0,
+        allowEdit: true,
+        correctOrientation: true
     }
 
     function openCamera(selection) {
@@ -53,7 +51,7 @@
     }
 
     function cameraSuccess(imageData) {
-        $("#camPic").attr("src","data:image/jpeg;base64"+imageData);
+        $("#camPic").attr("src","data:image/jpeg;base64,"+imageData);
     }
     function cameraError(error) {
           alert("Unable to obtain picture: " + error, "app");
@@ -62,7 +60,7 @@
     </script>
 </head>
 
-<body onload="onDeviceReady();">
+<body >
     <header class="head">
         <div class="app-bar orange" data-role="appbar">
             <a class="app-bar-element" href="...">WOW</a>
