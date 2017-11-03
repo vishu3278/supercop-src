@@ -33,23 +33,18 @@
     /*setTimeout(function () {
       window.location.assign("contact.html");
     },3000)*/
-    batteryStatus();
     document.addEventListener("offline", checkConnection, false);
     document.addEventListener("online", checkConnection, false);
-
+    window.addEventListener("batterystatus", onBatteryStatus, false);
   }
 
-  function batteryStatus () {
-    window.addEventListener("batterystatus", onBatteryStatus, false);
-
-    function onBatteryStatus(status) {
-        // alert("Level: " + status.level + " isPlugged: " + status.isPlugged);
-        var charging = (status.isPlugged)?"Charging":"Not charging";
-        // $("#battery .progress").data("progress").set(status.level);
-        $("#battery .tile-label").html(status.level+"%");
-        $("#battery .tile-badge").html(charging);
-        // $("#battery").append("<div class='tile' data-role='tile'>"+status.isPlugged+"</div>")
-    }
+  function onBatteryStatus(status) {
+      // alert("Level: " + status.level + " isPlugged: " + status.isPlugged);
+      var charging = (status.isPlugged)?"Charging":"Not charging";
+      // $("#battery .progress").data("progress").set(status.level);
+      $("#battery .tile-label").html(status.level+"%");
+      $("#battery .tile-badge").html(charging);
+      // $("#battery").append("<div class='tile' data-role='tile'>"+status.isPlugged+"</div>")
   }
 
   function checkConnection () {
@@ -79,7 +74,7 @@
 </script>
 </head>
 
-<body onload="onDeviceReady();">
+<body >
 <header class="head">
   <div class="app-bar orange " data-role="appbar">
       <a class="app-bar-element">WOW</a>
@@ -125,8 +120,8 @@
           <div class="tile-wide margin-auto" data-role="tile">
             <div class="tile-content bg-green iconic">
               <span class="icon mif-battery-two fg-white mif-4x"></span>
-              <span class="tile-label">50%</span>
-              <span class="tile-badge bg-darkGreen">Charging</span>
+              <span class="tile-label"></span>
+              <span class="tile-badge bg-darkGreen">?</span>
             </div>
           </div>
         </div>
@@ -134,8 +129,8 @@
           <div class="tile-wide margin-auto" data-role="tile">
             <div class="tile-content bg-orange iconic">
               <span class="icon mif-wifi-full fg-white"></span>
-              <span class="tile-label">WiFi</span>
-              <span class="tile-badge bg-darkOrange">Connected</span>
+              <span class="tile-label">Unknown</span>
+              <span class="tile-badge bg-darkOrange">?</span>
             </div>
           </div>
         </div>
