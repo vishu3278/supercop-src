@@ -74,6 +74,7 @@ export default {
             const fileReader = new FileReader();
             fileReader.onload = (e) => {
                 this.base64Photo = e.target.result;
+                this.$emit('imageData', this.base64Photo);
             }
             fileReader.readAsDataURL(fileobject);
         }

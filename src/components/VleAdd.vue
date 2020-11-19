@@ -1,11 +1,11 @@
 <template>
     <div class="is-clearfix">
         <div class="card">
-            <div class="card-header has-background-success-light">
-                <span class="card-header-icon has-text-success">
+            <div class="card-header has-background-info-light">
+                <span class="card-header-icon has-text-info-dark">
                     <span class="icon "><i class="las la-user-plus"></i></span>
                 </span>
-                <p class="card-header-title has-text-success">{{name}}</p>
+                <p class="card-header-title has-text-info-dark">{{name}}</p>
                 <!-- <span class="card-header-icon" v-on:click="addVle">
                     <span class="icon has-text-info"><i class="las la-plus-circle"></i></span>
                 </span> -->

@@ -51,10 +51,10 @@
 <script>
 import axios from 'axios'
 export default {
-    name: 'VLEList',
+    name: 'PANList',
     data() {
         return {
-            name: 'VLE List',
+            name: 'PAN List',
             userData: '',
             submitting: false,
             errors: [],
