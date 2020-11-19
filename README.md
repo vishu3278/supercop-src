@@ -1,4 +1,5 @@
-# qrscan
+# Supercop app
+Supercop app source files
 
 ## Project setup
 ```

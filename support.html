@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Transfer Connect</title>
+    <link href="css/metro.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/metro-responsive.min.css">
+    <link rel="stylesheet" type="text/css" href="css/metro-icons.css">
+    <link rel="stylesheet" type="text/css" href="css/icomoon.css">
+    <link rel="stylesheet" type="text/css" href="css/flexslider.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/metro.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+/*        $('#menuTrigger').on('click', function(event) {
+            event.preventDefault();
+            var menuid = $(this).attr('href');
+            $(document).find(menuid).toggle('fast');
+            console.log(menuid);
+        })*/
+        var options = {
+            quality: 50,
+            destinationType: 1,
+            sourceType: 0,
+            encodingType: 0,
+            mediaType: 0,
+            allowEdit: true,
+            correctOrientation: true
+        }
+        var optionsCam = {
+            quality: 50,
+            destinationType:1,
+            sourceType:1,
+            cameraDirection:1,
+            encodingType:0,
+            mediaType:0,
+            correctOrientation: true
+        }
+        $("#openGallery").on('click',function() {
+          // alert("button clicked.");
+          openCamera(options);
+        })
+        $("#openCamera").on('click',function() {
+          // alert("button clicked.");
+          openCamera(optionsCam);
+        })
+    });
+
+    document.addEventListener('deviceready', onDeviceReady, false);
+
+    function onDeviceReady (argument) {
+      // alert(navigator.camera);
+      
+    }
+
+
+    function openCamera(options) {
+      // var func = createNewFileEntry;
+      navigator.camera.getPicture(cameraSuccess, cameraError, options);
+    }
+
+    function cameraSuccess(imageData) {
+        $("#camPic").attr("src", imageData);
+    }
+    function cameraError(error) {
+          alert("Unable to obtain picture: " + error, "app");
+    }
+
+    </script>
+</head>
+
+<body >
+    <header class="head">
+        <div class="app-bar orange" data-role="appbar">
+            <a class="app-bar-element" href="...">WOW</a>
+            <span class="app-bar-divider"></span>
+            <ul class="app-bar-menu green place-right">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    <section class="padding-vert-10">
+        <div class="container ">
+            <button type="button" id="openGallery" class="shortcut-button bg-cobalt fg-white">
+                <span class="icon mif-images"></span>
+                <span class="title">Gallery</span>
+                <!-- <span class="badge">10</span> -->
+            </button>
+            <button type="button" id="openCamera" class="shortcut-button bg-darkGreen fg-white">
+                <span class="icon mif-camera"></span>
+                <span class="title">Camera</span>
+                <!-- <span class="badge">10</span> -->
+            </button>
+            
+            <div class="flex-grid">
+              
+              <div class="row cell-auto-size">
+                <div class="cell">
+                  <img src="" id="camPic" alt="">
+                </div>
+              </div>
+            </div>
+        </div>
+
+    </section>
+</body>
+
+</html>
