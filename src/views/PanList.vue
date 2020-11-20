@@ -7,6 +7,7 @@
                 </span> -->
                 <p class="card-header-title has-text-info-dark">{{name}}</p>
                 <span class="card-header-icon has-text-info-dark" v-on:click="addPan">
+
                     <span class="icon "><i class="las la-plus-circle"></i></span>
                 </span>
             </div>
@@ -72,6 +73,7 @@
                                     <i class="las la-toggle-off"></i>
                                 </span>
                             </button></td>
+
                     </tr> -->
                 </tbody>
             </table>
@@ -112,6 +114,7 @@ export default {
             .then(() => {
                 this.submitting = false;
             })*/
+
     },
     computed: {
         getImgPath: function() {
