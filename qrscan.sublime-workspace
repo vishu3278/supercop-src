@@ -1,0 +1,1206 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"v-",
+				"v-on\t@evt=\"callback\""
+			],
+			[
+				"m",
+				"m-0"
+			],
+			[
+				"has",
+				"has-background-info-light"
+			],
+			[
+				"base",
+				"base64Photo"
+			],
+			[
+				"if",
+				"ife\tif … else"
+			],
+			[
+				"img",
+				"imgBaseUrl"
+			],
+			[
+				"vle",
+				"vlelist"
+			],
+			[
+				"update",
+				"updateWallet"
+			],
+			[
+				"vu",
+				"vuex"
+			],
+			[
+				"has-ba",
+				"has-background-info"
+			],
+			[
+				"is-s",
+				"is-size-6"
+			],
+			[
+				"has-text-",
+				"has-text-grey-lighter"
+			],
+			[
+				"json",
+				"JSON_parse\t( json: string ): any JSON"
+			],
+			[
+				"http",
+				"https://thesupercop.com"
+			],
+			[
+				"sess",
+				"sessionUser"
+			],
+			[
+				"jso",
+				"JSON_parse\t( json: string ): any JSON"
+			],
+			[
+				"user",
+				"userUniqueID"
+			],
+			[
+				"onlo",
+				"onload\t: EventHandler Document"
+			],
+			[
+				"Fil",
+				"FileReader\t(): FileReader FileReader"
+			],
+			[
+				"files",
+				"filesSelected"
+			],
+			[
+				"Image",
+				"ImagePreview"
+			],
+			[
+				"na",
+				"name\t: DOMString File"
+			],
+			[
+				"hasba",
+				"has-background-primary"
+			],
+			[
+				"has-text",
+				"has-text-info"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"compo",
+				"components"
+			],
+			[
+				"has-back",
+				"has-background-primary"
+			],
+			[
+				"padd",
+				"padding\t Style CSS"
+			],
+			[
+				"state",
+				"stateid"
+			],
+			[
+				"else",
+				"else"
+			],
+			[
+				"status",
+				"statusText\t XMLHttpRequest"
+			],
+			[
+				"dis",
+				"district"
+			],
+			[
+				"JSON",
+				"JSON"
+			],
+			[
+				"fetch",
+				"fetchDistrict"
+			],
+			[
+				"parent",
+				"parent_name"
+			],
+			[
+				"f",
+				"f\tAnonymous Function"
+			],
+			[
+				"max",
+				"maxlength\tAttr"
+			],
+			[
+				"remo",
+				"removeItem\t( key: DOMString ): void Storage"
+			],
+			[
+				"us",
+				"userUniqueID"
+			],
+			[
+				"QR",
+				"QRCODE"
+			],
+			[
+				"is",
+				"is-fullwidth"
+			],
+			[
+				"le",
+				"length"
+			],
+			[
+				"err",
+				"errors"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"pare",
+				"parent_name"
+			],
+			[
+				"paret",
+				"parent\t: WindowProxy Window"
+			],
+			[
+				"set",
+				"setItem\t( key: DOMString, value: DOMString ): void Storage"
+			],
+			[
+				"parent_",
+				"parent_type"
+			],
+			[
+				"load",
+				"loadHome"
+			],
+			[
+				"attr",
+				"attribute"
+			],
+			[
+				"getE",
+				"getElementById\t( elementId: DOMString ): Element Document"
+			],
+			[
+				"e",
+				"errors"
+			],
+			[
+				"sub",
+				"subdist"
+			],
+			[
+				"ful",
+				"full_name_hi"
+			],
+			[
+				"xml",
+				"xmldata"
+			],
+			[
+				"for",
+				"forEach"
+			],
+			[
+				"each",
+				"forEach"
+			],
+			[
+				"xmld",
+				"xmldata"
+			],
+			[
+				"getI",
+				"getItem\t( key: DOMString ): DOMString Storage"
+			],
+			[
+				"post",
+				"postdata"
+			],
+			[
+				"nav",
+				"navbar-item"
+			],
+			[
+				"navi",
+				"navigator\t: Navigator Window"
+			],
+			[
+				"conso",
+				"console_log"
+			],
+			[
+				"inner",
+				"innerHeight"
+			],
+			[
+				"win",
+				"winHt"
+			],
+			[
+				"getele",
+				"getElementById\t( elementId: DOMString ): Element Document"
+			],
+			[
+				"getel",
+				"getElementById\t( elementId: DOMString ): Element Document"
+			],
+			[
+				"scroll",
+				"scrollAboveKeyboard"
+			],
+			[
+				"nod",
+				"nodeType"
+			],
+			[
+				"node",
+				"nodeType"
+			],
+			[
+				"add",
+				"addEventListener\t( type: DOMString, callback: EventListener, capture?: boolean ): void EventTarget"
+			],
+			[
+				"text",
+				"text3"
+			],
+			[
+				"ip",
+				"inp"
+			],
+			[
+				"lo",
+				"log\tlog"
+			],
+			[
+				"grey",
+				"grey-text"
+			],
+			[
+				"mate",
+				"material-icons"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/App.vue",
+			"settings":
+			{
+				"buffer_size": 6499,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/main.js",
+			"settings":
+			{
+				"buffer_size": 1153,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/router/index.js",
+			"settings":
+			{
+				"buffer_size": 1415,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/AddPan.vue",
+			"settings":
+			{
+				"buffer_size": 4283,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/views/Dashboard.vue",
+			"settings":
+			{
+				"buffer_size": 7372,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"html",
+				"Snippet: html"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 157.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/app/supercop",
+		"/D/app/supercop/src",
+		"/D/app/supercop/src/components",
+		"/D/app/supercop/src/views"
+	],
+	"file_history":
+	[
+		"/D/app/supercop/src/components/VleAdd.vue",
+		"/D/app/supercop/src/views/PanList.vue",
+		"/D/app/supercop/src/components/ImagePreview.vue",
+		"/D/app/supercop/src/components/AddAadhar.vue",
+		"/D/app/supercop/src/components/Address.vue",
+		"/D/app/qrcode/src/views/PanList.vue",
+		"/D/app/qrcode/src/views/Home.vue",
+		"/D/app/qrcode/src/components/ImagePreview.vue",
+		"/D/app/qrcode/src/components/ScanCard.vue",
+		"/D/app/qrcode/package-lock.json",
+		"/D/app/qrcode/package.json",
+		"/D/app/qrcode/README.md",
+		"/D/app/qrcode/.gitignore",
+		"/D/app/qrcode/src/router/index.js",
+		"/D/app/qrcode/src/main.js",
+		"/D/app/qrcode/dist/js/chunk-vendors.82584d17.js",
+		"/D/app/qrcode/dist/js/app.c6cf285a.js",
+		"/D/app/qrcode/dist/js/app.c6cf285a.js.map",
+		"/D/app/qrcode/dist/css/app.f5e4c645.css",
+		"/D/app/qrcode/src/components/Address.vue",
+		"/D/app/qrcode/src/components/AddAadhar.vue",
+		"/D/app/qrcode/src/views/VleList.vue",
+		"/D/app/qrcode/src/components/VleAdd.vue",
+		"/D/app/qrcode/src/views/Dashboard.vue",
+		"/D/app/qrcode/src/views/ListAadhar.vue",
+		"/D/app/qrcode/public/index.html",
+		"/D/app/qrcode/src/components/VleList.vue",
+		"/D/app/qrcode/src/components/AadharList.vue",
+		"/D/app/qrcode/src/views/About.vue",
+		"/D/app/qrcode/function.js",
+		"/D/app/qrcode/camera.js",
+		"/D/app/qrcode/vue.config.js",
+		"/D/app/qrcode/node_modules/bulma/css/bulma.min.css",
+		"/D/app/qrcode/node_modules/bulma/css/bulma.css",
+		"/D/app/qrcode/src/components/Manual.vue",
+		"/E/xampp/htdocs/supercop/webapis/state_cityajax.php",
+		"/E/xampp/htdocs/supercop/webapis/error_log",
+		"/E/xampp/htdocs/supercop/webapis/stateAjax.php",
+		"/E/xampp/htdocs/ifsc/api/branches.php",
+		"/E/xampp/htdocs/ifsc/api/branch.php",
+		"/E/xampp/htdocs/supercop/webapis/aadharcard.php",
+		"/E/xampp/htdocs/ifsc/api/index.php",
+		"/D/app/qrscan/public/index.html",
+		"/E/xampp/htdocs/supercop/webapis/login.php",
+		"/E/xampp/htdocs/supercop/webapis/index.php",
+		"/D/app/qrscan/src/router/index.js",
+		"/D/app/qrscan/src/main.js",
+		"/D/app/qrscan/.gitignore",
+		"/D/app/qrscan/dist/css/app.8706d334.css",
+		"/D/app/qrscan/camera.js",
+		"/D/app/qrscan/dist/js/app.a31ae078.js",
+		"/D/app/qrscan/dist/js/app.71e07e83.js",
+		"/D/app/qrscan/dist/js/app.233d5cfe.js",
+		"/D/app/qrscan/dist/js/chunk-vendors.5931c58b.js",
+		"/D/app/qrscan/dist/css/app.2b1bf602.css",
+		"/D/app/qrscan/dist/js/chunk-vendors.5931c58b.js.map",
+		"/D/app/qrscan/dist/js/app.780ee552.js",
+		"/D/app/qrscan/dist/favicon.ico",
+		"/D/app/qrscan/dist/js/app.0a3e6e47.js",
+		"/D/app/qrscan/dist/js/app.fb6a2d1d.js",
+		"/D/app/qrscan/dist/js/app.7873f66c.js",
+		"/D/app/qrscan/dist/js/app.694d9d8b.js",
+		"/D/app/qrscan/dist/js/app.b287c23f.js",
+		"/D/app/qrscan/app.js",
+		"/D/app/qrscan/dist/css/app.8fd093db.css",
+		"/D/app/qrscan/dist/js/app.1cfb5b0a.js",
+		"/D/app/qrscan/dist/js/app.416c091a.js",
+		"/D/app/qrscan/dist/index.html",
+		"/D/app/qrscan/vue.config.js",
+		"/D/app/qrscan/dist/js/app.5ca3ad34.js",
+		"/D/app/qrscan/dist/css/app.f73e9a2c.css",
+		"/D/app/qrscan/dist/js/app.5ca3ad34.js.map",
+		"/D/app/qrscan/dist/js/app.8904a451.js",
+		"/D/app/qrscan/dist/css/app.9366fca5.css",
+		"/D/app/qrscan/dist/js/app.a906156f.js",
+		"/E/xampp/htdocs/drsolution/workspace/templates/cards/aadhaar/add.php",
+		"/E/xampp/htdocs/drsolution/webapis/aadharcard.php",
+		"/C/Users/vishu/AppData/Local/Temp/fz3temp-2/aadharcard.php",
+		"/C/Users/vishu/AppData/Local/Temp/fz3temp-2/login.php",
+		"/D/app/qrscan/function.js",
+		"/D/app/qrscan/src/components/List.vue",
+		"/D/app/qrscan/src/views/Home.vue",
+		"/D/app/qrscan/package.json",
+		"/D/app/qrscan/src/components/Login.vue",
+		"/D/app/qrscan/dist/css/app.1143b002.css",
+		"/D/app/qrscan/dist/js/app.74e6cd2c.js",
+		"/D/app/qrscan/dist/js/app.b9ab95ef.js",
+		"/D/app/qrscan/dist/js/about.e72fada1.js",
+		"/D/app/qrscan/src/views/About.vue",
+		"/E/xampp/htdocs/drsolution/webapis/login.php",
+		"/D/app/qrscan/node_modules/bulma/package.json",
+		"/D/app/qrscan/src/App.vue",
+		"/D/app/qrscan/src/components/HelloWorld.vue",
+		"/D/app/drsol/css/style.css",
+		"/D/app/qrscan/www/js/index.js",
+		"/D/app/qrscan/www/index.html",
+		"/D/app/drsol/js/app.js",
+		"/D/app/drsol/compass.html",
+		"/D/app/drsol/about.html",
+		"/D/app/drsol/www/index.html",
+		"/D/app/drsol/www/js/index.js",
+		"/E/xampp/htdocs/drsolution/theme2/jeweler-master/images-cropper.html",
+		"/E/xampp/htdocs/drsolution/workspace/plugins/cropper/cropper-actice.js",
+		"/E/xampp/htdocs/drsolution/theme2/workspace/assets/js/cropper/cropper-actice.js",
+		"/E/xampp/htdocs/drsolution/theme2/workspace/assets/js/cropper/cropper.min.js",
+		"/E/xampp/htdocs/drsolution/theme2/workspace/assets/js/plugins.js",
+		"/E/xampp/htdocs/drsolution/theme2/workspace/assets/js/main.js",
+		"/F/download/add-language.php",
+		"/E/xampp/htdocs/story/mobileapp/index.html",
+		"/E/xampp/htdocs/story/index.html",
+		"/E/xampp/htdocs/storyapp/src/main.js",
+		"/E/xampp/htdocs/storyapp/index.html",
+		"/D/app/storyapp/www/dist/build.js",
+		"/E/xampp/htdocs/drsolution/workspace/index.php",
+		"/E/xampp/htdocs/abs-erp/centino-temp/classes/function.php",
+		"/E/xampp/htdocs/wowMobile/wowstoreadmin/error_log",
+		"/E/xampp/htdocs/trashapp/users.json"
+	],
+	"find":
+	{
+		"height": 41.0
+	},
+	"find_in_files":
+	{
+		"height": 104.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"@",
+			"addVle",
+			"Vle",
+			"addVle",
+			"/",
+			"Vle",
+			"li",
+			"success",
+			"text-primary",
+			"box",
+			"errors",
+			"imgPreview",
+			"getImageData",
+			"ImagePreview",
+			"is-text",
+			"imgBaseUrl",
+			"AddAadhar",
+			"http-proxy",
+			"node-forge",
+			"const",
+			"article",
+			"span",
+			"image-preview",
+			"addVle",
+			"fileReader",
+			"loadImageFileAsURL",
+			"inputFileToLoad",
+			"div",
+			"key",
+			"imgPreview",
+			"h6",
+			"section",
+			"inputFileToLoad",
+			"cameraGo",
+			"imgPreview",
+			"loadImageFileAsURL",
+			"my",
+			"VLE",
+			"name",
+			"input",
+			"Name",
+			"VleList",
+			"VLEList",
+			"AadharList",
+			"About",
+			"AddAadhar",
+			"td",
+			"danger",
+			"warning",
+			"primary",
+			"info",
+			"grid",
+			"box has-background-danger",
+			"box has-background-warning",
+			"box has-background-primary",
+			"scanQR",
+			"class=\"box\"",
+			"No gap",
+			"column",
+			"<i class=\"las la-portrait\"></i>",
+			"<i class=\"las la-id-card\"></i> ",
+			"link",
+			"primary",
+			"info-dark",
+			"-dark",
+			"has-text-info",
+			"Manual",
+			"manual",
+			"Manual",
+			"$_POST['state']",
+			"stateError",
+			"errors",
+			"error.dis",
+			"errors[5]",
+			"errors",
+			"stateid",
+			"postData",
+			"state",
+			"fetchDistrict",
+			"state",
+			"$result",
+			"[]",
+			"district_name",
+			"district_ID",
+			"<option",
+			"clearData",
+			"clear",
+			"error",
+			"block",
+			"imgData",
+			"getGender",
+			"gender",
+			"state",
+			"getStateIdByState",
+			"dob",
+			"getCo",
+			"pTypeInput",
+			"birth_date",
+			"single",
+			"base64Photo",
+			"birth_date",
+			"dob",
+			"date",
+			"loadImageFileAsURL",
+			"menuStatus",
+			"block",
+			"care_of",
+			"imgPreview",
+			"subdist",
+			"dob",
+			"coInput",
+			"full_address",
+			"address_line_hi",
+			"parent_name",
+			"parent_name_hi",
+			"subdist",
+			"dist",
+			"xmldata",
+			"parent_type",
+			"userData",
+			"qrdata",
+			"block_hi",
+			"dist",
+			"xmldata.",
+			"dist",
+			"parent_type",
+			"gname",
+			"ptype"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/App.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6499,
+						"regions":
+						{
+							"col_2C3E50FF":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										5756,
+										5763
+									]
+								],
+								"scope": "col_2C3E50FF"
+							},
+							"col_2C3E50FF_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_2C3E50FF_circle.png",
+								"regions":
+								[
+									[
+										5745,
+										5745
+									]
+								],
+								"scope": "col_gutter"
+							},
+							"col_BBBBBBFF":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										5989,
+										5993
+									]
+								],
+								"scope": "col_BBBBBBFF"
+							},
+							"col_BBBBBBFF_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_BBBBBBFF_circle.png",
+								"regions":
+								[
+									[
+										5960,
+										5960
+									]
+								],
+								"scope": "col_gutter"
+							},
+							"col_E4E4E4CC":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										6027,
+										6051
+									],
+									[
+										6198,
+										6222
+									]
+								],
+								"scope": "col_E4E4E4CC"
+							},
+							"col_E4E4E4CC_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_E4E4E4CC_circle.png",
+								"regions":
+								[
+									[
+										5995,
+										5995
+									],
+									[
+										6166,
+										6166
+									]
+								],
+								"scope": "col_gutter"
+							}
+						},
+						"selection":
+						[
+							[
+								3305,
+								3305
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 906.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1153,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								547,
+								547
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 228.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/router/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1415,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1121,
+								1127
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 171.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/components/AddPan.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4283,
+						"regions":
+						{
+							"col_0000FFFF":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										1225,
+										1229
+									]
+								],
+								"scope": "col_0000FFFF"
+							},
+							"col_0000FFFF_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_0000FFFF_circle.png",
+								"regions":
+								[
+									[
+										1112,
+										1112
+									]
+								],
+								"scope": "col_gutter"
+							}
+						},
+						"selection":
+						[
+							[
+								1337,
+								1337
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 285.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/views/Dashboard.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7372,
+						"regions":
+						{
+							"col_32323219":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										6744,
+										6765
+									]
+								],
+								"scope": "col_32323219"
+							},
+							"col_32323219_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_32323219_circle.png",
+								"regions":
+								[
+									[
+										6722,
+										6722
+									]
+								],
+								"scope": "col_gutter"
+							},
+							"col_32323226":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										6826,
+										6848
+									]
+								],
+								"scope": "col_32323226"
+							},
+							"col_32323226_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_32323226_circle.png",
+								"regions":
+								[
+									[
+										6804,
+										6804
+									]
+								],
+								"scope": "col_gutter"
+							},
+							"col_32323233":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										6909,
+										6930
+									]
+								],
+								"scope": "col_32323233"
+							},
+							"col_32323233_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_32323233_circle.png",
+								"regions":
+								[
+									[
+										6887,
+										6887
+									]
+								],
+								"scope": "col_gutter"
+							},
+							"col_3232323F":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										6991,
+										7013
+									]
+								],
+								"scope": "col_3232323F"
+							},
+							"col_3232323F_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_3232323F_circle.png",
+								"regions":
+								[
+									[
+										6969,
+										6969
+									]
+								],
+								"scope": "col_gutter"
+							},
+							"col_3232324C":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										7074,
+										7095
+									]
+								],
+								"scope": "col_3232324C"
+							},
+							"col_3232324C_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_3232324C_circle.png",
+								"regions":
+								[
+									[
+										7052,
+										7052
+									]
+								],
+								"scope": "col_gutter"
+							},
+							"col_32323259":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										7156,
+										7178
+									]
+								],
+								"scope": "col_32323259"
+							},
+							"col_32323259_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_32323259_circle.png",
+								"regions":
+								[
+									[
+										7134,
+										7134
+									]
+								],
+								"scope": "col_gutter"
+							}
+						},
+						"selection":
+						[
+							[
+								2066,
+								2072
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 640.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 41.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "qrscan.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 210.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
