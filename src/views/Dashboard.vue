@@ -24,23 +24,23 @@
                 </div>
                 <div class="buttons">
                     <router-link to="/addaadhar" class="button is-text is-fullwidth">Add Aadhaar Card</router-link>
-                    <router-link to="/listaadhar" class="button is-text is-fullwidth">List Aadhaar Cards</router-link>
+                    <router-link to="/aadharlist" class="button is-text is-fullwidth">Aadhaar Cards</router-link>
                 </div>
                 <div class="buttons">
                     <router-link to="/panadd" class="button is-text is-fullwidth">Add Pan Card</router-link>
-                    <router-link to="/panlist" class="button is-text is-fullwidth">List Pan Card</router-link>
+                    <router-link to="/panlist" class="button is-text is-fullwidth">Pan Cards</router-link>
                 </div>
                 <div class="buttons">
                     <router-link to="/addaadhar" class="button is-text is-fullwidth">Add Voter Card</router-link>
-                    <router-link to="/addaadhar" class="button is-text is-fullwidth">List Voter Card</router-link>
+                    <router-link to="/voterlist" class="button is-text is-fullwidth">Voter Cards</router-link>
                 </div>
                 <div class="buttons">
                     <router-link to="/addaadhar" class="button is-text is-fullwidth">Add Driving License</router-link>
-                    <router-link to="/addaadhar" class="button is-text is-fullwidth">List Driving License</router-link>
+                    <router-link to="/drivinglist" class="button is-text is-fullwidth">Driving License</router-link>
                 </div>
                 <div class="buttons">
-                    <router-link to="/addaadhar" class="button is-text is-fullwidth">Add Smart Card</router-link>
-                    <router-link to="/addaadhar" class="button is-text is-fullwidth">List Smart Card</router-link>
+                    <router-link to="/smartadd" class="button is-text is-fullwidth">Add Smart Card</router-link>
+                    <router-link to="/smartlist" class="button is-text is-fullwidth">Smart Cards</router-link>
                 </div>
             </div>
         </div>

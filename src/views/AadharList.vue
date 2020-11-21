@@ -27,7 +27,13 @@
                                 <span class="icon is-small">
                                     <i class="las la-toggle-off"></i>
                                 </span>
-                            </button></td>
+                            </button>
+                            <button class="button is-primary is-small" v-on:click="print">
+                                <span class="icon ">
+                                    <i class="las la-print"></i>
+                                </span>
+                            </button>
+                        </td>
                     </tr>
                     <tr>
                         <td>2</td>
@@ -37,7 +43,13 @@
                                 <span class="icon is-small">
                                     <i class="las la-toggle-off"></i>
                                 </span>
-                            </button></td>
+                            </button>
+                            <button class="button is-primary is-small">
+                                <span class="icon ">
+                                    <i class="las la-print"></i>
+                                </span>
+                            </button>
+                        </td>
                     </tr>
                     <tr>
                         <td>2</td>
@@ -47,7 +59,13 @@
                                 <span class="icon is-small">
                                     <i class="las la-toggle-off"></i>
                                 </span>
-                            </button></td>
+                            </button>
+                            <button class="button is-primary is-small">
+                                <span class="icon ">
+                                    <i class="las la-print"></i>
+                                </span>
+                            </button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -57,7 +75,7 @@
 <script>
 // import axios from 'axios'
 export default {
-    name: 'Aadhaar list',
+    name: 'Aadhaarlist',
     data() {
         return {
             name: 'Aadhaar List',
@@ -84,7 +102,10 @@ export default {
                 })*/
         },
         addAadhaar: function() {
-            this.$router.push({name: 'AddAadhar'});
+            this.$router.push({ name: 'AddAadhar' });
+        },
+        print: function() {
+            this.$router.push({ name: 'AadharPrint'})
         }
     }
 }

@@ -41,37 +41,37 @@
                     <ul class="has-background-primary-light">
                         <!-- <li class="has-text-centered has-background-primary">Cards</li> -->
                         <li>
-                            <router-link to="/about" class="navbar-item has-text-primary-dark"><i class="las la-qrcode"></i> Scan Aadhaar</router-link>
+                            <router-link to="/about" class="navbar-item has-text-primary-dark"><i class="las la-qrcode"></i> Scan Aadhaar </router-link>
                         </li>
                         <li>
-                            <router-link to="/addaadhar" class="navbar-item has-text-primary-dark"><i class="las la-edit"></i> Add Aadhaar </router-link>
+                            <router-link to="/addaadhar" class="navbar-item has-text-primary-dark"><i class="las la-edit"></i> Add Aadhaar Card</router-link>
                         </li>
                         <li>
-                            <router-link to="/listaadhar" class="navbar-item has-text-primary-dark"><i class="las la-list"></i> List Aadhaar </router-link>
+                            <router-link to="/aadharlist" class="navbar-item has-text-primary-dark"><i class="las la-list"></i> Aadhaar Cards </router-link>
                         </li>
-                    </ul>
-                    <ul class="has-background-primary-light">
                         <li>
                             <router-link to="/panlist" class="navbar-item has-text-primary-dark"><i class="las la-id-card"></i> Pan Cards</router-link>
                         </li>
                         <li>
                             <router-link to="/panadd" class="navbar-item has-text-primary-dark"><i class="las la-id-card"></i> Add Pan Card </router-link>
                         </li>
-                    </ul>
-                    <ul class="has-background-primary-light">
                         <li>
-                            <router-link to="/about" class="navbar-item has-text-primary-dark"><i class="las la-portrait"></i> Voter Cards</router-link>
+                            <router-link to="/voterlist" class="navbar-item has-text-primary-dark"><i class="las la-portrait"></i> Voter Cards</router-link>
                         </li>
                         <li>
                             <router-link to="/addaadhar" class="navbar-item has-text-primary-dark"><i class="las la-portrait"></i> Add Voter Card </router-link>
                         </li>
-                    </ul>
-                    <ul class="has-background-primary-light">
                         <li>
-                            <router-link to="/about" class="navbar-item has-text-primary-dark"><i class="las la-id-card-alt"></i> Driving License</router-link>
+                            <router-link to="/drivinglist" class="navbar-item has-text-primary-dark"><i class="las la-id-card-alt"></i> Driving License</router-link>
                         </li>
                         <li>
                             <router-link to="/addaadhar" class="navbar-item has-text-primary-dark"><i class="las la-id-card-alt"></i> Add Driving License </router-link>
+                        </li>
+                        <li>
+                            <router-link to="/smartlist" class="navbar-item has-text-primary-dark"><i class="las la-id-card-alt"></i> Smart Card</router-link>
+                        </li>
+                        <li>
+                            <router-link to="/smartadd" class="navbar-item has-text-primary-dark"><i class="las la-id-card-alt"></i> Add Smart Card </router-link>
                         </li>
                     </ul>
                     <p class="menu-label">
@@ -136,7 +136,6 @@ textarea,
 
 .navbar {
     border-bottom: 1px solid #bbb;
-    box-shadow: 0px 0px 0px 8px rgba(228, 228, 228, 0.8);
     position: relative;
 }
 

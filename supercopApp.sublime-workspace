@@ -1,0 +1,876 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"f",
+				"f\tAnonymous Function"
+			],
+			[
+				"margi",
+				"margin-bottom\tproperty"
+			],
+			[
+				"conso",
+				"console_log"
+			],
+			[
+				"inner",
+				"innerHeight"
+			],
+			[
+				"win",
+				"winHt"
+			],
+			[
+				"getele",
+				"getElementById\t( elementId: DOMString ): Element Document"
+			],
+			[
+				"getel",
+				"getElementById\t( elementId: DOMString ): Element Document"
+			],
+			[
+				"scroll",
+				"scrollAboveKeyboard"
+			],
+			[
+				"nod",
+				"nodeType"
+			],
+			[
+				"node",
+				"nodeType"
+			],
+			[
+				"for",
+				"forEach"
+			],
+			[
+				"add",
+				"addEventListener\t( type: DOMString, callback: EventListener, capture?: boolean ): void EventTarget"
+			],
+			[
+				"text",
+				"text3"
+			],
+			[
+				"ip",
+				"inp"
+			],
+			[
+				"lo",
+				"log\tlog"
+			],
+			[
+				"load",
+				"loadfile"
+			],
+			[
+				"grey",
+				"grey-text"
+			],
+			[
+				"mate",
+				"material-icons"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/router/index.js",
+			"settings":
+			{
+				"buffer_size": 1900,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/App.vue",
+			"settings":
+			{
+				"buffer_size": 6633,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/views/AadharList.vue",
+			"settings":
+			{
+				"buffer_size": 4444,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/print/AadhaarPrint.vue",
+			"settings":
+			{
+				"buffer_size": 12026,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/views/Dashboard.vue",
+			"settings":
+			{
+				"buffer_size": 7351,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"html",
+				"Snippet: html"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 157.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/app/supercop",
+		"/D/app/supercop/src",
+		"/D/app/supercop/src/components",
+		"/D/app/supercop/src/print",
+		"/D/app/supercop/src/views"
+	],
+	"file_history":
+	[
+		"/D/app/supercop/src/main.js",
+		"/D/app/supercop/src/views/ListAadhar.vue",
+		"/D/app/supercop/src/views/SmartList.vue",
+		"/D/app/supercop/src/views/VoterList.vue",
+		"/D/app/supercop/src/views/PanList.vue",
+		"/D/app/supercop/src/views/VleList.vue",
+		"/D/app/supercop/src/views/Dashboard.vue",
+		"/D/app/supercop/src/router/index.js",
+		"/D/app/supercop/src/components/VleAdd.vue",
+		"/D/app/supercop/src/App.vue",
+		"/D/app/supercop/package-lock.json",
+		"/K/ifsc/api/index.php",
+		"/D/app/ifsclookup/dist/index.html",
+		"/F/download/IFSC-list.json",
+		"/F/download/banknames.json",
+		"/F/download/banks.json",
+		"/F/download/IFSC.json",
+		"/D/app/qrscan/dist/css/app.a4c077e8.css",
+		"/D/app/qrscan/dist/js/app.9308d3b5.js",
+		"/D/app/qrscan/dist/js/app.9308d3b5.js.map",
+		"/E/xampp/htdocs/digimela/css/styleres.css",
+		"/E/xampp/htdocs/digimela/registration.php",
+		"/E/xampp/htdocs/digimela/js/customres.js",
+		"/E/xampp/htdocs/digimela/css/responsiveres.css",
+		"/E/xampp/htdocs/drsolution/theme2/jeweler-master/index.html",
+		"/C/Users/vishu/AppData/Local/Temp/fz3temp-2/aadharcard.php",
+		"/E/xampp/htdocs/wowitsolution/connection.php",
+		"/E/xampp/htdocs/wowitsolution/config.php",
+		"/E/xampp/htdocs/drsolution/workspace/templates/cards/aadhaar/view.php",
+		"/E/xampp/htdocs/drsolution/workspace/templates/cards/aadhaar/print.php",
+		"/D/app/qrscan/dist/js/app.0a3e6e47.js",
+		"/E/xampp/htdocs/story/config.xml",
+		"/D/app/drsol/www/index.html",
+		"/D/app/drsol/www/js/index.js",
+		"/E/xampp/htdocs/drsolution/theme2/jeweler-master/images-cropper.html",
+		"/E/xampp/htdocs/drsolution/workspace/plugins/cropper/cropper-actice.js",
+		"/E/xampp/htdocs/drsolution/theme2/workspace/assets/js/cropper/cropper-actice.js",
+		"/E/xampp/htdocs/drsolution/theme2/workspace/assets/js/cropper/cropper.min.js",
+		"/E/xampp/htdocs/drsolution/theme2/workspace/assets/js/plugins.js",
+		"/E/xampp/htdocs/drsolution/theme2/workspace/assets/js/main.js",
+		"/F/download/add-language.php",
+		"/E/xampp/htdocs/story/mobileapp/index.html",
+		"/E/xampp/htdocs/story/index.html",
+		"/E/xampp/htdocs/storyapp/src/main.js",
+		"/E/xampp/htdocs/storyapp/index.html",
+		"/D/app/storyapp/www/dist/build.js",
+		"/E/xampp/htdocs/drsolution/workspace/index.php",
+		"/E/xampp/htdocs/abs-erp/centino-temp/classes/function.php",
+		"/E/xampp/htdocs/wowMobile/wowstoreadmin/error_log",
+		"/E/xampp/htdocs/trashapp/users.json"
+	],
+	"find":
+	{
+		"height": 41.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"&quot;",
+			"html2Pdf",
+			"AadharList",
+			"Driving",
+			"Driving License",
+			"VoterList",
+			"Voter",
+			"List ",
+			"List",
+			"list",
+			"List",
+			"Driving",
+			"driving",
+			"Driving",
+			"is",
+			"8QE741955043",
+			"PANList",
+			"PanList"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/router/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1900,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								384,
+								384
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 171.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/App.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6633,
+						"regions":
+						{
+							"col_2C3E50FF":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										5948,
+										5955
+									]
+								],
+								"scope": "col_2C3E50FF"
+							},
+							"col_2C3E50FF_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_2C3E50FF_circle.png",
+								"regions":
+								[
+									[
+										5937,
+										5937
+									]
+								],
+								"scope": "col_gutter"
+							},
+							"col_BBBBBBFF":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										6181,
+										6185
+									]
+								],
+								"scope": "col_BBBBBBFF"
+							},
+							"col_BBBBBBFF_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_BBBBBBFF_circle.png",
+								"regions":
+								[
+									[
+										6152,
+										6152
+									]
+								],
+								"scope": "col_gutter"
+							},
+							"col_E4E4E4CC":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										6332,
+										6356
+									]
+								],
+								"scope": "col_E4E4E4CC"
+							},
+							"col_E4E4E4CC_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_E4E4E4CC_circle.png",
+								"regions":
+								[
+									[
+										6300,
+										6300
+									]
+								],
+								"scope": "col_gutter"
+							}
+						},
+						"selection":
+						[
+							[
+								6186,
+								6186
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2622.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/views/AadharList.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4444,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3437,
+								3437
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1140.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/print/AadhaarPrint.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12026,
+						"regions":
+						{
+							"col_000000FF":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										4205,
+										4212
+									]
+								],
+								"scope": "col_000000FF"
+							},
+							"col_000000FF_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_000000FF_circle.png",
+								"regions":
+								[
+									[
+										4114,
+										4114
+									]
+								],
+								"scope": "col_gutter"
+							},
+							"col_333333FF":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										11701,
+										11705
+									],
+									[
+										11747,
+										11751
+									]
+								],
+								"scope": "col_333333FF"
+							},
+							"col_333333FF_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_333333FF_circle.png",
+								"regions":
+								[
+									[
+										11679,
+										11679
+									],
+									[
+										11736,
+										11736
+									]
+								],
+								"scope": "col_gutter"
+							},
+							"col_454545FF":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										9854,
+										9861
+									],
+									[
+										10654,
+										10661
+									]
+								],
+								"scope": "col_454545FF"
+							},
+							"col_454545FF_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_454545FF_circle.png",
+								"regions":
+								[
+									[
+										9843,
+										9843
+									],
+									[
+										10643,
+										10643
+									]
+								],
+								"scope": "col_gutter"
+							},
+							"col_FFFFFFFF":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										4096,
+										4103
+									]
+								],
+								"scope": "col_FFFFFFFF"
+							},
+							"col_FFFFFFFF_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_FFFFFFFF_circle.png",
+								"regions":
+								[
+									[
+										3994,
+										3994
+									]
+								],
+								"scope": "col_gutter"
+							}
+						},
+						"selection":
+						[
+							[
+								8042,
+								8042
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 233.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/views/Dashboard.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7351,
+						"regions":
+						{
+							"col_32323219":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										6723,
+										6744
+									]
+								],
+								"scope": "col_32323219"
+							},
+							"col_32323219_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_32323219_circle.png",
+								"regions":
+								[
+									[
+										6701,
+										6701
+									]
+								],
+								"scope": "col_gutter"
+							},
+							"col_32323226":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										6805,
+										6827
+									]
+								],
+								"scope": "col_32323226"
+							},
+							"col_32323226_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_32323226_circle.png",
+								"regions":
+								[
+									[
+										6783,
+										6783
+									]
+								],
+								"scope": "col_gutter"
+							},
+							"col_32323233":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										6888,
+										6909
+									]
+								],
+								"scope": "col_32323233"
+							},
+							"col_32323233_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_32323233_circle.png",
+								"regions":
+								[
+									[
+										6866,
+										6866
+									]
+								],
+								"scope": "col_gutter"
+							},
+							"col_3232323F":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										6970,
+										6992
+									]
+								],
+								"scope": "col_3232323F"
+							},
+							"col_3232323F_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_3232323F_circle.png",
+								"regions":
+								[
+									[
+										6948,
+										6948
+									]
+								],
+								"scope": "col_gutter"
+							},
+							"col_3232324C":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										7053,
+										7074
+									]
+								],
+								"scope": "col_3232324C"
+							},
+							"col_3232324C_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_3232324C_circle.png",
+								"regions":
+								[
+									[
+										7031,
+										7031
+									]
+								],
+								"scope": "col_gutter"
+							},
+							"col_32323259":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										7135,
+										7157
+									]
+								],
+								"scope": "col_32323259"
+							},
+							"col_32323259_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_32323259_circle.png",
+								"regions":
+								[
+									[
+										7113,
+										7113
+									]
+								],
+								"scope": "col_gutter"
+							}
+						},
+						"selection":
+						[
+							[
+								1897,
+								1897
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1026.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 41.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "supercopApp.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 210.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

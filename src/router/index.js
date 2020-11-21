@@ -6,11 +6,15 @@ import Dashboard from '../views/Dashboard.vue'
 import Logout from '../components/Logout.vue'
 import ScanCard from '../components/ScanCard.vue'
 import AddAadhar from '../components/AddAadhar.vue'
-import ListAadhar from '../views/ListAadhar.vue'
+import AadharList from '../views/AadharList.vue'
+import AadharPrint from '../print/AadhaarPrint.vue'
 import VleAdd from '../components/VleAdd.vue'
 import PanAdd from '../components/AddPan.vue'
 import VleList from '../views/VleList.vue'
 import PanList from '../views/PanList.vue'
+import DrivingList from '../views/DrivingList.vue'
+import VoterList from '../views/VoterList.vue'
+import SmartList from '../views/SmartList.vue'
 
 Vue.use(VueRouter)
 Vue.use(VCalendar)
@@ -20,13 +24,17 @@ const routes = [
     { path: '/dashboard', name: 'Dashboard', component: Dashboard },
     { path: '/scancard', name: 'ScanCard', component: ScanCard },
     { path: '/addaadhar', name: 'AddAadhar', component: AddAadhar },
-    { path: '/listaadhar', name: 'ListAadhar', component: ListAadhar },
+    { path: '/aadharlist', name: 'AadharList', component: AadharList },
+    { path: '/aadharprint', name: 'AadharPrint', component: AadharPrint },
     { path: '/logout', name: 'Logout', component: Logout },
     { path: '/', name: 'Home', component: Home },
     { path: '/vleadd', name: 'VLEAdd', component: VleAdd },
     { path: '/panadd', name: 'PANAdd', component: PanAdd },
     { path: '/vlelist', name: 'VLEList', component: VleList },
-    { path: '/panlist', name: 'PANList', component: PanList }
+    { path: '/panlist', name: 'PANList', component: PanList },
+    { path: '/drivinglist', name: 'DrivingList', component: DrivingList },
+    { path: '/voterlist', name: 'VoterList', component: VoterList },
+    { path: '/smartlist', name: 'SmartList', component: SmartList }
 ]
 
 const router = new VueRouter({

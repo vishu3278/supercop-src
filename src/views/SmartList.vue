@@ -6,26 +6,35 @@
                     <span class="icon has-text-info"><i class="las la-list-ol"></i></span>
                 </span> -->
                 <p class="card-header-title has-text-info-dark">{{name}}</p>
-                <span class="card-header-icon has-text-info-dark" v-on:click="addPan">
-
+                <span class="card-header-icon has-text-info-dark" v-on:click="addSmart">
                     <span class="icon "><i class="las la-plus-circle"></i></span>
                 </span>
             </div>
         </div>
-        <div class="table-container content is-small">
-            <div class="notification is-light is-danger m-0" v-if="errors && errors.length">
-                <p v-for="(error, index) of errors" v-bind:key="index">
-                    {{index}} - {{error}}
-                </p>
+        <div class="notification is-light is-danger m-0" v-if="errors && errors.length">
+            <p v-for="(error, index) of errors" v-bind:key="index">
+                {{index}} - {{error}}
+            </p>
+        </div>
+        <progress v-show="submitting" class="progress is-small is-info" max="100">15%</progress>
+        <div class="level is-mobile px-1">
+            <div class="level-left"><label class="level-item">Search</label></div>
+            <div class="level-right">
+                <div class="field has-addons">
+                    <div class="control"><input type="text" class="input is-small" placeholder="Search"></div>
+                    <div class="control"><button type="button" class="button is-small is-info"><i class="las la-search"></i></button></div>
+                    <div class="control"><button type="button" class="button is-small is-ghost"><i class="las la-undo-alt"></i></button></div>
+                </div>
             </div>
-            <progress v-show="submitting" class="progress is-small is-info" max="100">15%</progress>
+        </div>
+        <div class="table-container content is-small">
             <table class="table is-narrow is-fullwidth">
                 <thead>
                     <tr class="has-background-info ">
                         <th>Info</th>
-                        <th>Name<br>Parent<br>Pan<br>DOB</th>
-                        <!-- <th>Address</th> -->
-                        <th>Status<br>Action</th>
+                        <th>Name<br>Gender</th>
+                        <th>Address</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,12 +42,12 @@
                         <td>Ack- ACK300441605776484<br>
                             VLE- Gaurav saini<br>
                             <span class="tag">8QE741955043</span></td>
-                        <td>Name<br>Parent Name<br>FPPPS6213Q<br>10-Mar-1996</td>
-                        <!-- <td></td> -->
+                        <td>Name<br>Female</td>
+                        <td>State<br>District<br>Block</td>
                         <td>
-                            <span class="tag is-success is-light">Active</span><br>
+                            <!-- <span class="tag is-success is-light">Active</span><br> -->
                             <button class="button is-warning is-small">
-                                <span class="icon is-small">
+                                <span class="icon ">
                                     <i class="las la-toggle-off"></i>
                                 </span>
                             </button>
@@ -53,12 +62,12 @@
                         <td>Ack- ACK300441605776484<br>
                             VLE- Amit kumar<br>
                             <span class="tag">8QE741955043</span></td>
-                        <td>Shyam Lal<br>Vishambhar Singh<br>FPPPS6213Q<br>10-Mar-1998</td>
-                        <!-- <td></td> -->
+                        <td>Shyam Lal<br>Male</td>
+                        <td>State<br>District<br>Block</td>
                         <td>
-                            <span class="tag is-success is-light">Active</span><br>
+                            <!-- <span class="tag is-success is-light">Active</span><br> -->
                             <button class="button is-warning is-small">
-                                <span class="icon is-small">
+                                <span class="icon ">
                                     <i class="las la-toggle-off"></i>
                                 </span>
                             </button>
@@ -91,12 +100,12 @@
     </div>
 </template>
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 export default {
-    name: 'PANList',
+    name: 'SmartList',
     data() {
         return {
-            name: 'PAN List',
+            name: 'Smart List',
             userData: '',
             submitting: false,
             errors: [],
@@ -132,28 +141,8 @@ export default {
         }
     },
     methods: {
-        list: function() {
-            let postData = JSON.stringify({ "_action": "dmxlLWxpc3Q=", "userUniqueID": this.userData.userUniqueID });
-            this.submitting = true;
-            axios.post('https://thesupercop.com/webapis/v2/vle-list.php', postData)
-                .then(response => {
-                    if (response.data.status == 1) {
-                        this.vlelist = response.data.data;
-                        this.errors = [];
-                        // this.$router.push({ name: 'About', params: { user: this.user } });
-                    } else {
-                        this.errors.push(response.data.message);
-                    }
-                })
-                .catch(error => {
-                    this.errors.push(error);
-                })
-                .then(() => {
-                    this.submitting = false;
-                })
-        },
-        addPan: function() {
-            this.$router.push({ name: 'PANAdd' });
+        addSmart: function() {
+            this.$router.push({ name: 'SmartAdd' });
         }
     }
 }
