@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import VCalendar from 'v-calendar'
 import Home from '../views/Home.vue'
 import Dashboard from '../views/Dashboard.vue'
+import RemoveBG from '../print/RemoveBG.vue'
 import Logout from '../components/Logout.vue'
 import ScanCard from '../components/ScanCard.vue'
 import AddAadhar from '../components/AddAadhar.vue'
@@ -10,6 +11,7 @@ import AadharList from '../views/AadharList.vue'
 import AadharPrint from '../print/AadhaarPrint.vue'
 import VleAdd from '../components/VleAdd.vue'
 import PanAdd from '../components/AddPan.vue'
+import DrivingAdd from '../components/DrivingAdd.vue'
 import VleList from '../views/VleList.vue'
 import PanList from '../views/PanList.vue'
 import DrivingList from '../views/DrivingList.vue'
@@ -22,6 +24,7 @@ Vue.use(VCalendar)
 const routes = [
     // { path: '/', name: 'Home', component: Home },
     { path: '/dashboard', name: 'Dashboard', component: Dashboard },
+    { path: '/removebg', name: 'RemoveBG', component: RemoveBG },
     { path: '/scancard', name: 'ScanCard', component: ScanCard },
     { path: '/addaadhar', name: 'AddAadhar', component: AddAadhar },
     { path: '/aadharlist', name: 'AadharList', component: AadharList },
@@ -30,6 +33,7 @@ const routes = [
     { path: '/', name: 'Home', component: Home },
     { path: '/vleadd', name: 'VLEAdd', component: VleAdd },
     { path: '/panadd', name: 'PANAdd', component: PanAdd },
+    { path: '/drivingadd', name: 'DrivingAdd', component: DrivingAdd },
     { path: '/vlelist', name: 'VLEList', component: VleList },
     { path: '/panlist', name: 'PANList', component: PanList },
     { path: '/drivinglist', name: 'DrivingList', component: DrivingList },

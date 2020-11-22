@@ -1,7 +1,7 @@
 <template>
     <section>
         <div class="field">
-            <label>State (राज्य)</label>
+            <label class="label">State (राज्य)</label>
             <div class="select is-fullwidth">
                 <select v-model="stateid" v-on:change="fetchDistrict($event)" class="input is-info " required="">
                     <option value="">Select State</option>
@@ -117,7 +117,7 @@
             </div>
         </div>
         <div class="field">
-            <label>District</label>
+            <label class="label">District (जिला)</label>
             <div class="control">
                 <div class="select is-fullwidth">
                     <select class="input is-info" v-model="districtid" v-on:change="fetchBlock($event)">
@@ -130,7 +130,7 @@
             </div>
         </div>
         <div class="field mb-3">
-            <label>Block</label>
+            <label class="label">Block (खंड)</label>
             <div class="control">
                 <div class="select is-fullwidth">
                     <select v-model="blockid" class="input is-info" v-on:change="changeBlock($event)">

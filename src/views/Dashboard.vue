@@ -19,6 +19,7 @@
             <div id="dashmenu" class="grid">
                 <div class="buttons">
                     <router-link to="/scancard" class="button is-text is-fullwidth">Scan Card</router-link>
+                    <router-link to="/removebg" class="button is-text is-fullwidth">Remove Background</router-link>
                     <!-- <a href="#!" class="button is-text is-fullwidth" onclick="scanQR()">Scan Card</a> -->
                     <!-- <a href="#!" class="button is-text is-inverted is-outlined is-fullwidth" v-on:click="showData()">Show Sample Data</a> -->
                 </div>
@@ -35,13 +36,14 @@
                     <router-link to="/voterlist" class="button is-text is-fullwidth">Voter Cards</router-link>
                 </div>
                 <div class="buttons">
-                    <router-link to="/addaadhar" class="button is-text is-fullwidth">Add Driving License</router-link>
+                    <router-link to="/drivingadd" class="button is-text is-fullwidth">Add Driving License</router-link>
                     <router-link to="/drivinglist" class="button is-text is-fullwidth">Driving License</router-link>
                 </div>
                 <div class="buttons">
                     <router-link to="/smartadd" class="button is-text is-fullwidth">Add Smart Card</router-link>
                     <router-link to="/smartlist" class="button is-text is-fullwidth">Smart Cards</router-link>
                 </div>
+                
             </div>
         </div>
         <div class="box" v-show="!userData">

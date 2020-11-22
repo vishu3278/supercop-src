@@ -41,7 +41,7 @@
                     <ul class="has-background-primary-light">
                         <!-- <li class="has-text-centered has-background-primary">Cards</li> -->
                         <li>
-                            <router-link to="/about" class="navbar-item has-text-primary-dark"><i class="las la-qrcode"></i> Scan Aadhaar </router-link>
+                            <router-link to="/scancard" class="navbar-item has-text-primary-dark"><i class="las la-qrcode"></i> Scan Aadhaar </router-link>
                         </li>
                         <li>
                             <router-link to="/addaadhar" class="navbar-item has-text-primary-dark"><i class="las la-edit"></i> Add Aadhaar Card</router-link>
@@ -65,7 +65,7 @@
                             <router-link to="/drivinglist" class="navbar-item has-text-primary-dark"><i class="las la-id-card-alt"></i> Driving License</router-link>
                         </li>
                         <li>
-                            <router-link to="/addaadhar" class="navbar-item has-text-primary-dark"><i class="las la-id-card-alt"></i> Add Driving License </router-link>
+                            <router-link to="/drivingadd" class="navbar-item has-text-primary-dark"><i class="las la-id-card-alt"></i> Add Driving License </router-link>
                         </li>
                         <li>
                             <router-link to="/smartlist" class="navbar-item has-text-primary-dark"><i class="las la-id-card-alt"></i> Smart Card</router-link>
@@ -77,6 +77,7 @@
                     <p class="menu-label">
                         Action
                     </p>
+                    <router-link to="/removebg" class="navbar-item has-background-info-light has-text-info-dark"><i class="las la-image "></i> Remove Background</router-link>
                     <router-link to="/logout" class="navbar-item has-background-warning-light has-text-warning-dark"><i class="las la-user-slash "></i> Logout</router-link>
                     <a onclick="exitApp()" class="navbar-item has-background-danger-light has-text-danger"><i class="las la-sign-out-alt"></i> Exit</a>
                 </div>
