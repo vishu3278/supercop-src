@@ -3,7 +3,7 @@
         <div class="card">
             <div class="card-header has-background-info-light">
                 <span class="card-header-icon has-text-info-dark">
-                    <span class="icon "><i class="las la-user-plus"></i></span>
+                    <span class="icon "><i class="las la-id-card-alt"></i></span>
                 </span>
                 <p class="card-header-title has-text-info-dark">{{name}}</p>
             </div>
@@ -11,13 +11,13 @@
                 <div class="field">
                     <label class="label">Full Name</label>
                     <div class="control">
-                        <input class="input" type="text" placeholder="Full Name">
+                        <input class="input" type="text" placeholder="Full Name" required="">
                     </div>
                 </div>
                 <div class="field">
                     <label class="label">Father's Name</label>
                     <div class="control">
-                        <input class="input" type="email" placeholder="Father's Name">
+                        <input class="input" type="email" placeholder="Father's Name" required="">
                     </div>
                 </div>
                 <div class="field">
@@ -27,9 +27,29 @@
                     </div>
                 </div>
                 <div class="field">
-                    <label class="label">PAN No.</label>
+                    <label class="label">Gender</label>
                     <div class="control">
-                        <input class="input" type="text" placeholder="PAN No.">
+                        <span class="select is-fullwidth">
+                            <select name="" id="" v-model="gender" class="input is-info" required="">
+                                <option selected="" value="">Select Gender</option>
+                                <option value="1">
+                                    Male (
+                                    पुरुष) </option>
+                                <option value="2">
+                                    Female (
+                                    महिला) </option>
+                                <option value="3">
+                                    Transgender (
+                                    ट्रांसजेंडर) </option>
+                            </select>
+                        </span>
+                    </div>
+                </div>
+                <app-address></app-address>
+                <div class="field">
+                    <label class="label">Pincode</label>
+                    <div class="control">
+                        <input class="input" type="number" placeholder="Pincode" minlength="6" maxlength="6" required="">
                     </div>
                 </div>
                 <div class="field">
@@ -44,33 +64,57 @@
             </div>
         </div>
         <div v-show="agree" class="box is-primary ">
+            <div class="field">
+                <label class="label">Aadhaar No.</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Aadhaar No.">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">PAN No.</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="PAN No.">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Driving License No.</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Driving License No.">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Voter ID</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Voter ID">
+                </div>
+            </div>
+
             <p class="title is-5">Address Information</p>
             <label class="label">Upload Photo</label>
             <ImagePreview v-on:imageData="pic = $event"></ImagePreview>
-            <label class="label">Upload Signature</label>
-            <ImagePreview v-on:imageData="signature = $event"></ImagePreview>
+            
             <label class="label">Upload ID Proof</label>
             <image-preview v-on:imageData="idproof = $event"></image-preview>
             <label class="label">Upload Disclaimer</label>
             <image-preview v-on:imageData="disclaimer = $event"></image-preview>
-
             <button class="button is-fullwidth is-success">Submit</button>
         </div>
-        
     </div>
 </template>
 <script>
 // import axios from 'axios'
-// import Address from './Address.vue'
+import Address from './Address.vue'
 import ImagePreview from './ImagePreview.vue'
 export default {
-    name: 'PANAdd',
+    name: 'SmartAdd',
     data() {
         return {
-            name: 'PAN Add',
+            name: 'Smart Add',
             userData: '',
             fullname: '',
             fathername: '',
+            gender: '',
             agree: '',
             dob: '',
             pic: '',
@@ -80,7 +124,8 @@ export default {
         }
     },
     components: {
-        ImagePreview
+        ImagePreview,
+        'app-address': Address,
     },
     mounted: function() {
         this.$emit("loaded", false);
@@ -89,19 +134,7 @@ export default {
     methods: {
         list: function() {
 
-            /*axios.post('https://thesupercop.com/webapis/login.php', postData)
-                .then(response => {
-                    if (response.data.status == 1) {
-                        this.user = response.data;
-                        this.errors = [];
-                        this.$router.push({ name: 'About', params: { user: this.user } });
-                    } else {
-                        this.errors.push(response.data.message);
-                    }
-                })
-                .catch(error => {
-                    this.errors.push(error);
-                })*/
+
         },
     }
 }

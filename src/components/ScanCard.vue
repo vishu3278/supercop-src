@@ -201,7 +201,7 @@ export default {
         window.sessionStorage.setItem('QRCODE', '<?xml version="1.0" encoding="UTF-8"?> <PrintLetterBarcodeData uid="360979299510" name="My Card" gender="F" yob="1998" gname="Demo Card" co="S/O Demo Card" house="555 House" street="Street 15" lm="Lane 48" loc="Locality" vtc="what  is this" po="Post Office" dist="Baghpat" subdist="Binauli" state="Uttar Pradesh" pc="247001" dob="13/08/1998"/>');
         // window.sessionStorage.setItem('QRCODE', '<?xml version="1.0" encoding="UTF-8"?> <PrintLetterBarcodeData uid="360979299510" name="Deepak Kumar" gender="M" yob="1995" gname="Prakash Kumar" co="S/O Prakash Kumar" house="135 Pratap Nagar" street="Gali 19" lm="Shanti Nagar" loc="Sikandarpur" vtc="" po="Sadar Bazar" dist="Shamli" subdist="Shamli" state="Uttar Pradesh" pc="110042" dob="13/08/1995"/>');
         // this.userData = JSON.parse(window.sessionStorage.getItem("user"));
-        this.userData = this.$store.getters.getUsers;
+        this.userData = this.$store.getters.getUser;
         if (!this.userData) {
             this.$router.push({ name: 'Home' });
         } else {
@@ -210,13 +210,8 @@ export default {
 
     },
     computed: {
-        // ...mapGetters(['getUsers']),
-        /*getUsers: function(){
-            return this.$store.getters.getUsers;
-        },*/
-        /*getImageData: function(imgData) {
-            return imgData;
-        },*/
+        // ...mapGetters(['getUser']),
+        
         getGender: function() {
             let gender;
             if (this.xmldata.gender == "M") {

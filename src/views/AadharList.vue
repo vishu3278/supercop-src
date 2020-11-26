@@ -102,7 +102,7 @@ export default {
                 })*/
         },
         addAadhaar: function() {
-            this.$router.push({ name: 'AddAadhar' });
+            this.$router.push({ name: 'AadhaarAdd' });
         },
         print: function() {
             this.$router.push({ name: 'AadharPrint'})

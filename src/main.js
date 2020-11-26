@@ -13,14 +13,19 @@ const store = new Vuex.Store({
         count: 0,
         user: '',
         wallet: '',
-        imgBaseUrl: 'https://thesupercop.com/workspace/dist/img/users/'
+        imgBaseUrl: 'https://thesupercop.com/workspace/dist/img/users/',
+        apiBaseUrl: 'https://thesupercop.com/webapis/v2/'
     },
     getters: {
-        getUsers(state) {
+        getUser(state) {
             return state.user;
         },
         getWallet(state) {
             return state.wallet;
+        },
+
+        getApiPath(state) {
+            return state.apiBaseUrl;
         },
         getImgPath(state) {
             return state.imgBaseUrl;

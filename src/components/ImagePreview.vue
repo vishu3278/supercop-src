@@ -30,9 +30,8 @@
                 </div>
             </div>
         </div>
-        <div class="field">
-            <label>Select image to upload or capture using camera</label>
-        </div>
+            <p class="help">Select image to upload or capture using camera (max file size 200kb)</p>
+        
         <div class="field mb-3">
             <figure class="image">
                 <img v-bind:src="base64Photo">

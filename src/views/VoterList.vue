@@ -114,7 +114,7 @@ export default {
     },
     mounted: function() {
         this.$emit("loaded", false);
-        this.userData = this.$store.getters.getUsers;
+        this.userData = this.$store.getters.getUser;
         // let postData = JSON.stringify({ "_action": "dmxlLWxpc3Q=", "userUniqueID": this.userData.userUniqueID });
         this.submitting = true;
         /*axios.post('https://thesupercop.com/webapis/v2/vle-list.php', postData)
@@ -148,5 +148,5 @@ export default {
 }
 </script>
 <style >
-.button.is-small .icon { font-size:1.5em; margin-top:-0.25em;}
+.button.is-small .icon { font-size:1.5em; margin-top:-0.125em;}
 </style>

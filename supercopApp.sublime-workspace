@@ -4,6 +4,54 @@
 		"selected_items":
 		[
 			[
+				"session",
+				"sessionUser"
+			],
+			[
+				"if",
+				"if\tif"
+			],
+			[
+				"repon",
+				"response"
+			],
+			[
+				"pu",
+				"push"
+			],
+			[
+				"respon",
+				"response"
+			],
+			[
+				"user",
+				"userID"
+			],
+			[
+				"Image",
+				"ImagePreview"
+			],
+			[
+				"has-text",
+				"has-text-success-light"
+			],
+			[
+				"navbar",
+				"navbar-item"
+			],
+			[
+				"di",
+				"drivingtype"
+			],
+			[
+				"max",
+				"maxlength\tAttr"
+			],
+			[
+				"min",
+				"minlength\tAttr"
+			],
+			[
 				"f",
 				"f\tAnonymous Function"
 			],
@@ -83,7 +131,7 @@
 			"file": "src/router/index.js",
 			"settings":
 			{
-				"buffer_size": 1900,
+				"buffer_size": 2374,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -92,35 +140,43 @@
 			"file": "src/App.vue",
 			"settings":
 			{
-				"buffer_size": 6633,
+				"buffer_size": 6818,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/views/AadharList.vue",
+			"file": "src/main.js",
 			"settings":
 			{
-				"buffer_size": 4444,
+				"buffer_size": 1288,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/print/AadhaarPrint.vue",
-			"settings":
-			{
-				"buffer_size": 12026,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "src/views/Dashboard.vue",
 			"settings":
 			{
-				"buffer_size": 7351,
+				"buffer_size": 7611,
 				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/components/SmartAdd.vue",
+			"settings":
+			{
+				"buffer_size": 5704,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/VleAdd.vue",
+			"settings":
+			{
+				"buffer_size": 5824,
 				"line_ending": "Windows"
 			}
 		}
@@ -136,6 +192,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"Snippet: vu",
+				"Snippet: Vue component"
+			],
 			[
 				"install",
 				"Package Control: Install Package"
@@ -171,22 +231,35 @@
 	[
 		"/D/app/supercop",
 		"/D/app/supercop/src",
+		"/D/app/supercop/src/assets",
 		"/D/app/supercop/src/components",
 		"/D/app/supercop/src/print",
 		"/D/app/supercop/src/views"
 	],
 	"file_history":
 	[
+		"/D/app/supercop/src/components/ScanCard.vue",
+		"/D/app/supercop/src/views/VleList.vue",
+		"/D/app/supercop/src/components/AddSmart.vue",
+		"/D/app/supercop/src/components/VleAdd.vue",
+		"/D/app/supercop/src/views/Dashboard.vue",
+		"/D/app/supercop/src/views/VoterList.vue",
+		"/D/app/supercop/src/views/DrivingList.vue",
+		"/D/app/supercop/src/print/RemoveBG.vue",
+		"/D/app/supercop/src/components/VoterAdd.vue",
+		"/D/app/supercop/src/components/DrivingAdd.vue",
+		"/D/app/supercop/src/components/AddPan.vue",
+		"/D/app/supercop/src/App.vue",
+		"/D/app/supercop/src/views/PanList.vue",
+		"/D/app/supercop/src/views/SmartList.vue",
+		"/D/app/supercop/src/views/Home.vue",
+		"/D/app/supercop/src/views/AadharList.vue",
+		"/D/app/supercop/src/components/ImagePreview.vue",
+		"/D/app/supercop/src/components/Address.vue",
+		"/D/app/supercop/src/print/AadhaarPrint.vue",
 		"/D/app/supercop/src/main.js",
 		"/D/app/supercop/src/views/ListAadhar.vue",
-		"/D/app/supercop/src/views/SmartList.vue",
-		"/D/app/supercop/src/views/VoterList.vue",
-		"/D/app/supercop/src/views/PanList.vue",
-		"/D/app/supercop/src/views/VleList.vue",
-		"/D/app/supercop/src/views/Dashboard.vue",
 		"/D/app/supercop/src/router/index.js",
-		"/D/app/supercop/src/components/VleAdd.vue",
-		"/D/app/supercop/src/App.vue",
 		"/D/app/supercop/package-lock.json",
 		"/K/ifsc/api/index.php",
 		"/D/app/ifsclookup/dist/index.html",
@@ -234,9 +307,10 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 105.0,
 		"where_history":
 		[
+			"D:\\app\\supercop\\src"
 		]
 	},
 	"find_state":
@@ -244,6 +318,33 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Address",
+			"address",
+			"Driving",
+			"PAN No.",
+			"Aadhaar",
+			"success",
+			"changeStatus",
+			"index",
+			"account_status",
+			"message",
+			"this",
+			"data",
+			"error",
+			"errors",
+			"getUsers",
+			"AddAadhar",
+			"addaadhar",
+			"submitData",
+			"label",
+			"validate",
+			"<label",
+			"D/O",
+			"Pan",
+			"PAN",
+			"success",
+			"Dashboard",
+			"PAN",
 			"&quot;",
 			"html2Pdf",
 			"AadharList",
@@ -288,15 +389,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1900,
+						"buffer_size": 2374,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								384,
-								384
+								710,
+								710
 							]
 						],
 						"settings":
@@ -309,7 +410,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 171.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
@@ -321,7 +422,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6633,
+						"buffer_size": 6818,
 						"regions":
 						{
 							"col_2C3E50FF":
@@ -330,8 +431,8 @@
 								"regions":
 								[
 									[
-										5948,
-										5955
+										6133,
+										6140
 									]
 								],
 								"scope": "col_2C3E50FF"
@@ -343,8 +444,8 @@
 								"regions":
 								[
 									[
-										5937,
-										5937
+										6122,
+										6122
 									]
 								],
 								"scope": "col_gutter"
@@ -355,8 +456,8 @@
 								"regions":
 								[
 									[
-										6181,
-										6185
+										6366,
+										6370
 									]
 								],
 								"scope": "col_BBBBBBFF"
@@ -368,8 +469,8 @@
 								"regions":
 								[
 									[
-										6152,
-										6152
+										6337,
+										6337
 									]
 								],
 								"scope": "col_gutter"
@@ -380,8 +481,8 @@
 								"regions":
 								[
 									[
-										6332,
-										6356
+										6517,
+										6541
 									]
 								],
 								"scope": "col_E4E4E4CC"
@@ -393,8 +494,8 @@
 								"regions":
 								[
 									[
-										6300,
-										6300
+										6485,
+										6485
 									]
 								],
 								"scope": "col_gutter"
@@ -403,8 +504,8 @@
 						"selection":
 						[
 							[
-								6186,
-								6186
+								252,
+								252
 							]
 						],
 						"settings":
@@ -417,197 +518,52 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2622.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/views/AadharList.vue",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4444,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3437,
-								3437
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1140.0,
+						"translation.y": 2578.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "src/print/AadhaarPrint.vue",
+					"buffer": 2,
+					"file": "src/main.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 12026,
+						"buffer_size": 1288,
 						"regions":
 						{
-							"col_000000FF":
-							{
-								"flags": 16,
-								"regions":
-								[
-									[
-										4205,
-										4212
-									]
-								],
-								"scope": "col_000000FF"
-							},
-							"col_000000FF_icon":
-							{
-								"flags": 16,
-								"icon": "Packages/User/Color Highlight.cache/col_000000FF_circle.png",
-								"regions":
-								[
-									[
-										4114,
-										4114
-									]
-								],
-								"scope": "col_gutter"
-							},
-							"col_333333FF":
-							{
-								"flags": 16,
-								"regions":
-								[
-									[
-										11701,
-										11705
-									],
-									[
-										11747,
-										11751
-									]
-								],
-								"scope": "col_333333FF"
-							},
-							"col_333333FF_icon":
-							{
-								"flags": 16,
-								"icon": "Packages/User/Color Highlight.cache/col_333333FF_circle.png",
-								"regions":
-								[
-									[
-										11679,
-										11679
-									],
-									[
-										11736,
-										11736
-									]
-								],
-								"scope": "col_gutter"
-							},
-							"col_454545FF":
-							{
-								"flags": 16,
-								"regions":
-								[
-									[
-										9854,
-										9861
-									],
-									[
-										10654,
-										10661
-									]
-								],
-								"scope": "col_454545FF"
-							},
-							"col_454545FF_icon":
-							{
-								"flags": 16,
-								"icon": "Packages/User/Color Highlight.cache/col_454545FF_circle.png",
-								"regions":
-								[
-									[
-										9843,
-										9843
-									],
-									[
-										10643,
-										10643
-									]
-								],
-								"scope": "col_gutter"
-							},
-							"col_FFFFFFFF":
-							{
-								"flags": 16,
-								"regions":
-								[
-									[
-										4096,
-										4103
-									]
-								],
-								"scope": "col_FFFFFFFF"
-							},
-							"col_FFFFFFFF_icon":
-							{
-								"flags": 16,
-								"icon": "Packages/User/Color Highlight.cache/col_FFFFFFFF_circle.png",
-								"regions":
-								[
-									[
-										3994,
-										3994
-									]
-								],
-								"scope": "col_gutter"
-							}
 						},
 						"selection":
 						[
 							[
-								8042,
-								8042
+								271,
+								275
 							]
 						],
 						"settings":
 						{
 							"incomplete_sync": null,
-							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage"
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 233.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 3,
 					"file": "src/views/Dashboard.vue",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7351,
+						"buffer_size": 7611,
 						"regions":
 						{
 							"col_32323219":
@@ -616,8 +572,8 @@
 								"regions":
 								[
 									[
-										6723,
-										6744
+										6762,
+										6783
 									]
 								],
 								"scope": "col_32323219"
@@ -629,8 +585,8 @@
 								"regions":
 								[
 									[
-										6701,
-										6701
+										6738,
+										6738
 									]
 								],
 								"scope": "col_gutter"
@@ -641,8 +597,8 @@
 								"regions":
 								[
 									[
-										6805,
-										6827
+										6879,
+										6901
 									]
 								],
 								"scope": "col_32323226"
@@ -654,8 +610,8 @@
 								"regions":
 								[
 									[
-										6783,
-										6783
+										6855,
+										6855
 									]
 								],
 								"scope": "col_gutter"
@@ -666,8 +622,8 @@
 								"regions":
 								[
 									[
-										6888,
-										6909
+										6997,
+										7018
 									]
 								],
 								"scope": "col_32323233"
@@ -679,8 +635,8 @@
 								"regions":
 								[
 									[
-										6866,
-										6866
+										6973,
+										6973
 									]
 								],
 								"scope": "col_gutter"
@@ -691,8 +647,8 @@
 								"regions":
 								[
 									[
-										6970,
-										6992
+										7114,
+										7136
 									]
 								],
 								"scope": "col_3232323F"
@@ -704,8 +660,8 @@
 								"regions":
 								[
 									[
-										6948,
-										6948
+										7090,
+										7090
 									]
 								],
 								"scope": "col_gutter"
@@ -716,8 +672,8 @@
 								"regions":
 								[
 									[
-										7053,
-										7074
+										7232,
+										7253
 									]
 								],
 								"scope": "col_3232324C"
@@ -729,8 +685,8 @@
 								"regions":
 								[
 									[
-										7031,
-										7031
+										7208,
+										7208
 									]
 								],
 								"scope": "col_gutter"
@@ -741,8 +697,8 @@
 								"regions":
 								[
 									[
-										7135,
-										7157
+										7349,
+										7371
 									]
 								],
 								"scope": "col_32323259"
@@ -754,8 +710,183 @@
 								"regions":
 								[
 									[
-										7113,
-										7113
+										7325,
+										7325
+									]
+								],
+								"scope": "col_gutter"
+							},
+							"col_DA5552FF":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										6809,
+										6816
+									]
+								],
+								"scope": "col_DA5552FF"
+							},
+							"col_DA5552FF_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_DA5552FF_circle.png",
+								"regions":
+								[
+									[
+										6787,
+										6787
+									]
+								],
+								"scope": "col_gutter"
+							},
+							"col_DD6463FF":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										6927,
+										6934
+									]
+								],
+								"scope": "col_DD6463FF"
+							},
+							"col_DD6463FF_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_DD6463FF_circle.png",
+								"regions":
+								[
+									[
+										6905,
+										6905
+									]
+								],
+								"scope": "col_gutter"
+							},
+							"col_DF7373FF":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										7044,
+										7051
+									]
+								],
+								"scope": "col_DF7373FF"
+							},
+							"col_DF7373FF_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_DF7373FF_circle.png",
+								"regions":
+								[
+									[
+										7022,
+										7022
+									]
+								],
+								"scope": "col_gutter"
+							},
+							"col_E07C7CFF":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										7162,
+										7169
+									]
+								],
+								"scope": "col_E07C7CFF"
+							},
+							"col_E07C7CFF_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_E07C7CFF_circle.png",
+								"regions":
+								[
+									[
+										7140,
+										7140
+									]
+								],
+								"scope": "col_gutter"
+							},
+							"col_E18584FF":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										7279,
+										7286
+									]
+								],
+								"scope": "col_E18584FF"
+							},
+							"col_E18584FF_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_E18584FF_circle.png",
+								"regions":
+								[
+									[
+										7257,
+										7257
+									]
+								],
+								"scope": "col_gutter"
+							},
+							"col_E28E8DFF":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										7397,
+										7404
+									]
+								],
+								"scope": "col_E28E8DFF"
+							},
+							"col_E28E8DFF_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_E28E8DFF_circle.png",
+								"regions":
+								[
+									[
+										7375,
+										7375
+									]
+								],
+								"scope": "col_gutter"
+							},
+							"col_FFFFFFFF":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										7595,
+										7599
+									]
+								],
+								"scope": "col_FFFFFFFF"
+							},
+							"col_FFFFFFFF_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_FFFFFFFF_circle.png",
+								"regions":
+								[
+									[
+										7561,
+										7561
 									]
 								],
 								"scope": "col_gutter"
@@ -764,8 +895,8 @@
 						"selection":
 						[
 							[
-								1897,
-								1897
+								7051,
+								7051
 							]
 						],
 						"settings":
@@ -778,7 +909,98 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1026.0,
+						"translation.y": 3110.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/components/SmartAdd.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5704,
+						"regions":
+						{
+							"col_0000FFFF":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										1265,
+										1269
+									]
+								],
+								"scope": "col_0000FFFF"
+							},
+							"col_0000FFFF_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_0000FFFF_circle.png",
+								"regions":
+								[
+									[
+										1152,
+										1152
+									]
+								],
+								"scope": "col_gutter"
+							}
+						},
+						"selection":
+						[
+							[
+								668,
+								668
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 342.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/components/VleAdd.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5824,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4906,
+								4906
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1767.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,

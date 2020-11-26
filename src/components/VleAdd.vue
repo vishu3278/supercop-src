@@ -119,7 +119,7 @@ export default {
     },
     mounted: function() {
         this.$emit("loaded", false);
-        this.userData = this.$store.getters.getUsers;
+        this.userData = this.$store.getters.getUser;
     },
     methods: {
         list: function() {

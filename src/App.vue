@@ -3,7 +3,7 @@
         <nav class="navbar " role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
                 <router-link to="/" class="navbar-item">
-                    <img src="./assets/logo.png">
+                    <img src="./assets/logo-small.png">
                 </router-link>
                 <a role="button" v-show="user" v-on:click="menu = !menu" class="navbar-burger burger" aria-label="menu" aria-expanded="false">
                     <span aria-hidden="true"></span>
@@ -44,7 +44,7 @@
                             <router-link to="/scancard" class="navbar-item has-text-primary-dark"><i class="las la-qrcode"></i> Scan Aadhaar </router-link>
                         </li>
                         <li>
-                            <router-link to="/addaadhar" class="navbar-item has-text-primary-dark"><i class="las la-edit"></i> Add Aadhaar Card</router-link>
+                            <router-link to="/aadhaaradd" class="navbar-item has-text-primary-dark"><i class="las la-edit"></i> Add Aadhaar Card</router-link>
                         </li>
                         <li>
                             <router-link to="/aadharlist" class="navbar-item has-text-primary-dark"><i class="las la-list"></i> Aadhaar Cards </router-link>
@@ -59,7 +59,7 @@
                             <router-link to="/voterlist" class="navbar-item has-text-primary-dark"><i class="las la-portrait"></i> Voter Cards</router-link>
                         </li>
                         <li>
-                            <router-link to="/addaadhar" class="navbar-item has-text-primary-dark"><i class="las la-portrait"></i> Add Voter Card </router-link>
+                            <router-link to="/voteradd" class="navbar-item has-text-primary-dark"><i class="las la-portrait"></i> Add Voter Card </router-link>
                         </li>
                         <li>
                             <router-link to="/drivinglist" class="navbar-item has-text-primary-dark"><i class="las la-id-card-alt"></i> Driving License</router-link>

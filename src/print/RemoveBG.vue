@@ -2,7 +2,7 @@
     <section>
         <nav class="panel">
             <p class="panel-heading">
-                Other Resources
+                Resources to remove background from images
             </p>
             
             
@@ -71,7 +71,7 @@ export default {
     },
     mounted: function() {
         this.$emit("loaded", false);
-        this.userData = this.$store.getters.getUsers;
+        this.userData = this.$store.getters.getUser;
     },
 }
 </script>

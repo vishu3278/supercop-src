@@ -1,7 +1,7 @@
 <template>
     <div>
         <div v-show="userData">
-            <div class="box m-0 is-radiusless has-background-link has-text-white">
+            <div class="box m-0 is-radiusless has-background-dark has-text-white">
                 <div class="media">
                     <figure class="media-left">
                         <p class="image is-64x64">
@@ -24,7 +24,7 @@
                     <!-- <a href="#!" class="button is-text is-inverted is-outlined is-fullwidth" v-on:click="showData()">Show Sample Data</a> -->
                 </div>
                 <div class="buttons">
-                    <router-link to="/addaadhar" class="button is-text is-fullwidth">Add Aadhaar Card</router-link>
+                    <router-link to="/aadharadd" class="button is-text is-fullwidth">Add Aadhaar Card</router-link>
                     <router-link to="/aadharlist" class="button is-text is-fullwidth">Aadhaar Cards</router-link>
                 </div>
                 <div class="buttons">
@@ -32,7 +32,7 @@
                     <router-link to="/panlist" class="button is-text is-fullwidth">Pan Cards</router-link>
                 </div>
                 <div class="buttons">
-                    <router-link to="/addaadhar" class="button is-text is-fullwidth">Add Voter Card</router-link>
+                    <router-link to="/voteradd" class="button is-text is-fullwidth">Add Voter Card</router-link>
                     <router-link to="/voterlist" class="button is-text is-fullwidth">Voter Cards</router-link>
                 </div>
                 <div class="buttons">
@@ -93,7 +93,7 @@ export default {
         window.sessionStorage.setItem('QRCODE', '<?xml version="1.0" encoding="UTF-8"?> <PrintLetterBarcodeData uid="360979299510" name="My Card" gender="F" yob="1998" gname="Demo Card" co="S/O Demo Card" house="555 House" street="Street 15" lm="Lane 48" loc="Locality" vtc="what  is this" po="Post Office" dist="Baghpat" subdist="Binauli" state="Uttar Pradesh" pc="247001" dob="13/08/1998"/>');
         // window.sessionStorage.setItem('QRCODE', '<?xml version="1.0" encoding="UTF-8"?> <PrintLetterBarcodeData uid="360979299510" name="Deepak Kumar" gender="M" yob="1995" gname="Prakash Kumar" co="S/O Prakash Kumar" house="135 Pratap Nagar" street="Gali 19" lm="Shanti Nagar" loc="Sikandarpur" vtc="" po="Sadar Bazar" dist="Shamli" subdist="Shamli" state="Uttar Pradesh" pc="110042" dob="13/08/1995"/>');
         // this.userData = JSON.parse(window.sessionStorage.getItem("user"));
-        this.userData = this.$store.getters.getUsers;
+        this.userData = this.$store.getters.getUser;
         if (!this.userData) {
             this.$router.push({ name: 'Home' });
         } else {
@@ -117,10 +117,7 @@ export default {
 
     },
     computed: {
-        // ...mapGetters(['getUsers']),
-        /*getUsers: function(){
-            return this.$store.getters.getUsers;
-        },*/
+        // ...mapGetters(['getUser']),
         getImgPath: function() {
             return this.$store.getters.getImgPath;
         },
@@ -141,27 +138,33 @@ export default {
 }
 
 #dashmenu .buttons:nth-child(1) {
-    background-color: rgba(50, 50, 50, 0.1);
+    /*background-color: rgba(50, 50, 50, 0.1);*/
+    background-color: #DA5552;
 }
 
 #dashmenu .buttons:nth-child(2) {
-    background-color: rgba(50, 50, 50, 0.15);
+    /*background-color: rgba(50, 50, 50, 0.15);*/
+    background-color: #DD6463;
 }
 
 #dashmenu .buttons:nth-child(3) {
-    background-color: rgba(50, 50, 50, 0.2);
+    /*background-color: rgba(50, 50, 50, 0.2);*/
+    background-color: #DF7373;
 }
 
 #dashmenu .buttons:nth-child(4) {
-    background-color: rgba(50, 50, 50, 0.25);
+    /*background-color: rgba(50, 50, 50, 0.25);*/
+    background-color: #E07C7C;
 }
 
 #dashmenu .buttons:nth-child(5) {
-    background-color: rgba(50, 50, 50, 0.3);
+    /*background-color: rgba(50, 50, 50, 0.3);*/
+    background-color: #E18584;
 }
 
 #dashmenu .buttons:nth-child(6) {
-    background-color: rgba(50, 50, 50, 0.35);
+    /*background-color: rgba(50, 50, 50, 0.35);*/
+    background-color: #E28E8D;
 }
 
 #dashmenu .buttons .button {
@@ -169,6 +172,6 @@ export default {
 }
 
 #dashmenu .button.is-text {
-    text-decoration: none;
+    text-decoration: none; color: #fff;
 }
 </style>
