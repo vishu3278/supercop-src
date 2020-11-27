@@ -1,6 +1,9 @@
 <template>
     <div>
-        <button class="button" @click="generateReport">Download PDF</button>
+        <div class="box">
+            <button class="button is-danger is-outlined" @click="generateReport"><span class="icon"><i class="las la-download"></i></span> <span>Download PDF</span> </button>
+            
+        </div>
         <article v-show="message" class="message is-success">
             <div class="message-body" v-text="message">
             </div>
@@ -16,15 +19,16 @@
                             <div id="front" class="artwork">
                                 <div class="card-body"><img src="https://thesupercop.com/workspace/dist/img/aadhaar-front.jpg" class="base" alt="aadhaar">
                                     <div class="printable">
-                                        <div class="photo"><img src="https://thesupercop.com/uploads/aadhaar/5fb36c14edacb_neha.jpg" alt="photo"></div>
+                                        <div class="photo"><img v-bind:src="getAadhaarImg + $route.params.photo" alt="photo"></div>
                                         <div class="info">
-                                            <p>नेहा </p>
-                                            <p>Neha</p>
-                                            <p>जन्म तिथि/DOB: 01/01/2004</p>
-                                            <p>Female /महिला</p>
-                                            <div class="aadhaar">5702 0054 8179 </div>
+                                            <p>{{$route.params.full_name_hi}}</p>
+                                            <p>{{$route.params.full_name_en}}</p>
+                                            <p>जन्म तिथि/DOB: {{qrdob}}</p>
+                                            <p>{{$route.params.gender_en}} /{{$route.params.gender_hi}}</p>
+                                            <div class="aadhaar">{{$route.params.aadhaar_number}} </div>
                                         </div>
-                                        <div class="qrcode" id="qrcode"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=<?xml version='1.0' encoding='UTF-8'?> <PrintLetterBarcodeData uid='570200548179' name='Neha' gender='Female' yob='2004' co='D/O' house='.' street='Dulla Kheri,Dullakheri' loc='' vtc='' po='' dist='Shamli' subdist='' state='Uttar Pradesh' pc='247776' dob='01-01-2004'/>" alt="qrcode"></div>
+                                        <div class="qrcode" id="qrcode">
+                                            <qrcode-vue :value="qrcode" :size="100" renderAs="svg" level="H"></qrcode-vue><!-- <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=<?xml version='1.0' encoding='UTF-8'?> <PrintLetterBarcodeData uid='570200548179' name='Neha' gender='Female' yob='2004' co='D/O' house='.' street='Dulla Kheri,Dullakheri' loc='' vtc='' po='' dist='Shamli' subdist='' state='Uttar Pradesh' pc='247776' dob='01-01-2004'/>" alt="qrcode"> --></div>
                                     </div>
                                 </div>
                             </div>
@@ -34,15 +38,15 @@
                                         <!-- <div class="date">Date: </div> -->
                                         <div class="address-h">
                                             <p><strong>पता:</strong></p>
-                                            <p>D/O अक्षय कुमार , दुल्ला खेरी ,दुल्लाखेरी , , शामली</p>
-                                            <p>उत्तर प्रदेश-247776</p>
+                                            <p>{{$route.params.parent_type}} {{$route.params.parent_name_hi}}, {{$route.params.address_line_hi}}, {{$route.params.address_district_hi}}</p>
+                                            <p>{{$route.params.address_state_hi}}-{{$route.params.address_pincode}}</p>
                                         </div>
                                         <div class="address-e">
                                             <p><strong>Address:</strong></p>
-                                            <p>D/O Akshay Kumar, Dulla Kheri,Dullakheri, , Shamli </p>
-                                            <p>Uttar Pradesh-247776</p>
+                                            <p>{{$route.params.parent_type}} {{$route.params.parent_name_en}}, {{$route.params.address_line_en}}, {{$route.params.address_district_en}} </p>
+                                            <p>{{$route.params.address_state_en}}-{{$route.params.address_pincode}}</p>
                                         </div>
-                                        <div class="aadhaar">5702 0054 8179 </div>
+                                        <div class="aadhaar">{{$route.params.aadhaar_number}}</div>
                                         <div class="barcode"><svg id="barcode_10540" width="101px" height="10px" x="0px" y="0px" viewBox="0 0 101 10" xmlns="http://www.w3.org/2000/svg" version="1.1" style="transform: translate(0,0)">
                                                 <rect x="0" y="0" width="101" height="10" style="fill:#ffffff;"></rect>
                                                 <g transform="translate(0, 0)" style="fill:#000000;">
@@ -89,12 +93,14 @@
     </div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 import VueHtml2pdf from 'vue-html2pdf'
+import QrcodeVue from 'qrcode.vue'
 export default {
     name: 'AadhaarPrint',
     data: function() {
         return {
-            aadhaar: '',
+            aadhaarData: '',
             message: '',
             html2PDFoptions: {
                 margin: 0,
@@ -112,13 +118,41 @@ export default {
             }
         }
     },
-    components: { VueHtml2pdf },
+    components: { VueHtml2pdf, QrcodeVue },
+    mounted: function() {
+
+    },
+    computed: {
+        ...mapGetters(['getUser', 'getAadhaarImg']),
+        qrcode () {
+            let value = '<?xml version="1.0" encoding="UTF-8"?> <PrintLetterBarcodeData uid="360979299510" name="'+this.$route.params.full_name_en+'" gender="'+this.gender+'" yob="'+this.yearofbirth+'" gname="'+this.$route.params.parent_name_en+'" co="'+this.$route.params.parent_type+' '+this.$route.params.parent_name_en+'" house="135 Pratap Nagar" street="Gali 19" lm="Shanti Nagar" loc="Sikandarpur" vtc="" po="Sadar Bazar" dist="'+this.$route.params.address_district_en+'" subdist="'+this.$route.params.address_block_en+'" state="'+this.$route.params.address_state_en+'" pc="'+this.$route.params.address_pincode+'" dob="'+this.qrdob+'"/>';
+            return value;
+        },
+        gender () {
+            if (this.$route.params.gender == '1') {
+                return 'M'
+            } else if (this.$route.params.gender == '2') {
+                return 'F'
+            } else {
+                return 'T'
+            }
+        },
+        yearofbirth () {
+            let dob = new Date(this.$route.params.birth_date);
+            return dob.getFullYear();
+        },
+        qrdob () {
+            let dob = new Date(this.$route.params.birth_date);
+            return ('0' + dob.getDate()).slice(-2) + '/'
+             + ('0' + (dob.getMonth()+1)).slice(-2) + '/' + dob.getFullYear();
+        }
+    },
     methods: {
         generateReport() {
             this.$refs.html2Pdf.generatePdf()
         },
         JsBarcode() {
-            ("#barcode_10540", this.aadhaar, {
+            ("#barcode_10540", this.aadhaarData.aadhaar_number, {
                 format: "code128",
                 displayValue: false,
                 height: 10,
@@ -301,7 +335,7 @@ p {
     height: 24mm;
     position: relative;
     top: 12mm;
-    left: 4mm;
+    left: 2mm;
     float: left;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 8pt;

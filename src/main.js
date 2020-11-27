@@ -14,7 +14,8 @@ const store = new Vuex.Store({
         user: '',
         wallet: '',
         imgBaseUrl: 'https://thesupercop.com/workspace/dist/img/users/',
-        apiBaseUrl: 'https://thesupercop.com/webapis/v2/'
+        apiBaseUrl: 'https://thesupercop.com/webapis/v2/',
+        aadhaarImg: 'https://thesupercop.com/uploads/aadhaar/'
     },
     getters: {
         getUser(state) {
@@ -29,6 +30,9 @@ const store = new Vuex.Store({
         },
         getImgPath(state) {
             return state.imgBaseUrl;
+        },
+        getAadhaarImg(state) {
+            return state.aadhaarImg;
         }
     },
     mutations: {

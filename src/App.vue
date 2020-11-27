@@ -23,7 +23,7 @@
                 </aside> -->
                 <div class="navbar-start">
                     <router-link to="/dashboard" class="navbar-item has-background-success has-text-success-light"><i class="las la-home"></i> Dashboard </router-link>
-                    <p class="menu-label">
+                    <p class="menu-label" v-show="user.user_type != 'suvidha_kendra'">
                         Admin
                     </p>
                     <ul class="has-background-info-light" v-show="user.user_type != 'suvidha_kendra'">
