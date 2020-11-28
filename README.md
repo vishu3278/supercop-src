@@ -1,5 +1,5 @@
 # Supercop app
-Supercop app cordova/phonegap build files
+New Supercop app source files
 
 ## Project setup
 ```
