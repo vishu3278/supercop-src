@@ -6,37 +6,37 @@
             </p>
             
             
-            <a class="panel-block " href="https://www.remove.bg" target="_blank">
+            <a class="panel-block " onclick="openBrowser('https://www.remove.bg')" target="_blank">
                 <span class="panel-icon">
                     <i class="las la-external-link-alt"></i>
                 </span>
                 remove.bg
             </a>
-            <a class="panel-block" href="https://www.slazzer.com" target="_blank">
+            <a class="panel-block" onclick="openBrowser('https://www.slazzer.com')" target="_blank">
                 <span class="panel-icon">
                     <i class="las la-external-link-alt"></i>
                 </span>
                 slazzer.com
             </a>
-            <a class="panel-block" href="https://photoscissors.com/upload" target="_blank">
+            <a class="panel-block" onclick="openBrowser('https://photoscissors.com/upload')" target="_blank">
                 <span class="panel-icon">
                     <i class="las la-external-link-alt"></i>
                 </span>
                 photoscissors.com
             </a>
-            <a class="panel-block" href="https://www.kapwing.com/tools/remove-background" target="_blank">
+            <a class="panel-block" onclick="openBrowser('https://www.kapwing.com/tools/remove-background')" target="_blank">
                 <span class="panel-icon">
                     <i class="las la-external-link-alt"></i>
                 </span>
                 kapwing.com
             </a>
-            <a class="panel-block" href="https://clippingmagic.com" target="_blank">
+            <a class="panel-block" onclick="openBrowser('https://clippingmagic.com')" target="_blank">
                 <span class="panel-icon">
                     <i class="las la-external-link-alt"></i>
                 </span>
                 clippingmagic.com
             </a>
-            <a class="panel-block" href="https://pixlr.com/remove-background/" target="_blank">
+            <a class="panel-block" onclick="openBrowser('https://pixlr.com/remove-background/')" target="_blank">
                 <span class="panel-icon">
                     <i class="las la-external-link-alt"></i>
                 </span>

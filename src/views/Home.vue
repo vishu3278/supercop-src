@@ -3,7 +3,7 @@
         <section class="hero is-primary is-bold ">
             <div class="hero-body">
                 <div class="container">
-                    <h1 class="title has-text-weight-normal">{{msg}} <small class="is-size-5 has-text-weight-light">Scanner App</small></h1>
+                    <h1 class="title has-text-weight-normal">{{msg}} <br><small class="is-size-5 has-text-weight-light">The Super Cop App</small></h1>
                 </div>
             </div>
         </section>
@@ -38,13 +38,6 @@
             </div>
             <button type="button" v-on:click="login()" v-bind:class="{'is-loading':submitting}" class="button is-link is-fullwidth is-uppercase">Login</button>
         </section>
-        <!-- <footer class="footer has-background-grey-lighter">
-            <div class="content has-text-centered">
-                <p>
-                    copyright &copy; SuperCop by <a href="https://wowitsolutions.com">WOW IT Solutions</a>.
-                </p>
-            </div>
-        </footer> -->
     </div>
 </template>
 <script>
@@ -74,8 +67,6 @@ export default {
         login: function() {
             let postData = JSON.stringify({ "_action": "bG9naW4=", "userUniqueID": this.userID, "password": this.password });
             this.submitting = true;
-
-            // this.postdata = postData;
             axios.post('https://thesupercop.com/webapis/v2/login.php', postData)
                 .then(response => {
                     if (response.data.status == 1) {
@@ -83,7 +74,6 @@ export default {
                         this.errors = [];
                         window.sessionStorage.setItem('user', JSON.stringify(this.user.data));
                         window.sessionStorage.setItem('password', this.password);
-                        // this.$router.push({ name: 'About', params: { user: this.user.data } });
                         
                         this.$store.dispatch('updateUser', this.user.data);
                         this.$router.push({ name: 'Dashboard' });

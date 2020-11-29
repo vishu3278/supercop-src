@@ -16,7 +16,7 @@
                 </div>
                 <p class="is-size-4 has-text-info-light"><i class="las la-rupee-sign"></i><strong class="has-text-warning-light">{{wallet.balance_amount}}</strong> <small class=" is-size-6">in your Wallet (Min <i class="las la-rupee-sign"></i>{{wallet.MINIMUM_BALANCE}})</small></p>
             </div>
-            <div id="dashmenu" class="grid">
+            <div id="dashmenu" class="grid" style="margin-top:1px;">
                 <div class="buttons">
                     <router-link to="/scancard" class="button is-text is-fullwidth">Scan Card</router-link>
                     <router-link to="/removebg" class="button is-text is-fullwidth">Remove Background</router-link>
@@ -131,6 +131,7 @@ export default {
 .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1px;
 }
 
 #dashmenu .buttons {

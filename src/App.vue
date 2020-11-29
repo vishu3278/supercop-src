@@ -21,7 +21,7 @@
                         <li><a><i class="las la-user"></i> Customers</a></li>
                     </ul>
                 </aside> -->
-                <div class="navbar-start">
+                <div class="navbar-start p-3 has-background-dark">
                     <router-link to="/dashboard" class="navbar-item has-background-success has-text-success-light"><i class="las la-home"></i> Dashboard </router-link>
                     <p class="menu-label" v-show="user.user_type != 'suvidha_kendra'">
                         Admin
@@ -144,9 +144,11 @@ textarea,
     position: absolute;
     left: 0;
     right: 0;
+    top: 3.75rem;
     padding-top: 0;
     box-shadow: 0px 0px 0px 8px rgba(228, 228, 228, 0.8);
 }
+.navbar-start ul li { border-bottom: 1px solid #363636;}
 
 .hero .hero-body {
     padding-top: 1rem;
@@ -168,4 +170,5 @@ textarea,
 .card-header .icon .las {
     font-size: 1.5rem;
 }
+.tag:not(body) { height:1.125rem; line-height:1rem;}
 </style>

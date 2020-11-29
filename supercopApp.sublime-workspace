@@ -4,12 +4,44 @@
 		"selected_items":
 		[
 			[
-				"session",
-				"sessionUser"
+				"has-ba",
+				"has-background-info"
+			],
+			[
+				"hei",
+				"height\t Style CSS"
+			],
+			[
+				"list",
+				"list('approve"
 			],
 			[
 				"if",
 				"if\tif"
+			],
+			[
+				"else",
+				"else"
+			],
+			[
+				"stat",
+				"state"
+			],
+			[
+				"is",
+				"is-primary"
+			],
+			[
+				"err",
+				"errors"
+			],
+			[
+				"user",
+				"userUniqueID"
+			],
+			[
+				"session",
+				"sessionUser"
 			],
 			[
 				"repon",
@@ -22,10 +54,6 @@
 			[
 				"respon",
 				"response"
-			],
-			[
-				"user",
-				"userID"
 			],
 			[
 				"Image",
@@ -131,16 +159,7 @@
 			"file": "src/router/index.js",
 			"settings":
 			{
-				"buffer_size": 2374,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/App.vue",
-			"settings":
-			{
-				"buffer_size": 6818,
+				"buffer_size": 2435,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -149,35 +168,53 @@
 			"file": "src/main.js",
 			"settings":
 			{
-				"buffer_size": 1288,
+				"buffer_size": 2743,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/App.vue",
+			"settings":
+			{
+				"buffer_size": 6957,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "src/views/Dashboard.vue",
 			"settings":
 			{
-				"buffer_size": 7611,
+				"buffer_size": 7654,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/components/SmartAdd.vue",
+			"file": "src/views/VleList.vue",
 			"settings":
 			{
-				"buffer_size": 5704,
+				"buffer_size": 7915,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/components/VleAdd.vue",
+			"file": "src/views/DrivingList.vue",
 			"settings":
 			{
-				"buffer_size": 5824,
+				"buffer_size": 6729,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/views/AadharList.vue",
+			"settings":
+			{
+				"buffer_size": 8600,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -239,10 +276,19 @@
 	"file_history":
 	[
 		"/D/app/supercop/src/components/ScanCard.vue",
-		"/D/app/supercop/src/views/VleList.vue",
-		"/D/app/supercop/src/components/AddSmart.vue",
-		"/D/app/supercop/src/components/VleAdd.vue",
+		"/D/app/supercop/src/components/Logout.vue",
 		"/D/app/supercop/src/views/Dashboard.vue",
+		"/D/app/supercop/src/views/Home.vue",
+		"/D/app/supercop/src/views/VleList.vue",
+		"/D/app/supercop/src/print/AadhaarPrint.vue",
+		"/D/app/supercop/camera.js",
+		"/D/app/supercop/dist/js/app.b891dc5e.js",
+		"/D/app/supercop/dist/js/chunk-vendors.22f4a331.js",
+		"/D/app/supercop/dist/css/app.e2b4aa5e.css",
+		"/D/app/supercop/dist/img/logo-small.b931059f.png",
+		"/D/app/supercop/src/components/SmartAdd.vue",
+		"/D/app/supercop/src/components/VleAdd.vue",
+		"/D/app/supercop/src/components/AddSmart.vue",
 		"/D/app/supercop/src/views/VoterList.vue",
 		"/D/app/supercop/src/views/DrivingList.vue",
 		"/D/app/supercop/src/print/RemoveBG.vue",
@@ -252,11 +298,9 @@
 		"/D/app/supercop/src/App.vue",
 		"/D/app/supercop/src/views/PanList.vue",
 		"/D/app/supercop/src/views/SmartList.vue",
-		"/D/app/supercop/src/views/Home.vue",
 		"/D/app/supercop/src/views/AadharList.vue",
 		"/D/app/supercop/src/components/ImagePreview.vue",
 		"/D/app/supercop/src/components/Address.vue",
-		"/D/app/supercop/src/print/AadhaarPrint.vue",
 		"/D/app/supercop/src/main.js",
 		"/D/app/supercop/src/views/ListAadhar.vue",
 		"/D/app/supercop/src/router/index.js",
@@ -318,6 +362,28 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"list",
+			"action",
+			"pendingList",
+			"vlelist",
+			"vleList",
+			"UpdateUser",
+			"response",
+			"address_line_hi",
+			"xmldata",
+			"showData",
+			"scan",
+			"status",
+			"MyDate",
+			"address-h",
+			"aadhaar_number",
+			"247776",
+			"aadhaar",
+			"div",
+			"figure",
+			"level",
+			"vle",
+			"a>",
 			"Address",
 			"address",
 			"Driving",
@@ -380,7 +446,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -389,15 +455,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2374,
+						"buffer_size": 2435,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								710,
-								710
+								2370,
+								2370
 							]
 						],
 						"settings":
@@ -410,19 +476,52 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 427.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
+					"file": "src/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2743,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1813,
+								1813
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 171.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "src/App.vue",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6818,
+						"buffer_size": 6957,
 						"regions":
 						{
 							"col_2C3E50FF":
@@ -431,8 +530,8 @@
 								"regions":
 								[
 									[
-										6133,
-										6140
+										6201,
+										6208
 									]
 								],
 								"scope": "col_2C3E50FF"
@@ -444,8 +543,8 @@
 								"regions":
 								[
 									[
-										6122,
-										6122
+										6190,
+										6190
 									]
 								],
 								"scope": "col_gutter"
@@ -456,8 +555,8 @@
 								"regions":
 								[
 									[
-										6366,
-										6370
+										6434,
+										6438
 									]
 								],
 								"scope": "col_BBBBBBFF"
@@ -469,8 +568,8 @@
 								"regions":
 								[
 									[
-										6337,
-										6337
+										6405,
+										6405
 									]
 								],
 								"scope": "col_gutter"
@@ -481,8 +580,8 @@
 								"regions":
 								[
 									[
-										6517,
-										6541
+										6603,
+										6627
 									]
 								],
 								"scope": "col_E4E4E4CC"
@@ -494,8 +593,8 @@
 								"regions":
 								[
 									[
-										6485,
-										6485
+										6571,
+										6571
 									]
 								],
 								"scope": "col_gutter"
@@ -504,8 +603,8 @@
 						"selection":
 						[
 							[
-								252,
-								252
+								1146,
+								1146
 							]
 						],
 						"settings":
@@ -518,43 +617,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2578.0,
+						"translation.y": 260.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/main.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1288,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								271,
-								275
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -563,7 +629,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7611,
+						"buffer_size": 7654,
 						"regions":
 						{
 							"col_32323219":
@@ -572,8 +638,8 @@
 								"regions":
 								[
 									[
-										6762,
-										6783
+										6805,
+										6826
 									]
 								],
 								"scope": "col_32323219"
@@ -585,8 +651,8 @@
 								"regions":
 								[
 									[
-										6738,
-										6738
+										6781,
+										6781
 									]
 								],
 								"scope": "col_gutter"
@@ -597,8 +663,8 @@
 								"regions":
 								[
 									[
-										6879,
-										6901
+										6922,
+										6944
 									]
 								],
 								"scope": "col_32323226"
@@ -610,8 +676,8 @@
 								"regions":
 								[
 									[
-										6855,
-										6855
+										6898,
+										6898
 									]
 								],
 								"scope": "col_gutter"
@@ -622,8 +688,8 @@
 								"regions":
 								[
 									[
-										6997,
-										7018
+										7040,
+										7061
 									]
 								],
 								"scope": "col_32323233"
@@ -635,8 +701,8 @@
 								"regions":
 								[
 									[
-										6973,
-										6973
+										7016,
+										7016
 									]
 								],
 								"scope": "col_gutter"
@@ -647,8 +713,8 @@
 								"regions":
 								[
 									[
-										7114,
-										7136
+										7157,
+										7179
 									]
 								],
 								"scope": "col_3232323F"
@@ -660,8 +726,8 @@
 								"regions":
 								[
 									[
-										7090,
-										7090
+										7133,
+										7133
 									]
 								],
 								"scope": "col_gutter"
@@ -672,8 +738,8 @@
 								"regions":
 								[
 									[
-										7232,
-										7253
+										7275,
+										7296
 									]
 								],
 								"scope": "col_3232324C"
@@ -685,8 +751,8 @@
 								"regions":
 								[
 									[
-										7208,
-										7208
+										7251,
+										7251
 									]
 								],
 								"scope": "col_gutter"
@@ -697,8 +763,8 @@
 								"regions":
 								[
 									[
-										7349,
-										7371
+										7392,
+										7414
 									]
 								],
 								"scope": "col_32323259"
@@ -710,8 +776,8 @@
 								"regions":
 								[
 									[
-										7325,
-										7325
+										7368,
+										7368
 									]
 								],
 								"scope": "col_gutter"
@@ -722,8 +788,8 @@
 								"regions":
 								[
 									[
-										6809,
-										6816
+										6852,
+										6859
 									]
 								],
 								"scope": "col_DA5552FF"
@@ -735,8 +801,8 @@
 								"regions":
 								[
 									[
-										6787,
-										6787
+										6830,
+										6830
 									]
 								],
 								"scope": "col_gutter"
@@ -747,8 +813,8 @@
 								"regions":
 								[
 									[
-										6927,
-										6934
+										6970,
+										6977
 									]
 								],
 								"scope": "col_DD6463FF"
@@ -760,8 +826,8 @@
 								"regions":
 								[
 									[
-										6905,
-										6905
+										6948,
+										6948
 									]
 								],
 								"scope": "col_gutter"
@@ -772,8 +838,8 @@
 								"regions":
 								[
 									[
-										7044,
-										7051
+										7087,
+										7094
 									]
 								],
 								"scope": "col_DF7373FF"
@@ -785,8 +851,8 @@
 								"regions":
 								[
 									[
-										7022,
-										7022
+										7065,
+										7065
 									]
 								],
 								"scope": "col_gutter"
@@ -797,8 +863,8 @@
 								"regions":
 								[
 									[
-										7162,
-										7169
+										7205,
+										7212
 									]
 								],
 								"scope": "col_E07C7CFF"
@@ -810,8 +876,8 @@
 								"regions":
 								[
 									[
-										7140,
-										7140
+										7183,
+										7183
 									]
 								],
 								"scope": "col_gutter"
@@ -822,8 +888,8 @@
 								"regions":
 								[
 									[
-										7279,
-										7286
+										7322,
+										7329
 									]
 								],
 								"scope": "col_E18584FF"
@@ -835,8 +901,8 @@
 								"regions":
 								[
 									[
-										7257,
-										7257
+										7300,
+										7300
 									]
 								],
 								"scope": "col_gutter"
@@ -847,8 +913,8 @@
 								"regions":
 								[
 									[
-										7397,
-										7404
+										7440,
+										7447
 									]
 								],
 								"scope": "col_E28E8DFF"
@@ -860,8 +926,8 @@
 								"regions":
 								[
 									[
-										7375,
-										7375
+										7418,
+										7418
 									]
 								],
 								"scope": "col_gutter"
@@ -872,8 +938,8 @@
 								"regions":
 								[
 									[
-										7595,
-										7599
+										7638,
+										7642
 									]
 								],
 								"scope": "col_FFFFFFFF"
@@ -885,8 +951,8 @@
 								"regions":
 								[
 									[
-										7561,
-										7561
+										7604,
+										7604
 									]
 								],
 								"scope": "col_gutter"
@@ -895,8 +961,8 @@
 						"selection":
 						[
 							[
-								7051,
-								7051
+								1288,
+								1288
 							]
 						],
 						"settings":
@@ -909,52 +975,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3110.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "src/components/SmartAdd.vue",
+					"file": "src/views/VleList.vue",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5704,
+						"buffer_size": 7915,
 						"regions":
 						{
-							"col_0000FFFF":
-							{
-								"flags": 16,
-								"regions":
-								[
-									[
-										1265,
-										1269
-									]
-								],
-								"scope": "col_0000FFFF"
-							},
-							"col_0000FFFF_icon":
-							{
-								"flags": 16,
-								"icon": "Packages/User/Color Highlight.cache/col_0000FFFF_circle.png",
-								"regions":
-								[
-									[
-										1152,
-										1152
-									]
-								],
-								"scope": "col_gutter"
-							}
 						},
 						"selection":
 						[
 							[
-								668,
-								668
+								4598,
+								4598
 							]
 						],
 						"settings":
@@ -967,27 +1008,60 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 342.0,
+						"translation.y": 1710.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/views/DrivingList.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6729,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								944,
+								1597
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 171.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "src/components/VleAdd.vue",
+					"buffer": 6,
+					"file": "src/views/AadharList.vue",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5824,
+						"buffer_size": 8600,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4906,
-								4906
+								5767,
+								5767
 							]
 						],
 						"settings":
@@ -1000,7 +1074,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1767.0,
+						"translation.y": 2198.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,

@@ -4,7 +4,7 @@
             <div class="box is-radiusless has-background-link has-text-white">
                 <div class="buttons">
                     <a href="#!" class="button is-fullwidth" onclick="scanQR()">Scan Card</a>
-                    <a href="#!" class="button is-inverted is-outlined is-fullwidth" v-on:click="showData()">Show Sample Data</a>
+                    <a href="#!" class="button is-inverted is-outlined is-fullwidth" v-on:click="showData()">Show Data</a>
                 </div>
             </div>
         </div>

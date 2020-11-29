@@ -1,8 +1,6 @@
 <template>
     <div>
-        
-        <p></p>{{name}}
-        
+        <p>{{name}}</p>
     </div>
 </template>
 <script>
@@ -14,27 +12,16 @@ export default {
             name: 'Logout',
         }
     },
-    mounted: function () {
+    mounted: function() {
         window.sessionStorage.removeItem('user');
         window.sessionStorage.removeItem('password');
+        this.$store.dispatch('resetStore');
         this.$router.push({ name: 'Home' });
     },
     methods: {
         list: function() {
 
-            /*axios.post('https://thesupercop.com/webapis/login.php', postData)
-                .then(response => {
-                    if (response.data.status == 1) {
-                        this.user = response.data;
-                        this.errors = [];
-                        this.$router.push({ name: 'About', params: { user: this.user } });
-                    } else {
-                        this.errors.push(response.data.message);
-                    }
-                })
-                .catch(error => {
-                    this.errors.push(error);
-                })*/
+
         }
     }
 }

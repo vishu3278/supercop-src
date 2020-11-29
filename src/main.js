@@ -15,7 +15,10 @@ const store = new Vuex.Store({
         wallet: '',
         imgBaseUrl: 'https://thesupercop.com/workspace/dist/img/users/',
         apiBaseUrl: 'https://thesupercop.com/webapis/v2/',
-        aadhaarImg: 'https://thesupercop.com/uploads/aadhaar/'
+        aadhaarImg: 'https://thesupercop.com/uploads/aadhaar/',
+        vleList: [],
+        aadhaarListPending: [],
+        aadhaarListApprove: []
     },
     getters: {
         getUser(state) {
@@ -33,22 +36,59 @@ const store = new Vuex.Store({
         },
         getAadhaarImg(state) {
             return state.aadhaarImg;
+        },
+        getVleList(state) {
+            return state.vleList;
+        },
+        getPendingAadhaar(state) {
+            return state.aadhaarListPending;
+        },
+        getApproveAadhaar(state) {
+            return state.aadhaarListApprove;
         }
     },
     mutations: {
-        updateUser(state, user) {
+        UPDATE_USER(state, user) {
             state.user = user;
         },
-        updateWallet(state, wallet) {
+        UPDATE_WALLET(state, wallet) {
             state.wallet = wallet;
+        },
+        UPDATE_VLE_LIST(state, vleList){
+            state.vleList = vleList;
+        },
+        UPDATE_PEND_AADHAAR(state, aadhaarList){
+            state.aadhaarListPending = aadhaarList;
+        },
+        UPDATE_APPR_AADHAAR(state, aadhaarList){
+            state.aadhaarListApprove = aadhaarList;
+        },
+        RESET_STORE(state){
+            state.user = '',
+            state.wallet = '',
+            state.vleList = [],
+            state.aadhaarListPending = [],
+            state.aadhaarListApprove = []
         }
     },
     actions: {
         updateUser(context, user) {
-            context.commit('updateUser', user)
+            context.commit('UPDATE_USER', user)
         },
         updateWallet(context, wallet) {
-            context.commit('updateWallet', wallet)
+            context.commit('UPDATE_WALLET', wallet)
+        },
+        updateVleList(context, vlelist) {
+            context.commit('UPDATE_VLE_LIST', vlelist)
+        },
+        updatePendAaadhaar(context, aadhaarList) {
+            context.commit('UPDATE_PEND_AADHAAR', aadhaarList)
+        },
+        updateApprAadhaar(context, aadhaarList) {
+            context.commit('UPDATE_APPR_AADHAAR', aadhaarList)
+        },
+        resetStore(context){
+            context.commit('RESET_STORE')
         }
     }
 })
