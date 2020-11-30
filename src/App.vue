@@ -11,69 +11,63 @@
                     <span aria-hidden="true"></span>
                 </a>
             </div>
-            <div class="navbar-menu " v-bind:class="{'is-active': menu}">
-                <!-- <aside class="menu">
-                    <p class="menu-label">
-                        General
-                    </p>
-                    <ul class="menu-list">
-                        <li><a><i class="las la-home"></i> Dashboard</a></li>
-                        <li><a><i class="las la-user"></i> Customers</a></li>
-                    </ul>
-                </aside> -->
+            <div class="overlay" v-show="menu"></div>
+            <div class="navbar-menu p-0" v-bind:class="{'is-active': menu}">
                 <div class="navbar-start p-3 has-background-dark">
                     <router-link to="/dashboard" class="navbar-item has-background-success has-text-success-light"><i class="las la-home"></i> Dashboard </router-link>
-                    <p class="menu-label" v-show="user.user_type != 'suvidha_kendra'">
-                        Admin
-                    </p>
-                    <ul class="has-background-info-light" v-show="user.user_type != 'suvidha_kendra'">
-                        <!-- <li class="has-text-centered has-background-info">Admin</li> -->
-                        <li>
-                            <router-link to="/vlelist" class="navbar-item has-text-info"><i class="las la-user"></i> List VLE</router-link>
-                        </li>
-                        <li>
-                            <router-link to="/vleadd" class="navbar-item has-text-info"><i class="las la-user-plus"></i> Add VLE</router-link>
-                        </li>
-                    </ul>
-                    <p class="menu-label">
-                        Cards
-                    </p>
-                    <ul class="has-background-primary-light">
-                        <!-- <li class="has-text-centered has-background-primary">Cards</li> -->
-                        <li>
-                            <router-link to="/scancard" class="navbar-item has-text-primary-dark"><i class="las la-qrcode"></i> Scan Aadhaar </router-link>
-                        </li>
-                        <li>
-                            <router-link to="/aadhaaradd" class="navbar-item has-text-primary-dark"><i class="las la-edit"></i> Add Aadhaar Card</router-link>
-                        </li>
-                        <li>
-                            <router-link to="/aadharlist" class="navbar-item has-text-primary-dark"><i class="las la-list"></i> Aadhaar Cards </router-link>
-                        </li>
-                        <li>
-                            <router-link to="/panlist" class="navbar-item has-text-primary-dark"><i class="las la-id-card"></i> Pan Cards</router-link>
-                        </li>
-                        <li>
-                            <router-link to="/panadd" class="navbar-item has-text-primary-dark"><i class="las la-id-card"></i> Add Pan Card </router-link>
-                        </li>
-                        <li>
-                            <router-link to="/voterlist" class="navbar-item has-text-primary-dark"><i class="las la-portrait"></i> Voter Cards</router-link>
-                        </li>
-                        <li>
-                            <router-link to="/voteradd" class="navbar-item has-text-primary-dark"><i class="las la-portrait"></i> Add Voter Card </router-link>
-                        </li>
-                        <li>
-                            <router-link to="/drivinglist" class="navbar-item has-text-primary-dark"><i class="las la-id-card-alt"></i> Driving License</router-link>
-                        </li>
-                        <li>
-                            <router-link to="/drivingadd" class="navbar-item has-text-primary-dark"><i class="las la-id-card-alt"></i> Add Driving License </router-link>
-                        </li>
-                        <li>
-                            <router-link to="/smartlist" class="navbar-item has-text-primary-dark"><i class="las la-id-card-alt"></i> Smart Card</router-link>
-                        </li>
-                        <li>
-                            <router-link to="/smartadd" class="navbar-item has-text-primary-dark"><i class="las la-id-card-alt"></i> Add Smart Card </router-link>
-                        </li>
-                    </ul>
+                    <div v-show="wallet.balance_amount >= wallet.MINIMUM_BALANCE">
+                        <p class="menu-label" v-show="user.user_type != 'suvidha_kendra'">
+                            Admin
+                        </p>
+                        <ul class="has-background-info-light" v-show="user.user_type != 'suvidha_kendra'">
+                            <!-- <li class="has-text-centered has-background-info">Admin</li> -->
+                            <li>
+                                <router-link to="/vlelist" class="navbar-item has-text-info"><i class="las la-user"></i> List VLE</router-link>
+                            </li>
+                            <li>
+                                <router-link to="/vleadd" class="navbar-item has-text-info"><i class="las la-user-plus"></i> Add VLE</router-link>
+                            </li>
+                        </ul>
+                        <p class="menu-label">
+                            Cards
+                        </p>
+                        <ul class="has-background-primary-light" >
+                            <!-- <li class="has-text-centered has-background-primary">Cards</li> -->
+                            <li>
+                                <router-link to="/scancard" class="navbar-item has-text-primary-dark"><i class="las la-qrcode"></i> Scan Aadhaar </router-link>
+                            </li>
+                            <li>
+                                <router-link to="/aadhaaradd" class="navbar-item has-text-primary-dark"><i class="las la-edit"></i> Add Aadhaar Card</router-link>
+                            </li>
+                            <li>
+                                <router-link to="/aadharlist" class="navbar-item has-text-primary-dark"><i class="las la-list"></i> Aadhaar Cards </router-link>
+                            </li>
+                            <li>
+                                <router-link to="/panlist" class="navbar-item has-text-primary-dark"><i class="las la-id-card"></i> Pan Cards</router-link>
+                            </li>
+                            <li>
+                                <router-link to="/panadd" class="navbar-item has-text-primary-dark"><i class="las la-id-card"></i> Add Pan Card </router-link>
+                            </li>
+                            <li>
+                                <router-link to="/voterlist" class="navbar-item has-text-primary-dark"><i class="las la-portrait"></i> Voter Cards</router-link>
+                            </li>
+                            <li>
+                                <router-link to="/voteradd" class="navbar-item has-text-primary-dark"><i class="las la-portrait"></i> Add Voter Card </router-link>
+                            </li>
+                            <li>
+                                <router-link to="/drivinglist" class="navbar-item has-text-primary-dark"><i class="las la-id-card-alt"></i> Driving License</router-link>
+                            </li>
+                            <li>
+                                <router-link to="/drivingadd" class="navbar-item has-text-primary-dark"><i class="las la-id-card-alt"></i> Add Driving License </router-link>
+                            </li>
+                            <li>
+                                <router-link to="/smartlist" class="navbar-item has-text-primary-dark"><i class="las la-id-card-alt"></i> Smart Card</router-link>
+                            </li>
+                            <li>
+                                <router-link to="/smartadd" class="navbar-item has-text-primary-dark"><i class="las la-id-card-alt"></i> Add Smart Card </router-link>
+                            </li>
+                        </ul>
+                    </div>
                     <p class="menu-label">
                         Action
                     </p>
@@ -84,7 +78,7 @@
             </div>
         </nav>
         <!-- <progress class="progress is-small is-warning" v-show="loader" max="100">100%</progress> -->
-        <router-view v-on:loaded="menuStatus" v-on:userData="updateUserData" />
+        <router-view v-on:loaded="menuStatus" v-on:userData="updateUserData" v-on:walletBal="walletBalance" />
     </div>
 </template>
 <script>
@@ -94,8 +88,12 @@ export default {
             menu: false,
             loader: false,
             user: '',
+            wallet: '',
             baseApiUrl: 'https://thesupercop.com/webapis/v2/'
         }
+    },
+    mounted: function() {
+        this.$router.push({ name: 'Home' });
     },
     methods: {
         menuStatus: function(e) {
@@ -103,6 +101,9 @@ export default {
         },
         updateUserData: function(userdata) {
             this.user = userdata;
+        },
+        walletBalance: function(balance) {
+            this.wallet = balance;
         }
     }
 }
@@ -135,20 +136,34 @@ textarea,
     font-weight: bold;
 }
 
+.overlay {
+    position: fixed;
+    left: 0;
+    top: 3rem;
+    right: 0;
+    bottom: 0;
+    z-index: 91;
+    background: rgba(0, 0, 0, 0.5);
+}
+
 .navbar {
     border-bottom: 1px solid #bbb;
     position: relative;
 }
 
 .navbar-menu {
-    position: absolute;
+    position: fixed;
     left: 0;
     right: 0;
-    top: 3.75rem;
-    padding-top: 0;
-    box-shadow: 0px 0px 0px 8px rgba(228, 228, 228, 0.8);
+    top: 3rem;
+    bottom:0;
+    z-index: 99;
+    overflow: auto;
 }
-.navbar-start ul li { border-bottom: 1px solid #363636;}
+
+.navbar-start ul li {
+    border-bottom: 1px solid #363636;
+}
 
 .hero .hero-body {
     padding-top: 1rem;
@@ -170,5 +185,10 @@ textarea,
 .card-header .icon .las {
     font-size: 1.5rem;
 }
-.tag:not(body) { height:1.125rem; line-height:1rem;}
+
+.tag:not(body) {
+    height: 1.125rem;
+    line-height: 1rem;
+}
+.tabs li.is-active a { color: #DA5552; border-bottom-color: #DD6463; }
 </style>

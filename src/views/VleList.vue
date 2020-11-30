@@ -48,8 +48,8 @@
                             <div class="media">
                                 <div class="media-left">
                                     <figure class="image is-32x32 m-0">
-                                        <img src="https://thesupercop.com/assets/images/dummy_user.png" v-if="!vle.photo" v-bind:alt="vle.f_name">
-                                        <img v-bind:src="getImgPath + vle.photo" v-bind:alt="vle.f_name">
+                                        <img src="https://thesupercop.com/assets/images/dummy_user.png" v-if="!vle.photo" alt="vle">
+                                        <img v-else v-bind:src="getImgPath + vle.photo" v-bind:alt="vle.f_name">
                                     </figure>
                                 </div>
                                 <div class="media-content">

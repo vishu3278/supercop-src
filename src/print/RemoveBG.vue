@@ -1,11 +1,9 @@
 <template>
     <section>
         <nav class="panel">
-            <p class="panel-heading">
+            <div class="panel-heading has-text-info-dark ">
                 Resources to remove background from images
-            </p>
-            
-            
+            </div>
             <a class="panel-block " onclick="openBrowser('https://www.remove.bg')" target="_blank">
                 <span class="panel-icon">
                     <i class="las la-external-link-alt"></i>
@@ -52,6 +50,14 @@
                 </button>
             </div> -->
         </nav>
+        <div class="notification is-info is-light">
+            <p>How to use:</p>
+            <ol class="m-3">
+                <li>Upload your image.</li>
+                <li>Download the output image.</li>
+                <li>Navigate and upload to form.</li>
+            </ol>
+        </div>
         <!-- <p>Other resources for removing background from image.</p> -->
         <!-- <iframe src="https://www.remove.bg/" frameborder="0"></iframe> -->
         <!-- <iframe src="https://www.slazzer.com/" frameborder="0"></iframe> -->

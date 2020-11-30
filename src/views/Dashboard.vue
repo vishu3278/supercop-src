@@ -16,7 +16,8 @@
                 </div>
                 <p class="is-size-4 has-text-info-light"><i class="las la-rupee-sign"></i><strong class="has-text-warning-light">{{wallet.balance_amount}}</strong> <small class=" is-size-6">in your Wallet (Min <i class="las la-rupee-sign"></i>{{wallet.MINIMUM_BALANCE}})</small></p>
             </div>
-            <div id="dashmenu" class="grid" style="margin-top:1px;">
+            <progress v-show="progress" class="progress is-small is-info is-radiusless" max="100">20%</progress>
+            <div id="dashmenu" class="grid" style="margin-top:1px;" v-if="wallet.balance_amount >= wallet.MINIMUM_BALANCE">
                 <div class="buttons">
                     <router-link to="/scancard" class="button is-text is-fullwidth">Scan Card</router-link>
                     <router-link to="/removebg" class="button is-text is-fullwidth">Remove Background</router-link>
@@ -43,14 +44,28 @@
                     <router-link to="/smartadd" class="button is-text is-fullwidth">Add Smart Card</router-link>
                     <router-link to="/smartlist" class="button is-text is-fullwidth">Smart Cards</router-link>
                 </div>
-                
+            </div>
+            <article class="message is-warning is-radiusless mb-3" v-else>
+                <div class="message-body">
+                    Your Wallet Balance <strong class="has-text-danger is-size-4"><i class="las la-rupee-sign"></i>{{wallet.balance_amount}}</strong> is lower than the required amount <strong><i class="las la-rupee-sign"></i>{{wallet.MINIMUM_BALANCE}}</strong>.<br> Please recharge to proceed further.
+                </div>
+            </article>
+        </div>
+        <div class="wrapper">
+            <div class="panel ">
+                <p class="panel-heading">Help</p>
+                <a class="panel-block" href="tel:+91 9876543210"><span class="panel-icon">
+                        <i class="las la-phone" aria-hidden="true"></i>
+                    </span> +91 9876543210</a>
+                <a class="panel-block" href="mailto:info@thesupercop.com"><span class="panel-icon">
+                        <i class="las la-envelope" aria-hidden="true"></i>
+                    </span> info@thesupercop.com</a>
             </div>
         </div>
         <div class="box" v-show="!userData">
             <router-link to="/" class="button is-fullwidth is-warning">Login Again</router-link>
         </div>
-        <br>
-        <p class="has-text-centered has-text-weight-light">copyright &copy; 2020</p>
+        <p class="has-text-centered has-text-weight-light mt-4">copyright &copy; 2020</p>
         <br>
     </div>
 </template>
@@ -83,11 +98,12 @@ export default {
             submitting: false,
             response: '',
             wallet: '',
-            progress: 0
+            progress: false
         }
     },
     mounted: function() {
         // window.sessionStorage.setItem('user', JSON.stringify(this.$route.params.user));
+        this.progress = true;
         window.sessionStorage.removeItem('response');
         this.$emit("loaded", false);
         window.sessionStorage.setItem('QRCODE', '<?xml version="1.0" encoding="UTF-8"?> <PrintLetterBarcodeData uid="360979299510" name="My Card" gender="F" yob="1998" gname="Demo Card" co="S/O Demo Card" house="555 House" street="Street 15" lm="Lane 48" loc="Locality" vtc="what  is this" po="Post Office" dist="Baghpat" subdist="Binauli" state="Uttar Pradesh" pc="247001" dob="13/08/1998"/>');
@@ -106,6 +122,7 @@ export default {
                 if (response.data.status == 1) {
                     this.wallet = response.data.data;
                     this.$store.dispatch('updateWallet', this.wallet);
+                    this.$emit('walletBal', this.wallet)
                 } else {
                     this.errors.push(response.data.message)
                 }
@@ -113,7 +130,9 @@ export default {
             .catch((error) => {
                 this.errors.push(error);
             })
-
+            .then(() => {
+                this.progress = false;
+            })
 
     },
     computed: {
@@ -135,7 +154,8 @@ export default {
 }
 
 #dashmenu .buttons {
-    margin: 0; padding: 5px 0;
+    margin: 0;
+    padding: 5px 0;
 }
 
 #dashmenu .buttons:nth-child(1) {
@@ -169,10 +189,15 @@ export default {
 }
 
 #dashmenu .buttons .button {
-    margin: 0; border-radius: 0; padding-top: 0.75em; padding-bottom: 0.75em; height: auto;
+    margin: 0;
+    border-radius: 0;
+    padding-top: 0.75em;
+    padding-bottom: 0.75em;
+    height: auto;
 }
 
 #dashmenu .button.is-text {
-    text-decoration: none; color: #fff;
+    text-decoration: none;
+    color: #fff;
 }
 </style>

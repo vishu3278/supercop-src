@@ -18,7 +18,9 @@ const store = new Vuex.Store({
         aadhaarImg: 'https://thesupercop.com/uploads/aadhaar/',
         vleList: [],
         aadhaarListPending: [],
-        aadhaarListApprove: []
+        aadhaarListApprove: [],
+        voterListPending: [],
+        voterListApprove: []
     },
     getters: {
         getUser(state) {
@@ -45,6 +47,12 @@ const store = new Vuex.Store({
         },
         getApproveAadhaar(state) {
             return state.aadhaarListApprove;
+        },
+        getPendingVoter(state) {
+            return state.voterListPending;
+        },
+        getApproveVoter(state) {
+            return state.voterListApprove;
         }
     },
     mutations: {

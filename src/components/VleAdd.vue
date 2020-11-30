@@ -13,26 +13,39 @@
             <div class="card-content">
                 <div class="field">
                     <label class="label">Name</label>
-                    <div class="control">
+                    <div class="control has-icons-right">
                         <input class="input" type="text" placeholder="Name">
+                        <span class="icon is-right"><i class="las la-user"></i></span>
                     </div>
                 </div>
                 <div class="field">
                     <label class="label">Email</label>
-                    <div class="control">
+                    <div class="control has-icons-right">
                         <input class="input" type="email" placeholder="Email">
+                        <span class="icon is-right">
+                            <i class="las la-envelope"></i>
+                        </span>
                     </div>
                 </div>
                 <div class="field">
                     <label class="label">Contact No.</label>
-                    <div class="control">
+                    <div class="control has-icons-right">
                         <input class="input" type="number" placeholder="Contact No.">
+                        <span class="icon is-right"><i class="las la-phone"></i></span>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Alternate Phone No.</label>
+                    <div class="control has-icons-right">
+                        <input class="input" type="number" placeholder="Alternate Phone No.">
+                        <span class="icon is-right"><i class="las la-phone-alt"></i></span>
                     </div>
                 </div>
                 <div class="field">
                     <label class="label">Password</label>
-                    <div class="control">
+                    <div class="control has-icons-right">
                         <input class="input" type="password" placeholder="Password">
+                        <span class="icon is-right"><i class="las la-lock"></i></span>
                     </div>
                 </div>
                 <div class="field">
@@ -42,7 +55,7 @@
                     </div>
                 </div>
                 <app-address></app-address>
-                <div class="field">
+                <!-- <div class="field">
                     <label>Block Coordinator</label>
                     <div class="control">
                         <div class="select is-fullwidth">
@@ -53,16 +66,17 @@
                         </div>
                         <p class="help is-danger">No blocks found</p>
                     </div>
-                </div>
-                <label >Profile Pic</label>
+                </div> -->
+                <label class="label">Profile Pic/Logo</label>
                 <ImagePreview v-on:imageData="profilepic = $event"></ImagePreview>
                 <div class="field">
-                    <label class="label">UserID</label>
-                    <div class="control">
+                    <label class="label">User ID</label>
+                    <div class="control has-icons-right">
                         <input class="input" type="text" readonly="" placeholder="UserID">
+                        <span class="icon is-right"><i class="las la-id-card"></i></span>
                     </div>
                 </div>
-                <div class="field">
+                <!-- <div class="field">
                     <label>Select Admin</label>
                     <div class="control">
                         <div class="select is-fullwidth">
@@ -73,11 +87,11 @@
                         </div>
                         <p class="help is-danger">No Admins</p>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="box is-primary ">
-            <p class="title is-5">Other Information</p>
+            <!-- <p class="title is-5">Other Information</p>
             <div class="field">
                 <label class="label">Aadhaar No.</label>
                 <div class="control">
@@ -91,10 +105,9 @@
                     <input class="input" type="number" placeholder="PAN No.">
                 </div>
             </div>
-            <ImagePreview v-on:imageData="panpic = $event"></ImagePreview>
+            <ImagePreview v-on:imageData="panpic = $event"></ImagePreview> -->
             <button class="button is-fullwidth is-success">Submit</button>
         </div>
-        
     </div>
 </template>
 <script>
@@ -105,7 +118,7 @@ export default {
     name: 'VLEAdd',
     data() {
         return {
-            name: 'VLE Add',
+            name: 'Mobile VLE Add',
             userData: '',
             profilepic: '',
             aadhaarpic: '',
