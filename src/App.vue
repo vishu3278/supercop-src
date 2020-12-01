@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <nav class="navbar " role="navigation" aria-label="main navigation">
+        <nav class="navbar " v-bind:style="[ menu ? {'position': 'sticky', 'top': 0} : '']" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
                 <router-link to="/" class="navbar-item">
                     <img src="./assets/logo-small.png">
@@ -11,74 +11,76 @@
                     <span aria-hidden="true"></span>
                 </a>
             </div>
-            <div class="overlay" v-show="menu"></div>
-            <div class="navbar-menu p-0" v-bind:class="{'is-active': menu}">
-                <div class="navbar-start p-3 has-background-dark">
-                    <router-link to="/dashboard" class="navbar-item has-background-success has-text-success-light"><i class="las la-home"></i> Dashboard </router-link>
-                    <div v-show="wallet.balance_amount >= wallet.MINIMUM_BALANCE">
-                        <p class="menu-label" v-show="user.user_type != 'suvidha_kendra'">
-                            Admin
-                        </p>
-                        <ul class="has-background-info-light" v-show="user.user_type != 'suvidha_kendra'">
-                            <!-- <li class="has-text-centered has-background-info">Admin</li> -->
-                            <li>
-                                <router-link to="/vlelist" class="navbar-item has-text-info"><i class="las la-user"></i> List VLE</router-link>
-                            </li>
-                            <li>
-                                <router-link to="/vleadd" class="navbar-item has-text-info"><i class="las la-user-plus"></i> Add VLE</router-link>
-                            </li>
-                        </ul>
-                        <p class="menu-label">
-                            Cards
-                        </p>
-                        <ul class="has-background-primary-light" >
-                            <!-- <li class="has-text-centered has-background-primary">Cards</li> -->
-                            <li>
-                                <router-link to="/scancard" class="navbar-item has-text-primary-dark"><i class="las la-qrcode"></i> Scan Aadhaar </router-link>
-                            </li>
-                            <li>
-                                <router-link to="/aadhaaradd" class="navbar-item has-text-primary-dark"><i class="las la-edit"></i> Add Aadhaar Card</router-link>
-                            </li>
-                            <li>
-                                <router-link to="/aadharlist" class="navbar-item has-text-primary-dark"><i class="las la-list"></i> Aadhaar Cards </router-link>
-                            </li>
-                            <li>
-                                <router-link to="/panlist" class="navbar-item has-text-primary-dark"><i class="las la-id-card"></i> Pan Cards</router-link>
-                            </li>
-                            <li>
-                                <router-link to="/panadd" class="navbar-item has-text-primary-dark"><i class="las la-id-card"></i> Add Pan Card </router-link>
-                            </li>
-                            <li>
-                                <router-link to="/voterlist" class="navbar-item has-text-primary-dark"><i class="las la-portrait"></i> Voter Cards</router-link>
-                            </li>
-                            <li>
-                                <router-link to="/voteradd" class="navbar-item has-text-primary-dark"><i class="las la-portrait"></i> Add Voter Card </router-link>
-                            </li>
-                            <li>
-                                <router-link to="/drivinglist" class="navbar-item has-text-primary-dark"><i class="las la-id-card-alt"></i> Driving License</router-link>
-                            </li>
-                            <li>
-                                <router-link to="/drivingadd" class="navbar-item has-text-primary-dark"><i class="las la-id-card-alt"></i> Add Driving License </router-link>
-                            </li>
-                            <li>
-                                <router-link to="/smartlist" class="navbar-item has-text-primary-dark"><i class="las la-id-card-alt"></i> Smart Card</router-link>
-                            </li>
-                            <li>
-                                <router-link to="/smartadd" class="navbar-item has-text-primary-dark"><i class="las la-id-card-alt"></i> Add Smart Card </router-link>
-                            </li>
-                        </ul>
-                    </div>
-                    <p class="menu-label">
-                        Action
-                    </p>
-                    <router-link to="/removebg" class="navbar-item has-background-info-light has-text-info-dark"><i class="las la-image "></i> Remove Background</router-link>
-                    <router-link to="/logout" class="navbar-item has-background-warning-light has-text-warning-dark"><i class="las la-user-slash "></i> Logout</router-link>
-                    <a onclick="exitApp()" class="navbar-item has-background-danger-light has-text-danger"><i class="las la-sign-out-alt"></i> Exit</a>
-                </div>
-            </div>
         </nav>
         <!-- <progress class="progress is-small is-warning" v-show="loader" max="100">100%</progress> -->
         <router-view v-on:loaded="menuStatus" v-on:userData="updateUserData" v-on:walletBal="walletBalance" />
+        <div class="overlay" v-show="menu" v-on:click="menu = !menu"></div>
+        <div class="navbar-menu p-0" v-bind:class="{'is-active': menu}">
+            <div class="navbar-start p-3 has-background-dark">
+                <router-link to="/dashboard" class="navbar-item has-background-success has-text-success-light"><i class="las la-home"></i> Dashboard </router-link>
+                <div v-show="wallet.balance_amount >= wallet.MINIMUM_BALANCE">
+                    <p class="menu-label" v-show="user.user_type != 'suvidha_kendra'">
+                        Admin
+                    </p>
+                    <ul class="has-background-info-light" v-show="user.user_type != 'suvidha_kendra'">
+                        <!-- <li class="has-text-centered has-background-info">Admin</li> -->
+                        <li>
+                            <router-link to="/vlelist" class="navbar-item has-text-info"><i class="las la-user"></i> List VLE</router-link>
+                        </li>
+                        <li>
+                            <router-link to="/vleadd" class="navbar-item has-text-info"><i class="las la-user-plus"></i> Add VLE</router-link>
+                        </li>
+                    </ul>
+                    <p class="menu-label">
+                        Cards
+                    </p>
+                    <ul class="has-background-primary-light">
+                        <!-- <li class="has-text-centered has-background-primary">Cards</li> -->
+                        <li>
+                            <router-link to="/aadharlist" class="navbar-item has-text-primary-dark"><i class="las la-address-card"></i> Aadhaar Cards </router-link>
+                        </li>
+                        <li>
+                            <router-link to="/panlist" class="navbar-item has-text-primary-dark"><i class="las la-id-card"></i> Pan Cards</router-link>
+                        </li>
+                        <li>
+                            <router-link to="/voterlist" class="navbar-item has-text-primary-dark"><i class="las la-portrait"></i> Voter Cards</router-link>
+                        </li>
+                        <li>
+                            <router-link to="/drivinglist" class="navbar-item has-text-primary-dark"><i class="las la-id-card-alt"></i> Driving License</router-link>
+                        </li>
+                        <li>
+                            <router-link to="/smartlist" class="navbar-item has-text-primary-dark"><i class="las la-id-card-alt"></i> Smart Card</router-link>
+                        </li>
+                    </ul>
+                    <ul class="has-background-primary-light" v-show="user.user_type != 'suvidha_kendra'">
+                        <li>
+                            <router-link to="/scancard" class="navbar-item has-text-primary-dark"><i class="las la-qrcode"></i> Scan Aadhaar </router-link>
+                        </li>
+                        <li>
+                            <router-link to="/aadhaaradd" class="navbar-item has-text-primary-dark"><i class="las la-address-card"></i> Add Aadhaar Card</router-link>
+                        </li>
+                        <li>
+                            <router-link to="/panadd" class="navbar-item has-text-primary-dark"><i class="las la-id-card"></i> Add Pan Card </router-link>
+                        </li>
+                        <li>
+                            <router-link to="/voteradd" class="navbar-item has-text-primary-dark"><i class="las la-portrait"></i> Add Voter Card </router-link>
+                        </li>
+                        <li>
+                            <router-link to="/drivingadd" class="navbar-item has-text-primary-dark"><i class="las la-id-card-alt"></i> Add Driving License </router-link>
+                        </li>
+                        <li>
+                            <router-link to="/smartadd" class="navbar-item has-text-primary-dark"><i class="las la-id-card-alt"></i> Add Smart Card </router-link>
+                        </li>
+                    </ul>
+                </div>
+                <p class="menu-label">
+                    Action
+                </p>
+                <router-link to="/removebg" class="navbar-item has-background-info-light has-text-info-dark"><i class="las la-image "></i> Remove Background</router-link>
+                <router-link to="/logout" class="navbar-item has-background-warning-light has-text-warning-dark"><i class="las la-user-slash "></i> Logout</router-link>
+                <a onclick="exitApp()" class="navbar-item has-background-danger-light has-text-danger"><i class="las la-sign-out-alt"></i> Exit</a>
+            </div>
+        </div>
     </div>
 </template>
 <script>
@@ -156,7 +158,7 @@ textarea,
     left: 0;
     right: 0;
     top: 3rem;
-    bottom:0;
+    max-height:92vh;
     z-index: 99;
     overflow: auto;
 }
@@ -190,5 +192,9 @@ textarea,
     height: 1.125rem;
     line-height: 1rem;
 }
-.tabs li.is-active a { color: #DA5552; border-bottom-color: #DD6463; }
+
+.tabs li.is-active a {
+    color: #DA5552;
+    border-bottom-color: #DD6463;
+}
 </style>
