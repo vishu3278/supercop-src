@@ -19,29 +19,29 @@
             <progress v-show="progress" class="progress is-small is-info is-radiusless" max="100">20%</progress>
             <div id="dashmenu" class="grid" style="margin-top:1px;" v-if="wallet.balance_amount >= wallet.MINIMUM_BALANCE">
                 <div class="buttons">
-                    <router-link to="/scancard" class="button is-text is-fullwidth">Scan Card</router-link>
-                    <router-link to="/removebg" class="button is-text is-fullwidth">Remove Background</router-link>
-                    <!-- <a href="#!" class="button is-text is-fullwidth" onclick="scanQR()">Scan Card</a> -->
-                    <!-- <a href="#!" class="button is-text is-inverted is-outlined is-fullwidth" v-on:click="showData()">Show Sample Data</a> -->
+                    <router-link to="/scancard" v-show="getUser.user_type == 'suvidha_kendra'" class="button is-text is-fullwidth">Scan Card</router-link>
+                    
+                    <router-link to="/vlelist" v-show="getUser.user_type != 'suvidha_kendra'" class="button is-text is-fullwidth"> List VLE</router-link>
+                    <router-link to="/vleadd" v-show="getUser.user_type != 'suvidha_kendra'" class="button is-text is-fullwidth"> Add VLE</router-link>
                 </div>
                 <div class="buttons">
-                    <router-link to="/aadharadd" class="button is-text is-fullwidth">Add Aadhaar Card</router-link>
+                    <router-link to="/aadharadd" v-show="getUser.user_type == 'suvidha_kendra'" class="button is-text is-fullwidth">Add Aadhaar Card</router-link>
                     <router-link to="/aadharlist" class="button is-text is-fullwidth">Aadhaar Cards</router-link>
                 </div>
                 <div class="buttons">
-                    <router-link to="/panadd" class="button is-text is-fullwidth">Add Pan Card</router-link>
+                    <router-link to="/panadd" v-show="getUser.user_type == 'suvidha_kendra'" class="button is-text is-fullwidth">Add Pan Card</router-link>
                     <router-link to="/panlist" class="button is-text is-fullwidth">Pan Cards</router-link>
                 </div>
                 <div class="buttons">
-                    <router-link to="/voteradd" class="button is-text is-fullwidth">Add Voter Card</router-link>
+                    <router-link to="/voteradd" v-show="getUser.user_type == 'suvidha_kendra'" class="button is-text is-fullwidth">Add Voter Card</router-link>
                     <router-link to="/voterlist" class="button is-text is-fullwidth">Voter Cards</router-link>
                 </div>
                 <div class="buttons">
-                    <router-link to="/drivingadd" class="button is-text is-fullwidth">Add Driving License</router-link>
+                    <router-link to="/drivingadd" v-show="getUser.user_type == 'suvidha_kendra'" class="button is-text is-fullwidth">Add Driving License</router-link>
                     <router-link to="/drivinglist" class="button is-text is-fullwidth">Driving License</router-link>
                 </div>
                 <div class="buttons">
-                    <router-link to="/smartadd" class="button is-text is-fullwidth">Add Smart Card</router-link>
+                    <router-link to="/smartadd" v-show="getUser.user_type == 'suvidha_kendra'" class="button is-text is-fullwidth">Add Smart Card</router-link>
                     <router-link to="/smartlist" class="button is-text is-fullwidth">Smart Cards</router-link>
                 </div>
             </div>
@@ -54,6 +54,9 @@
         <div class="wrapper">
             <div class="panel ">
                 <p class="panel-heading">Help</p>
+                <router-link to="/removebg" class="panel-block"><span class="panel-icon">
+                        <i class="las la-image" aria-hidden="true"></i>
+                    </span> Remove Background</router-link>
                 <a class="panel-block" href="tel:+91 9876543210"><span class="panel-icon">
                         <i class="las la-phone" aria-hidden="true"></i>
                     </span> +91 9876543210</a>
@@ -71,7 +74,7 @@
 </template>
 <script>
 import axios from 'axios'
-// import { mapGetters } from 'vuex'
+import { mapGetters } from 'vuex'
 export default {
     data() {
         return {
@@ -136,10 +139,10 @@ export default {
 
     },
     computed: {
-        // ...mapGetters(['getUser']),
-        getImgPath: function() {
+        ...mapGetters(['getUser', 'getImgPath']),
+        /*getImgPath: function() {
             return this.$store.getters.getImgPath;
-        },
+        },*/
     },
     methods: {
 

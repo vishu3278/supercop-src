@@ -45,18 +45,27 @@
                 <thead>
                     <tr class="has-background-info ">
                         <th>Info</th>
-                        <th>Name (Gender)<br>Parent<br>Voter ID</th>
                         <th>Address</th>
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr v-for="(item, index) in getPendingVoter" v-bind:key="index">
-                        <td>Ack- ACK300441605776484<br>
-                            VLE- Gaurav saini<br>
-                            <span class="tag">8QE741955043</span></td>
-                        <td>Name (F)<br>Parent Name<br>UP/83/412/0540055</td>
-                        <td>State<br>District<br>Block</td>
+                <tbody v-bind:class="{'is-hidden': activeTab=='approve'}">
+                    <tr v-for="(item, index) in pendingList" v-bind:key="index">
+                        <td>
+                            <div class="media">
+                                <div class="media-left">
+                                    <figure class="image is-32x32 m-0">
+                                        <img src="https://thesupercop.com/assets/images/dummy_user.png" v-if="!item.photo" v-bind:alt="item.full_name_en">
+                                        <img v-else v-bind:src="'https://thesupercop.com/uploads/voterid/'+item.photo" alt="image">
+                                    </figure>
+                                </div>
+                                <div class="media-content">
+                                    {{item.full_name_en}} ({{item.gender_en}})<br>{{item.parent_name_en}}<br>{{item.voterid_number}}<br>
+                                </div>
+                            </div>
+                            Ack- {{item.ack_no}}<br>
+                        </td>
+                        <td>{{item.address_state_en}}<br>{{item.address_district_en}}<br>{{item.address_block_en}}<br>{{item.created_at}}</td>
                         <td>
                             <button class="button is-primary is-small">
                                 <span class="icon ">
@@ -65,30 +74,47 @@
                             </button>
                         </td>
                     </tr>
-                    <!-- <tr v-for="vle in vlelist" :key="vle.id">
+                </tbody>
+                <tbody v-bind:class="{'is-hidden': activeTab=='pending'}">
+                    <tr v-for="(item, index) in approvedList" v-bind:key="index">
                         <td>
-                            <figure class="image is-32x32 m-0">
-                                <img src="https://thesupercop.com/assets/images/dummy_user.png" v-if="!vle.photo" v-bind:alt="vle.f_name">
-                                <img v-bind:src="getImgPath + vle.photo" v-bind:alt="vle.f_name">
-                            </figure>
+                            <div class="media">
+                                <div class="media-left">
+                                    <figure class="image is-32x32 m-0">
+                                        <img src="https://thesupercop.com/assets/images/dummy_user.png" v-if="!item.photo" v-bind:alt="item.full_name_en">
+                                        <img v-else v-bind:src="'https://thesupercop.com/uploads/voterid/'+item.photo" alt="image">
+                                    </figure>
+                                </div>
+                                <div class="media-content">
+                                    {{item.full_name_en}} ({{item.gender_en}})<br>{{item.parent_name_en}}<br>{{item.voterid_number}}<br>
+                                </div>
+                            </div>
+                            Ack- {{item.ack_no}}<br>
                         </td>
-                        <td>{{vle.f_name}}<br>{{vle.phone}}<br>{{vle.email}}</td>
-                        <td>{{vle.state_ID}}<br>{{vle.district_ID}}<br>{{vle.block_ID}}</td>
-                        <td><button class="button is-warning is-small">
-                                <span class="icon is-small">
-                                    <i class="las la-toggle-off"></i>
+                        <td>{{item.address_state_en}}<br>{{item.address_district_en}}<br>{{item.address_block_en}}<br>{{item.created_at}}</td>
+                        <td>
+                            <button class="button is-primary is-small">
+                                <span class="icon ">
+                                    <i class="las la-print"></i>
                                 </span>
-                            </button></td>
-
-                    </tr> -->
+                            </button>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
+        </div>
+        <div v-show="activeTab=='pending'">
+            <pagination :totalPages="pendingPages" :currentPage="currentPage" v-on:pageChange="pageChange($event, 'pending')"></pagination>
+        </div>
+        <div v-show="activeTab=='approve'">
+            <pagination :totalPages="approvePages" :currentPage="currentPage" v-on:pageChange="pageChange($event, 'approve')"></pagination>
         </div>
     </div>
 </template>
 <script>
 import axios from 'axios'
 import { mapGetters } from 'vuex'
+import Pagination from '../components/Pagination'
 export default {
     name: 'VoterList',
     data() {
@@ -99,18 +125,28 @@ export default {
             activeTab: 'pending',
             errors: [],
             pendingList: [],
-            approvedList: []
+            approvedList: [],
+            pendingPages: '',
+            approvePages: '',
+            currentPage: 1,
         }
+    },
+    components: {
+        Pagination
     },
     mounted: function() {
         this.$emit("loaded", false);
-        // this.userData = this.$store.getters.getUser;
         this.list('pending');
     },
     computed: {
         ...mapGetters(['getUser', 'getApiPath', 'getAadhaarImg', 'getPendingVoter', 'getApproveVoter']),
     },
     methods: {
+        pageChange: function(page, type) {
+            console.log(page);
+            this.currentPage = page;
+            this.list(type);
+        },
         actionEncode: function(arg) {
             console.log(arg);
             return btoa(arg);
@@ -118,18 +154,12 @@ export default {
         listCache: function(arg) {
             switch (arg) {
                 case 'pending':
-                    console.log(this.getPendingVoter.length);
-                    if (!this.getPendingVoter.length) {
-                        this.list('pending');
-                    }
+                    this.list('pending');
                     this.errors = [];
                     this.activeTab = 'pending';
                     break;
                 case 'approve':
-                    console.log(this.getApproveVoter.length);
-                    if (!this.getApproveVoter.length) {
-                        this.list('approve');
-                    }
+                    this.list('approve');
                     this.errors = [];
                     this.activeTab = 'approve';
                     break;
@@ -141,17 +171,19 @@ export default {
         list: function(arg) {
             this.errors = [];
             this.submitting = true;
-            let postData = JSON.stringify({ "_action": 'dm90ZXItbGlzdA==', "userUniqueID": this.getUser.userUniqueID, "cpage": 1, "status": this.actionEncode(arg) });
+            let postData = JSON.stringify({ "_action": 'dm90ZXItbGlzdA==', "userUniqueID": this.getUser.userUniqueID, "cpage": this.currentPage, "status": this.actionEncode(arg) });
             // console.log(arg, this.actionEncode(arg));
             axios.post('https://thesupercop.com/webapis/v2/cards.php', postData)
                 .then((response) => {
                     if (response.data.status == 1) {
                         if (arg == 'pending') {
                             this.pendingList = response.data.data;
-                            // this.$store.dispatch('updatePendAaadhaar', response.data.data);
+                            this.pendingPages = response.data.total_pages;
+                            // this.$store.dispatch('updatePendVoter', response.data.data);
                         } else {
                             this.approvedList = response.data.data;
-                            // this.$store.dispatch('updateApprAadhaar', response.data.data);
+                            this.approvePages = response.data.total_pages;
+                            // this.$store.dispatch('updateApprVoter', response.data.data);
                         }
                     } else {
                         this.errors.push(response.data.message);

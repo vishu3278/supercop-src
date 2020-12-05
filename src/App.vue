@@ -3,7 +3,7 @@
         <nav class="navbar " v-bind:style="[ menu ? {'position': 'sticky', 'top': 0} : '']" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
                 <router-link to="/" class="navbar-item">
-                    <img src="./assets/logo-small.png">
+                    <img src="./assets/logo.png">
                 </router-link>
                 <a role="button" v-show="user" v-on:click="menu = !menu" class="navbar-burger burger" aria-label="menu" aria-expanded="false">
                     <span aria-hidden="true"></span>
@@ -52,7 +52,10 @@
                             <router-link to="/smartlist" class="navbar-item has-text-primary-dark"><i class="las la-id-card-alt"></i> Smart Card</router-link>
                         </li>
                     </ul>
-                    <ul class="has-background-primary-light" v-show="user.user_type != 'suvidha_kendra'">
+                    <p class="menu-label" v-show="user.user_type == 'suvidha_kendra'">
+                        Add Cards
+                    </p>
+                    <ul class="has-background-primary-light" v-show="user.user_type == 'suvidha_kendra'">
                         <li>
                             <router-link to="/scancard" class="navbar-item has-text-primary-dark"><i class="las la-qrcode"></i> Scan Aadhaar </router-link>
                         </li>

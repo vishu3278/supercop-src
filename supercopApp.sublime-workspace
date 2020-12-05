@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"approve",
+				"approve"
+			],
+			[
+				"json",
+				"JSON_parse\t( json: string ): any JSON"
+			],
+			[
+				"geti",
+				"getItem\t( key: DOMString ): DOMString Storage"
+			],
+			[
+				"pendin",
+				"pendingPages"
+			],
+			[
+				"pen",
+				"pendingPages"
+			],
+			[
+				"seti",
+				"setItem\t( key: DOMString, value: DOMString ): void Storage"
+			],
+			[
+				"im",
+				"image"
+			],
+			[
 				"has",
 				"has-background-primary-light"
 			],
@@ -180,7 +208,7 @@
 			"file": "src/main.js",
 			"settings":
 			{
-				"buffer_size": 2977,
+				"buffer_size": 5400,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -189,24 +217,43 @@
 			"file": "src/App.vue",
 			"settings":
 			{
-				"buffer_size": 7405,
+				"buffer_size": 7545,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/views/Home.vue",
-			"settings":
-			{
-				"buffer_size": 3697,
-				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "src/views/Dashboard.vue",
 			"settings":
 			{
-				"buffer_size": 9042,
+				"buffer_size": 9511,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/views/AadharList.vue",
+			"settings":
+			{
+				"buffer_size": 10368,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/views/VleList.vue",
+			"settings":
+			{
+				"buffer_size": 8546,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/Pagination.vue",
+			"settings":
+			{
+				"buffer_size": 588,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -223,6 +270,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"Snippet: ",
+				"Snippet: Vue component"
+			],
 			[
 				"Snippet: vu",
 				"Snippet: Vue component"
@@ -261,25 +312,28 @@
 	"expanded_folders":
 	[
 		"/D/app/supercop",
-		"/D/app/supercop/dist",
-		"/D/app/supercop/dist/css",
-		"/D/app/supercop/dist/js"
+		"/D/app/supercop/src",
+		"/D/app/supercop/src/components",
+		"/D/app/supercop/src/print",
+		"/D/app/supercop/src/views"
 	],
 	"file_history":
 	[
-		"/D/app/supercop/dist/css/app.96835213.css",
 		"/D/app/supercop/src/views/VleList.vue",
 		"/D/app/supercop/src/views/AadharList.vue",
+		"/D/app/supercop/src/views/SmartList.vue",
 		"/D/app/supercop/src/views/VoterList.vue",
+		"/D/app/supercop/src/views/DrivingList.vue",
+		"/D/app/supercop/src/views/PanList.vue",
 		"/D/app/supercop/src/print/RemoveBG.vue",
+		"/D/app/supercop/src/views/Home.vue",
+		"/D/app/supercop/dist/css/app.96835213.css",
 		"/D/app/supercop/src/components/VleAdd.vue",
 		"/D/app/supercop/src/components/ImagePreview.vue",
 		"/D/app/supercop/public/index.html",
 		"/D/app/supercop/dist/index.html",
 		"/D/app/supercop/dist/css/app.53630c68.css",
 		"/D/app/supercop/dist/js/chunk-vendors.22f4a331.js",
-		"/D/app/supercop/src/views/DrivingList.vue",
-		"/D/app/supercop/src/views/Home.vue",
 		"/D/app/supercop/dist/css/app.c8f94d7c.css",
 		"/D/app/supercop/dist/css/app.e2b4aa5e.css",
 		"/D/app/supercop/src/components/ScanCard.vue",
@@ -295,8 +349,6 @@
 		"/D/app/supercop/src/components/DrivingAdd.vue",
 		"/D/app/supercop/src/components/AddPan.vue",
 		"/D/app/supercop/src/App.vue",
-		"/D/app/supercop/src/views/PanList.vue",
-		"/D/app/supercop/src/views/SmartList.vue",
 		"/D/app/supercop/src/components/Address.vue",
 		"/D/app/supercop/src/main.js",
 		"/D/app/supercop/src/views/ListAadhar.vue",
@@ -359,6 +411,35 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"navbar-item",
+			"my-",
+			"getUser",
+			"getApproveAadhaar",
+			"getPendingAadhaar",
+			"pan",
+			"pagination",
+			"currentPage",
+			"getApproveDl",
+			"getPendingDl",
+			"driving",
+			"DL",
+			"Dl",
+			"driving",
+			"DL",
+			"driving",
+			"Dl",
+			"driving",
+			"getPendingVoter",
+			"listCache",
+			"VOTER",
+			"voterList",
+			"voter",
+			"aadhaarList",
+			"AADHAAR",
+			"aadhaar",
+			"Aaadhaar",
+			"getPendingVoter",
+			"_blank",
 			"aadhaar",
 			"Aadhaar",
 			"listCache",
@@ -448,7 +529,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -481,7 +562,7 @@
 						"translation.y": 427.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -490,15 +571,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2977,
+						"buffer_size": 5400,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1383,
-								1398
+								5067,
+								5082
 							]
 						],
 						"settings":
@@ -511,10 +592,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 570.0,
+						"translation.y": 2679.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -523,7 +604,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7405,
+						"buffer_size": 7545,
 						"regions":
 						{
 							"col_0000007F":
@@ -532,8 +613,8 @@
 								"regions":
 								[
 									[
-										6691,
-										6709
+										6831,
+										6849
 									]
 								],
 								"scope": "col_0000007F"
@@ -545,8 +626,8 @@
 								"regions":
 								[
 									[
-										6675,
-										6675
+										6815,
+										6815
 									]
 								],
 								"scope": "col_gutter"
@@ -557,8 +638,8 @@
 								"regions":
 								[
 									[
-										6375,
-										6382
+										6515,
+										6522
 									]
 								],
 								"scope": "col_2C3E50FF"
@@ -570,8 +651,8 @@
 								"regions":
 								[
 									[
-										6364,
-										6364
+										6504,
+										6504
 									]
 								],
 								"scope": "col_gutter"
@@ -582,8 +663,8 @@
 								"regions":
 								[
 									[
-										6976,
-										6983
+										7116,
+										7123
 									]
 								],
 								"scope": "col_363636FF"
@@ -595,8 +676,8 @@
 								"regions":
 								[
 									[
-										6947,
-										6947
+										7087,
+										7087
 									]
 								],
 								"scope": "col_gutter"
@@ -607,8 +688,8 @@
 								"regions":
 								[
 									[
-										6753,
-										6757
+										6893,
+										6897
 									]
 								],
 								"scope": "col_BBBBBBFF"
@@ -620,8 +701,8 @@
 								"regions":
 								[
 									[
-										6724,
-										6724
+										6864,
+										6864
 									]
 								],
 								"scope": "col_gutter"
@@ -632,8 +713,8 @@
 								"regions":
 								[
 									[
-										7352,
-										7359
+										7492,
+										7499
 									]
 								],
 								"scope": "col_DA5552FF"
@@ -645,8 +726,8 @@
 								"regions":
 								[
 									[
-										7341,
-										7341
+										7481,
+										7481
 									]
 								],
 								"scope": "col_gutter"
@@ -657,8 +738,8 @@
 								"regions":
 								[
 									[
-										7386,
-										7393
+										7526,
+										7533
 									]
 								],
 								"scope": "col_DD6463FF"
@@ -670,8 +751,8 @@
 								"regions":
 								[
 									[
-										7361,
-										7361
+										7501,
+										7501
 									]
 								],
 								"scope": "col_gutter"
@@ -680,8 +761,8 @@
 						"selection":
 						[
 							[
-								6881,
-								6881
+								1538,
+								2141
 							]
 						],
 						"settings":
@@ -694,52 +775,19 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3167.0,
+						"translation.y": 266.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "src/views/Home.vue",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3697,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 741.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
 					"file": "src/views/Dashboard.vue",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9042,
+						"buffer_size": 9511,
 						"regions":
 						{
 							"col_32323219":
@@ -748,8 +796,8 @@
 								"regions":
 								[
 									[
-										8173,
-										8194
+										8642,
+										8663
 									]
 								],
 								"scope": "col_32323219"
@@ -761,8 +809,8 @@
 								"regions":
 								[
 									[
-										8149,
-										8149
+										8618,
+										8618
 									]
 								],
 								"scope": "col_gutter"
@@ -773,8 +821,8 @@
 								"regions":
 								[
 									[
-										8290,
-										8312
+										8759,
+										8781
 									]
 								],
 								"scope": "col_32323226"
@@ -786,8 +834,8 @@
 								"regions":
 								[
 									[
-										8266,
-										8266
+										8735,
+										8735
 									]
 								],
 								"scope": "col_gutter"
@@ -798,8 +846,8 @@
 								"regions":
 								[
 									[
-										8408,
-										8429
+										8877,
+										8898
 									]
 								],
 								"scope": "col_32323233"
@@ -811,8 +859,8 @@
 								"regions":
 								[
 									[
-										8384,
-										8384
+										8853,
+										8853
 									]
 								],
 								"scope": "col_gutter"
@@ -823,8 +871,8 @@
 								"regions":
 								[
 									[
-										8525,
-										8547
+										8994,
+										9016
 									]
 								],
 								"scope": "col_3232323F"
@@ -836,8 +884,8 @@
 								"regions":
 								[
 									[
-										8501,
-										8501
+										8970,
+										8970
 									]
 								],
 								"scope": "col_gutter"
@@ -848,8 +896,8 @@
 								"regions":
 								[
 									[
-										8643,
-										8664
+										9112,
+										9133
 									]
 								],
 								"scope": "col_3232324C"
@@ -861,8 +909,8 @@
 								"regions":
 								[
 									[
-										8619,
-										8619
+										9088,
+										9088
 									]
 								],
 								"scope": "col_gutter"
@@ -873,8 +921,8 @@
 								"regions":
 								[
 									[
-										8760,
-										8782
+										9229,
+										9251
 									]
 								],
 								"scope": "col_32323259"
@@ -886,8 +934,8 @@
 								"regions":
 								[
 									[
-										8736,
-										8736
+										9205,
+										9205
 									]
 								],
 								"scope": "col_gutter"
@@ -898,8 +946,8 @@
 								"regions":
 								[
 									[
-										8220,
-										8227
+										8689,
+										8696
 									]
 								],
 								"scope": "col_DA5552FF"
@@ -911,8 +959,8 @@
 								"regions":
 								[
 									[
-										8198,
-										8198
+										8667,
+										8667
 									]
 								],
 								"scope": "col_gutter"
@@ -923,8 +971,8 @@
 								"regions":
 								[
 									[
-										8338,
-										8345
+										8807,
+										8814
 									]
 								],
 								"scope": "col_DD6463FF"
@@ -936,8 +984,8 @@
 								"regions":
 								[
 									[
-										8316,
-										8316
+										8785,
+										8785
 									]
 								],
 								"scope": "col_gutter"
@@ -948,8 +996,8 @@
 								"regions":
 								[
 									[
-										8455,
-										8462
+										8924,
+										8931
 									]
 								],
 								"scope": "col_DF7373FF"
@@ -961,8 +1009,8 @@
 								"regions":
 								[
 									[
-										8433,
-										8433
+										8902,
+										8902
 									]
 								],
 								"scope": "col_gutter"
@@ -973,8 +1021,8 @@
 								"regions":
 								[
 									[
-										8573,
-										8580
+										9042,
+										9049
 									]
 								],
 								"scope": "col_E07C7CFF"
@@ -986,8 +1034,8 @@
 								"regions":
 								[
 									[
-										8551,
-										8551
+										9020,
+										9020
 									]
 								],
 								"scope": "col_gutter"
@@ -998,8 +1046,8 @@
 								"regions":
 								[
 									[
-										8690,
-										8697
+										9159,
+										9166
 									]
 								],
 								"scope": "col_E18584FF"
@@ -1011,8 +1059,8 @@
 								"regions":
 								[
 									[
-										8668,
-										8668
+										9137,
+										9137
 									]
 								],
 								"scope": "col_gutter"
@@ -1023,8 +1071,8 @@
 								"regions":
 								[
 									[
-										8808,
-										8815
+										9277,
+										9284
 									]
 								],
 								"scope": "col_E28E8DFF"
@@ -1036,8 +1084,8 @@
 								"regions":
 								[
 									[
-										8786,
-										8786
+										9255,
+										9255
 									]
 								],
 								"scope": "col_gutter"
@@ -1048,8 +1096,8 @@
 								"regions":
 								[
 									[
-										9026,
-										9030
+										9495,
+										9499
 									]
 								],
 								"scope": "col_FFFFFFFF"
@@ -1061,8 +1109,8 @@
 								"regions":
 								[
 									[
-										9015,
-										9015
+										9484,
+										9484
 									]
 								],
 								"scope": "col_gutter"
@@ -1071,8 +1119,8 @@
 						"selection":
 						[
 							[
-								4742,
-								4742
+								4422,
+								4422
 							]
 						],
 						"settings":
@@ -1085,10 +1133,106 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 450.0,
+						"translation.y": 1083.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/views/AadharList.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10368,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2558,
+								2558
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 969.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/views/VleList.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8546,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5184,
+								5184
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2744.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/components/Pagination.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 588,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								370,
+								370
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"incomplete_sync": null,
+							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]

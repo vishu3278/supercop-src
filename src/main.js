@@ -20,7 +20,13 @@ const store = new Vuex.Store({
         aadhaarListPending: [],
         aadhaarListApprove: [],
         voterListPending: [],
-        voterListApprove: []
+        voterListApprove: [],
+        drivingListPending: [],
+        drivingListApprove: [],
+        panListPending: [],
+        panListApprove: [],
+        smartListPending: [],
+        smartListApprove: []
     },
     getters: {
         getUser(state) {
@@ -53,6 +59,24 @@ const store = new Vuex.Store({
         },
         getApproveVoter(state) {
             return state.voterListApprove;
+        },
+        getPendingDl(state) {
+            return state.drivingListPending;
+        },
+        getApproveDl(state) {
+            return state.drivingListApprove;
+        },
+        getPendingPan(state) {
+            return state.panListPending;
+        },
+        getApprovePan(state) {
+            return state.panListApprove;
+        },
+        getPendingSmart(state) {
+            return state.smartListPending;
+        },
+        getApproveSmart(state) {
+            return state.smartListApprove;
         }
     },
     mutations: {
@@ -70,6 +94,30 @@ const store = new Vuex.Store({
         },
         UPDATE_APPR_AADHAAR(state, aadhaarList){
             state.aadhaarListApprove = aadhaarList;
+        },
+        UPDATE_PEND_VOTER(state, voterList){
+            state.voterListPending = voterList;
+        },
+        UPDATE_APPR_VOTER(state, voterList){
+            state.voterListApprove = voterList;
+        },
+        UPDATE_PEND_DL(state, drivingList){
+            state.drivingListPending = drivingList;
+        },
+        UPDATE_APPR_DL(state, drivingList){
+            state.drivingListApprove = drivingList;
+        },
+        UPDATE_PEND_PAN(state, panList){
+            state.panListPending = panList;
+        },
+        UPDATE_APPR_PAN(state, panList){
+            state.panListApprove = panList;
+        },
+        UPDATE_PEND_SMART(state, smartList){
+            state.smartListPending = smartList;
+        },
+        UPDATE_APPR_SMART(state, smartList){
+            state.smartListApprove = smartList;
         },
         RESET_STORE(state){
             state.user = '',
@@ -92,8 +140,32 @@ const store = new Vuex.Store({
         updatePendAaadhaar(context, aadhaarList) {
             context.commit('UPDATE_PEND_AADHAAR', aadhaarList)
         },
-        updateApprAadhaar(context, aadhaarList) {
+        updateApprAaadhaar(context, aadhaarList) {
             context.commit('UPDATE_APPR_AADHAAR', aadhaarList)
+        },
+        updatePendVoter(context, voterList) {
+            context.commit('UPDATE_PEND_VOTER', voterList)
+        },
+        updateApprVoter(context, voterList) {
+            context.commit('UPDATE_APPR_VOTER', voterList)
+        },
+        updatePendDl(context, drivingList) {
+            context.commit('UPDATE_PEND_DL', drivingList)
+        },
+        updateApprDl(context, drivingList) {
+            context.commit('UPDATE_APPR_DL', drivingList)
+        },
+        updatePendPan(context, panList) {
+            context.commit('UPDATE_PEND_PAN', panList)
+        },
+        updateApprPan(context, panList) {
+            context.commit('UPDATE_APPR_PAN', panList)
+        },
+        updatePendSmart(context, smartList) {
+            context.commit('UPDATE_PEND_SMART', smartList)
+        },
+        updateApprSmart(context, smartList) {
+            context.commit('UPDATE_APPR_SMART', smartList)
         },
         resetStore(context){
             context.commit('RESET_STORE')

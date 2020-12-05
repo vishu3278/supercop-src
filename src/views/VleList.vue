@@ -68,20 +68,14 @@
                 </tbody>
             </table>
         </div>
-        <nav class="pagination is-small" role="navigation" aria-label="pagination">
-            <!-- <a class="pagination-previous">Previous</a> -->
-            <ul class="pagination-list">
-                <li v-for="(page, index) in totalPages" v-bind:key="index"><a class="pagination-link" aria-label="Goto page 1">{{page}}</a></li>
-                <!-- <li><a class="pagination-link is-current" aria-label="Page 46" aria-current="page">1</a></li>
-                <li><a class="pagination-link" aria-label="Goto page 47">2</a></li> -->
-            </ul>
-            <!-- <a class="pagination-next">Next page</a> -->
-        </nav>
+        <pagination :totalPages="totalPages" :currentPage="currentPage" v-on:pageChange="pageChange($event)"></pagination>
+        
     </div>
 </template>
 <script>
 import axios from 'axios'
 import { mapGetters } from 'vuex'
+import Pagination from '../components/Pagination.vue'
 export default {
     name: 'VLEList',
     data() {
@@ -95,9 +89,12 @@ export default {
             errors: [],
             success: '',
             totalPages: '',
-            currentPage: ''
+            currentPage: 1
             // vlelist: []
         }
+    },
+    components: {
+        Pagination
     },
     computed: {
         ...mapGetters(['getUser', 'getApiPath', 'getImgPath', 'getVleList']),
@@ -109,9 +106,31 @@ export default {
         // this.userData = this.$store.getters.getUser;
         this.$emit('userData', sessionUser);
         // console.log(this.getVleList.length == 0);
-        if (this.getVleList.length == 0) {
+        this.list();
+    },
+    methods: {
+        pageChange: function(page) {
+            console.log(page);
+            this.currentPage = page;
+            this.list();
+        },
+        autoHideMsg() {
+            if (this.success != null) {
+                setTimeout(function() {
+                    this.success = '';
+                }, 4500)
+            }
+        },
+        statusEncode(status) {
+            if (status == 'Active') {
+                return 'SW4tQWN0aXZl'
+            } else {
+                return 'QWN0aXZl'
+            }
+        },
+        list: function() {
             this.submitting = true;
-            let postData = JSON.stringify({ "_action": "dmxlLWxpc3Q=", "userUniqueID": this.userID });
+            let postData = JSON.stringify({ "_action": "dmxlLWxpc3Q=", "userUniqueID": this.userID, "cPage": this.currentPage });
             axios.post(this.getApiPath + 'vle-list.php', postData)
                 .then(response => {
                     if (response.data.status == 1) {
@@ -129,22 +148,6 @@ export default {
                 .then(() => {
                     this.submitting = false;
                 })
-        }
-    },
-    methods: {
-        autoHideMsg() {
-            if (this.success != null) {
-                setTimeout(function() {
-                    this.success = '';
-                }, 4500)
-            }
-        },
-        statusEncode(status) {
-            if (status == 'Active') {
-                return 'SW4tQWN0aXZl'
-            } else {
-                return 'QWN0aXZl'
-            }
         },
         changeStatus: function(userID, status, index) {
             this.submitting = true;
