@@ -213,7 +213,7 @@
                 <div class="field">
                     <label>Pincode</label>
                     <div class="control">
-                        <input type="number" v-on:keyup="validate($event)" class="input is-info" v-model="pincode" required="" minlength="6" maxlength="6">
+                        <input type="number" class="input is-info" v-model="pincode" required="" minlength="6" maxlength="6">
                     </div>
                 </div>
                 <div class="field">
@@ -290,8 +290,8 @@
                     </a>
                 </div>
                 <div class="card-content">
-                    <div class="field ">
-                        <p>Select image and upload</p>
+                    <label class="label">Select image to upload</label>
+                    <div class="field is-grouped">
                         <div class="control">
                             <div class="file has-name is-warning">
                                 <label class="file-label">
@@ -304,19 +304,22 @@
                                             Choose a file…
                                         </span>
                                     </span>
-                                    <span class="file-name" v-text="imgName">
-                                    </span>
+                                    <!-- <span class="file-name" v-text="imgName">
+                                    </span> -->
                                 </label>
                             </div>
                         </div>
+                        <div class="control is-expanded">
+                            <button type="button" class="button is-warning is-fullwidth" onclick="cameraGo()"><span class="icon"><i class="las la-camera"></i></span> <span>Camera</span></button>
+                        </div>
                     </div>
-                    <p class="is-size-5 has-text-centered has-text-danger">Or</p>
+                    <!-- <p class="is-size-5 has-text-centered has-text-danger">Or</p>
                     <div class="field">
                         <label>Capture image and crop before upload</label>
                         <div class="control">
                             <button type="button" class="button is-warning is-fullwidth" onclick="cameraGo()"><i class="las la-camera"></i> Camera</button>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="field">
                         <div class="image">
                             <img id="imgPreview">
@@ -337,7 +340,6 @@
             </div>
         </div>
         <div class="box">
-            
             <div class="message is-success" v-if="response">
                 <div class="message-body">
                     <p>{{response.message}}</p>
@@ -356,7 +358,7 @@ export default {
             componentTitle:'Add Aadhaar Card',
             name: '',
             userData: '',
-            imgBaseUrl: "https://drsolution.co.in/workspace/dist/img/users/",
+            // imgBaseUrl: "https://drsolution.co.in/workspace/dist/img/users/",
             language: 'hi',
             full_name_hi: '',
             parent_type: '',
@@ -400,19 +402,8 @@ export default {
             console.log(formattedDate);
             return formattedDate;
         },
-        
     },
     methods: {
-        validate: function(event){
-            let el = event.target.attributes;
-            console.log(el[1]);
-            /*if (el.value == '') {
-                return "is-danger"
-            } else {
-                return "is-success"
-            }*/
-            return event.target.value;
-        },
         fetchDistrict: function(event) {
             this.state = event.target.selectedOptions[0].dataset.state;
             // console.log(event);

@@ -43,7 +43,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="(vle, index) in getVleList" :key="vle.id">
+                    <tr v-for="(vle, index) in vlelist" :key="vle.id">
                         <td>
                             <div class="media">
                                 <div class="media-left">
@@ -86,11 +86,11 @@ export default {
             // userImgPath: '',
             // apiPath: '',
             submitting: false,
+            vlelist: [],
             errors: [],
             success: '',
             totalPages: '',
             currentPage: 1
-            // vlelist: []
         }
     },
     components: {
@@ -135,7 +135,8 @@ export default {
                 .then(response => {
                     if (response.data.status == 1) {
                         this.totalPages = response.data.total_pages;
-                        this.$store.dispatch('updateVleList', response.data.data);
+                        this.vlelist = response.data.data;
+                        // this.$store.dispatch('updateVleList', response.data.data);
                         this.errors = [];
                         // this.$router.push({ name: 'About', params: { user: this.user } });
                     } else {
@@ -152,12 +153,12 @@ export default {
         changeStatus: function(userID, status, index) {
             this.submitting = true;
             let postData = JSON.stringify({ "_action": "dmxlLXN0YXR1cw==", "userUniqueID": userID, "status": this.statusEncode(status) });
-            console.log(this.statusEncode(status), index);
+            // console.log(this.statusEncode(status), index);
             axios.post(this.getApiPath + 'vle-status.php', postData)
                 .then(response => {
                     if (response.data.status == 1) {
                         this.success = response.data.message;
-                        this.vlelist[index].status = response.data.acstatus;
+                        this.vlelist[index].account_status = response.data.acstatus;
                     } else {
                         this.errors.push(response.data.message)
                     }

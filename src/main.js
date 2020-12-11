@@ -169,7 +169,12 @@ const store = new Vuex.Store({
         },
         resetStore(context){
             context.commit('RESET_STORE')
-        }
+        },
+        setDate (context) {
+            let formattedDate = ('0' + context.getDate()).slice(-2) + '-' + ('0' + (context.getMonth() + 1)).slice(-2) + '-' + context.getFullYear();
+            console.log(formattedDate);
+            return formattedDate;
+        },
     }
 })
 

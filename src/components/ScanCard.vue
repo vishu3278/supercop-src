@@ -51,7 +51,7 @@
                     <div class="field">
                         <label>Name </label>
                         <div class="control">
-                            <input type="text" class="input is-info" v-model="xmldata.name">
+                            <input type="text" class="input is-info" v-model="xmldata.name" readonly="">
                         </div>
                     </div>
                     <div class="field">
@@ -74,7 +74,7 @@
                             </span>
                         </div>
                         <div class="control is-expanded">
-                            <input type="text" class="input is-info" v-model="xmldata.gname">
+                            <input type="text" class="input is-info" v-model="xmldata.gname" readonly="">
                         </div>
                     </div>
                     <div class="field ">
@@ -86,7 +86,7 @@
                     <div class="field">
                         <label>Address</label>
                         <div class="control">
-                            <textarea class="textarea is-info" v-model="full_address" rows="2"></textarea>
+                            <textarea class="textarea is-info" v-model="full_address" rows="2" readonly=""></textarea>
                         </div>
                     </div>
                     <div class="field">
@@ -98,7 +98,7 @@
                     <div class="field">
                         <label>District</label>
                         <div class="control">
-                            <input type="text" class="input is-info" v-model="xmldata.dist">
+                            <input type="text" class="input is-info" v-model="xmldata.dist" readonly="">
                         </div>
                     </div>
                     <div class="field">
@@ -110,7 +110,7 @@
                     <div class="field">
                         <label>Block</label>
                         <div class="control">
-                            <input type="text" class="input is-info" v-model="xmldata.subdist">
+                            <input type="text" class="input is-info" v-model="xmldata.subdist" readonly="">
                         </div>
                     </div>
                     <div class="field" v-show="xmldata.dist!=xmldata.subdist">
@@ -122,7 +122,7 @@
                     <div class="field">
                         <label>Date of Birth</label>
                         <div class="control">
-                            <input type="text" class="input is-info" v-model="xmldata.dob">
+                            <input type="text" class="input is-info" v-model="xmldata.dob" readonly="">
                         </div>
                     </div>
                     <input type="hidden" id="genderInput" v-model="getGender">

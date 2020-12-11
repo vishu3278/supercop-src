@@ -14,14 +14,14 @@
                 <div class="field">
                     <label class="label">Name</label>
                     <div class="control has-icons-right">
-                        <input class="input" type="text" placeholder="Name">
+                        <input class="input" type="text" v-model="username" placeholder="Name">
                         <span class="icon is-right"><i class="las la-user"></i></span>
                     </div>
                 </div>
                 <div class="field">
                     <label class="label">Email</label>
                     <div class="control has-icons-right">
-                        <input class="input" type="email" placeholder="Email">
+                        <input class="input" type="email" v-model="email" placeholder="Email">
                         <span class="icon is-right">
                             <i class="las la-envelope"></i>
                         </span>
@@ -30,88 +30,54 @@
                 <div class="field">
                     <label class="label">Contact No.</label>
                     <div class="control has-icons-right">
-                        <input class="input" type="number" placeholder="Contact No.">
+                        <input class="input" type="number" v-model="phone" placeholder="Contact No.">
                         <span class="icon is-right"><i class="las la-phone"></i></span>
                     </div>
                 </div>
                 <div class="field">
                     <label class="label">Alternate Phone No.</label>
                     <div class="control has-icons-right">
-                        <input class="input" type="number" placeholder="Alternate Phone No.">
+                        <input class="input" type="number" v-model="phone2" placeholder="Alternate Phone No.">
                         <span class="icon is-right"><i class="las la-phone-alt"></i></span>
                     </div>
                 </div>
                 <div class="field">
                     <label class="label">Password</label>
                     <div class="control has-icons-right">
-                        <input class="input" type="password" placeholder="Password">
+                        <input class="input" type="password" v-model="password" minlength="6" placeholder="Password">
                         <span class="icon is-right"><i class="las la-lock"></i></span>
                     </div>
                 </div>
                 <div class="field">
                     <label class="label">Address</label>
                     <div class="control">
-                        <textarea class="textarea" rows="2" placeholder="Address"></textarea>
+                        <textarea class="textarea" rows="2" v-model="address" placeholder="Address"></textarea>
                     </div>
                 </div>
-                <app-address></app-address>
-                <!-- <div class="field">
-                    <label>Block Coordinator</label>
-                    <div class="control">
-                        <div class="select is-fullwidth">
-                            <select v-model="blockcoord" class="input is-info">
-                                <option value="" selected="">Select Block Coordinator</option>
-                                <option></option>
-                            </select>
-                        </div>
-                        <p class="help is-danger">No blocks found</p>
-                    </div>
-                </div> -->
+                <app-address v-on:stateID="getStateId($event)" v-on:districtID="getDistId($event)" v-on:blockID="getBlockId($event)"></app-address>
+                
                 <label class="label">Profile Pic/Logo</label>
-                <ImagePreview v-on:imageData="profilepic = $event"></ImagePreview>
-                <div class="field">
-                    <label class="label">User ID</label>
-                    <div class="control has-icons-right">
-                        <input class="input" type="text" readonly="" placeholder="UserID">
-                        <span class="icon is-right"><i class="las la-id-card"></i></span>
-                    </div>
-                </div>
-                <!-- <div class="field">
-                    <label>Select Admin</label>
-                    <div class="control">
-                        <div class="select is-fullwidth">
-                            <select v-model="blockcoord" class="input is-info">
-                                <option value="" selected="">Select Admin</option>
-                                <option></option>
-                            </select>
-                        </div>
-                        <p class="help is-danger">No Admins</p>
-                    </div>
-                </div> -->
+                <ImagePreview v-on:imageData="photo = $event"></ImagePreview>
+                
             </div>
         </div>
         <div class="box is-primary ">
-            <!-- <p class="title is-5">Other Information</p>
-            <div class="field">
-                <label class="label">Aadhaar No.</label>
-                <div class="control">
-                    <input class="input" type="number" placeholder="Aadhaar No.">
+            <button class="button is-fullwidth is-success" v-bind:class="{'is-loading':loading}" v-on:click="addVle">Submit</button>
+            <div class="message is-danger" v-show="errors.length>0">
+                <div class="message-body">
+                    <ul>
+                        <li v-for="(err, index) in errors" v-bind:key="index">{{index}} - {{err}}</li>
+                    </ul>
                 </div>
             </div>
-            <ImagePreview v-on:imageData="aadhaarpic = $event"></ImagePreview>
-            <div class="field">
-                <label class="label">PAN No.</label>
-                <div class="control">
-                    <input class="input" type="number" placeholder="PAN No.">
-                </div>
+            <div class="message" v-show="success">
+                <div class="message-body">{{success}}</div>
             </div>
-            <ImagePreview v-on:imageData="panpic = $event"></ImagePreview> -->
-            <button class="button is-fullwidth is-success">Submit</button>
         </div>
     </div>
 </template>
 <script>
-// import axios from 'axios'
+import axios from 'axios'
 import Address from './Address.vue'
 import ImagePreview from './ImagePreview.vue'
 export default {
@@ -120,10 +86,21 @@ export default {
         return {
             name: 'Mobile VLE Add',
             userData: '',
-            profilepic: '',
-            aadhaarpic: '',
-            panpic: '',
-            blockcoord: ''
+            photo: '',
+            phone: '',
+            userUniqueID: '',
+            username: '',
+            email: '',
+            phone2: '',
+            password: '',
+            address: '',
+            state: '',
+            district: '',
+            block: '',
+            parent_admin_user_id: '',
+            errors: [],
+            success: '',
+            loading: false,
         }
     },
     components: {
@@ -134,25 +111,56 @@ export default {
         this.$emit("loaded", false);
         this.userData = this.$store.getters.getUser;
     },
+    computed: {
+        getAdminID: function() {
+            return this.userData.userUniqueID;
+        }
+    },
     methods: {
-        list: function() {
-
-            /*axios.post('https://thesupercop.com/webapis/login.php', postData)
-                .then(response => {
+        getStateId: function(arg) {
+            this.state = arg;
+        },
+        getDistId: function(arg) {
+            this.district = arg;
+        },
+        getBlockId: function(arg) {
+            this.block = arg;
+        },
+        addVle: function() {
+            this.errors = [];
+            this.loading = true;
+            // this.$router.push({ name: 'VLEList' });
+            let postData = JSON.stringify({
+                "_action": "dmxlLWFkZA==",
+                "photo": this.photo,
+                "phone": this.phone,
+                "userUniqueID": this.phone,
+                "username": this.username,
+                "email": this.email,
+                "phone2": this.phone2,
+                "password": this.password,
+                "address": this.address,
+                "state": this.state,
+                "district": this.district,
+                "block": this.block,
+                "parent_admin_user_id": this.getAdminID
+            });
+            axios.post('https://thesupercop.com/webapis/v2/vle-add.php', postData)
+                .then((response) => {
                     if (response.data.status == 1) {
-                        this.user = response.data;
-                        this.errors = [];
-                        this.$router.push({ name: 'About', params: { user: this.user } });
+                        // this.user = response.data;
+                        this.success = response.data.message;
+                        // this.$router.push({ name: 'About', params: { user: this.user } });
                     } else {
                         this.errors.push(response.data.message);
                     }
                 })
-                .catch(error => {
+                .catch((error) => {
                     this.errors.push(error);
-                })*/
-        },
-        addVle: function() {
-            this.$router.push({ name: 'VLEList' });
+                })
+                .then(()=>{
+                    this.loading = false;
+                })
         }
     }
 }

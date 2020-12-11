@@ -185,7 +185,7 @@ export default {
         list: function(arg) {
             this.errors = [];
             this.submitting = true;
-            let postData = JSON.stringify({ "_action": 'YWFkaGFhci1saXN0', "userUniqueID": this.userData.userUniqueID, "cPage": this.currentPage, "status": this.actionEncode(arg) });
+            let postData = JSON.stringify({ "_action": 'YWFkaGFhci1saXN0', "userUniqueID": this.userData.userUniqueID, "cpage": this.currentPage, "status": this.actionEncode(arg) });
             // console.log(arg, this.actionEncode(arg));
             axios.post('https://thesupercop.com/webapis/v2/cards.php', postData)
             .then((response) => {

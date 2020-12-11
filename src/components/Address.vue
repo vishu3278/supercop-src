@@ -167,6 +167,7 @@ export default {
     methods: {
         fetchDistrict: function(event) {
             this.state = event.target.selectedOptions[0].dataset.state;
+            this.$emit('stateID',this.stateid);
             // console.log(event);
             this.districtList = [];
             this.blockList = [];
@@ -198,6 +199,8 @@ export default {
             this.district = event.target.selectedOptions[0].dataset.dist;
             this.district_hi = event.target.selectedOptions[0].dataset.disthindi;
             this.blockList = [];
+            this.$emit('districtID',this.districtid);
+
             if (this.districtid) {
                 let districtData = JSON.stringify({ district: this.districtid });
                 axios.post('https://thesupercop.com/webapis/stateAjax.php', districtData)
@@ -222,6 +225,9 @@ export default {
                 // this.stateError.block = ""
             }
         },
+        changeBlock: function() {
+            this.$emit('blockID',this.blockid);
+        }
     }
 }
 </script>

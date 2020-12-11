@@ -18,7 +18,7 @@
             </div>
             <div class="control is-warning">
                 <div class="file is-boxed">
-                    <label onclick="cameraGo()" class="file-label"><input type="button" class="file-input" value="">
+                    <label class="file-label"><input type="button" onclick="cameraGo(event)" class="file-input" v-bind:value="imgId">
                         <span class="file-cta ">
                             <span class="file-icon">
                                 <i class="las la-camera"></i>
@@ -30,16 +30,14 @@
                 </div>
             </div>
         </div>
-            <p class="help">Select image to upload or capture using camera (max file size 200kb)</p>
-        
+        <p class="help" v-show="base64Photo==''">Select image to upload or capture using camera (max file size 200kb) {{imgId}}</p>
         <div class="field mb-3">
             <figure class="image">
-                <img v-bind:src="base64Photo">
+                <img v-bind:src="base64Photo" v-bind:id="imgId">
             </figure>
-            <div class="message is-danger" v-if="errors.length>0">
-                <div class="message-body">
-                    <p v-for="(err, index) in errors" :key="index">{{err}}</p>
-                </div>
+            <p class="help is-success" v-if="success" v-text="success"></p>
+            <div class="help is-danger" v-if="errors.length>0">
+                <p v-for="(err, index) in errors" :key="index">{{err}}</p>
             </div>
         </div>
     </div>
@@ -52,20 +50,26 @@ export default {
             name: 'Image Preview',
             base64Photo: '',
             errors: [],
+            success: '',
         }
     },
-    // props: ['imgID'],
+    props: { 'imgId': { type: String, required: true } },
     methods: {
         loadImageFileAsURL: function(e) {
             this.errors = [];
             let filesSelected = e.target.files[0];
             let file = Math.round((filesSelected.size / 1024));
             if (file >= 200) {
+                this.base64Photo = '';
+                this.success = '';
                 this.errors.push('File too large (' + file + 'kb). Please select a file less than 200kb');
-            } else if (file < 10) {
-                this.errors.push('File too small (' + file + 'kb). Please select a file larger than 10kb');
+            } else if (file < 5) {
+                this.base64Photo = '';
+                this.success = '';
+                this.errors.push('File too small (' + file + 'kb). Please select a file larger than 5kb');
             } else {
-                this.errors.push('File size '+file + 'kb');
+                this.errors = [];
+                this.success = 'File size ' + file + 'kb';
                 this.getBase64(filesSelected);
             }
         },
@@ -80,3 +84,13 @@ export default {
     }
 }
 </script>
+<style scoped>
+.file.is-boxed .file-cta {
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+}
+
+.file.is-boxed .file-label {
+    flex-grow: 1;
+}
+</style>

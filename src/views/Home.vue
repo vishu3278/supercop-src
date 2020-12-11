@@ -3,7 +3,7 @@
         <section class="hero is-primary is-bold ">
             <div class="hero-body">
                 <div class="container">
-                    <h1 class="title has-text-weight-normal">{{msg}} <br><small class="is-size-5 has-text-weight-light">The Super Cop App</small></h1>
+                    <h1 class="title has-text-weight-normal">{{msg}} <br><small class="is-size-5 has-text-weight-light">The Digital India App</small></h1>
                 </div>
             </div>
         </section>
@@ -15,28 +15,29 @@
             </ul>
         </div>
         <section class="box">
-            <div class="field">
-                <p class="control has-icons-left has-icons-right">
-                    <input class="input" v-model="userID" type="text" placeholder="User ID">
-                    <span class="icon is-small is-left">
-                        <i class="las la-user"></i>
-                    </span>
-                    <!-- <span class="icon is-small is-right">
-                    <i class="las la-check"></i>
-                </span> -->
-                </p>
-                <!-- <p class="help">Use VLE user id only</p> -->
-            </div>
-            <div class="field">
-                <p class="control has-icons-left">
-                    <input class="input" type="password" v-model="password" placeholder="Password">
-                    <span class="icon is-small is-left">
-                        <i class="las la-lock"></i>
-                    </span>
-                </p>
-                <!-- <p class="help">{{password}}</p> -->
-            </div>
-            <button type="button" v-on:click="login()" v-bind:class="{'is-loading':submitting}" class="button is-link is-fullwidth is-uppercase">Login</button>
+            <form v-on:submit.prevent="login">
+                <div class="field">
+                    <p class="control has-icons-left has-icons-right">
+                        <input class="input" v-model="userID" type="text" placeholder="User ID" required="">
+                        <span class="icon is-small is-left">
+                            <i class="las la-user"></i>
+                        </span>
+                    </p>
+                    <!-- <p class="help">Use VLE user id only</p> -->
+                </div>
+                <div class="field">
+                    <p class="control has-icons-left">
+                        <input class="input" type="password" v-model="password" required="" minlength="6" placeholder="Password">
+                        <span class="icon is-small is-left">
+                            <i class="las la-lock"></i>
+                        </span>
+                    </p>
+                    <!-- <p class="help">{{password}}</p> -->
+                </div>
+                <button type="submit" v-bind:class="{'is-loading':submitting}" class="button is-link is-fullwidth is-uppercase">Login</button>
+                <hr>
+                <p class="is-size-7 has-text-weight-light">Login using VLE or Admin ID.</p>
+            </form>
         </section>
     </div>
 </template>
@@ -74,7 +75,7 @@ export default {
                         this.errors = [];
                         window.sessionStorage.setItem('user', JSON.stringify(this.user.data));
                         window.sessionStorage.setItem('password', this.password);
-                        
+
                         this.$store.dispatch('updateUser', this.user.data);
                         this.$router.push({ name: 'Dashboard' });
                     } else {
@@ -84,7 +85,7 @@ export default {
                 .catch(error => {
                     this.errors.push(error);
                 })
-                .then(()=>{
+                .then(() => {
                     this.submitting = false;
                 })
         }

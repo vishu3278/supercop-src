@@ -3,7 +3,7 @@
         <nav class="navbar " v-bind:style="[ menu ? {'position': 'sticky', 'top': 0} : '']" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
                 <router-link to="/" class="navbar-item">
-                    <img src="./assets/logo.png">
+                    <img src="https://thesupercop.com/webapis/logo.png">
                 </router-link>
                 <a role="button" v-show="user" v-on:click="menu = !menu" class="navbar-burger burger" aria-label="menu" aria-expanded="false">
                     <span aria-hidden="true"></span>
@@ -12,7 +12,6 @@
                 </a>
             </div>
         </nav>
-        <!-- <progress class="progress is-small is-warning" v-show="loader" max="100">100%</progress> -->
         <router-view v-on:loaded="menuStatus" v-on:userData="updateUserData" v-on:walletBal="walletBalance" />
         <div class="overlay" v-show="menu" v-on:click="menu = !menu"></div>
         <div class="navbar-menu p-0" v-bind:class="{'is-active': menu}">
@@ -161,7 +160,7 @@ textarea,
     left: 0;
     right: 0;
     top: 3rem;
-    max-height:92vh;
+    max-height:90vh;
     z-index: 99;
     overflow: auto;
 }

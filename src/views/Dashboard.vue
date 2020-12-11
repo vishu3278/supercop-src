@@ -54,15 +54,18 @@
         <div class="wrapper">
             <div class="panel ">
                 <p class="panel-heading">Help</p>
+                <a class="panel-block" v-show="userData.adminphone" v-bind:href="'tel:+91'+userData.adminphone"><span class="panel-icon">
+                        <i class="las la-phone" aria-hidden="true"></i>
+                    </span> +91 {{userData.adminphone}}</a>
+                <a class="panel-block" v-show="userData.adminphone2" v-bind:href="'tel:+91'+userData.adminphone2"><span class="panel-icon">
+                        <i class="las la-phone" aria-hidden="true"></i>
+                    </span> +91 {{userData.adminphone2}}</a>
+                <a class="panel-block" v-bind:href="'mailto:'+userData.email" v-show="userData.email"><span class="panel-icon">
+                        <i class="las la-envelope" aria-hidden="true"></i>
+                    </span> {{userData.email}}</a>
                 <router-link to="/removebg" class="panel-block"><span class="panel-icon">
                         <i class="las la-image" aria-hidden="true"></i>
                     </span> Remove Background</router-link>
-                <a class="panel-block" href="tel:+91 9876543210"><span class="panel-icon">
-                        <i class="las la-phone" aria-hidden="true"></i>
-                    </span> +91 9876543210</a>
-                <a class="panel-block" href="mailto:info@thesupercop.com"><span class="panel-icon">
-                        <i class="las la-envelope" aria-hidden="true"></i>
-                    </span> info@thesupercop.com</a>
             </div>
         </div>
         <div class="box" v-show="!userData">

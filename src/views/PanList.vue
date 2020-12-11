@@ -117,6 +117,7 @@
 <script>
 import axios from 'axios'
 import { mapGetters } from 'vuex'
+import Pagination from '../components/Pagination'
 export default {
     name: 'PANList',
     data() {
@@ -133,6 +134,7 @@ export default {
             currentPage: 1
         }
     },
+    components: { Pagination },
     mounted: function() {
         this.$emit("loaded", false);
         this.list('pending');

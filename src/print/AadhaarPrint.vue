@@ -1,15 +1,15 @@
 <template>
     <div>
         <div class="box">
-            <button class="button is-danger is-outlined" @click="generateReport"><span class="icon"><i class="las la-download"></i></span> <span>Download PDF</span> </button>
-            
+            <button class="button is-danger is-outlined is-fullwidth" @click="generateReport"><span class="icon"><i class="las la-download"></i></span> <span>Download PDF</span> </button>
+            <article v-show="message.length" class="message is-success">
+                <div class="message-body" >
+                    <span v-for="(m, index) in message" :key="index" >{{m}}</span>
+                </div>
+            </article>
         </div>
-        <article v-show="message" class="message is-success">
-            <div class="message-body" v-text="message">
-            </div>
-        </article>
-        <vue-html2pdf :show-layout="false" :float-layout="false" :enable-download="true" :preview-modal="false" :paginate-elements-by-height="1800" filename="hee-hee" :pdf-quality="2" :manual-pagination="false" pdf-format="a4" pdf-orientation="portrait" pdf-content-width="210mm" :html-to-pdf-options="html2PDFoptions" @hasGenerated="hasGenerated($event)" ref="html2Pdf">
-            <section slot="pdf-content">
+        <vue-html2pdf :show-layout="false" :float-layout="false" :enable-download="true" :preview-modal="false" :paginate-elements-by-height="1800" filename="card-hee" :pdf-quality="2" :manual-pagination="false" pdf-format="a4" pdf-orientation="portrait" pdf-content-width="210mm" :html-to-pdf-options="html2PDFoptions" @hasGenerated="hasGenerated($event)" @hasDownloaded="hasDownloaded($event)" ref="html2Pdf">
+            <section slot="pdf-content" @domRendered="domRendered()">
                 <div id="preview">
                     <div>
                         <!-- $codeContents = '
@@ -28,7 +28,8 @@
                                             <div class="aadhaar">{{$route.params.aadhaar_number}} </div>
                                         </div>
                                         <div class="qrcode" id="qrcode">
-                                            <qrcode-vue :value="qrcode" :size="100" renderAs="svg" level="H"></qrcode-vue><!-- <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=<?xml version='1.0' encoding='UTF-8'?> <PrintLetterBarcodeData uid='570200548179' name='Neha' gender='Female' yob='2004' co='D/O' house='.' street='Dulla Kheri,Dullakheri' loc='' vtc='' po='' dist='Shamli' subdist='' state='Uttar Pradesh' pc='247776' dob='01-01-2004'/>" alt="qrcode"> --></div>
+                                            <qrcode-vue :value="qrcode" :size="100" renderAs="svg" level="H"></qrcode-vue>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -101,7 +102,7 @@ export default {
     data: function() {
         return {
             aadhaarData: '',
-            message: '',
+            message: [],
             html2PDFoptions: {
                 margin: 0,
                 filename: 'hehehe.pdf',
@@ -124,11 +125,11 @@ export default {
     },
     computed: {
         ...mapGetters(['getUser', 'getAadhaarImg']),
-        qrcode () {
-            let value = '<?xml version="1.0" encoding="UTF-8"?> <PrintLetterBarcodeData uid="360979299510" name="'+this.$route.params.full_name_en+'" gender="'+this.gender+'" yob="'+this.yearofbirth+'" gname="'+this.$route.params.parent_name_en+'" co="'+this.$route.params.parent_type+' '+this.$route.params.parent_name_en+'" house="135 Pratap Nagar" street="Gali 19" lm="Shanti Nagar" loc="Sikandarpur" vtc="" po="Sadar Bazar" dist="'+this.$route.params.address_district_en+'" subdist="'+this.$route.params.address_block_en+'" state="'+this.$route.params.address_state_en+'" pc="'+this.$route.params.address_pincode+'" dob="'+this.qrdob+'"/>';
+        qrcode() {
+            let value = '<?xml version="1.0" encoding="UTF-8"?> <PrintLetterBarcodeData uid="360979299510" name="' + this.$route.params.full_name_en + '" gender="' + this.gender + '" yob="' + this.yearofbirth + '" gname="' + this.$route.params.parent_name_en + '" co="' + this.$route.params.parent_type + ' ' + this.$route.params.parent_name_en + '" house="135 Pratap Nagar" street="Gali 19" lm="Shanti Nagar" loc="Sikandarpur" vtc="" po="Sadar Bazar" dist="' + this.$route.params.address_district_en + '" subdist="' + this.$route.params.address_block_en + '" state="' + this.$route.params.address_state_en + '" pc="' + this.$route.params.address_pincode + '" dob="' + this.qrdob + '"/>';
             return value;
         },
-        gender () {
+        gender() {
             if (this.$route.params.gender == '1') {
                 return 'M'
             } else if (this.$route.params.gender == '2') {
@@ -137,17 +138,26 @@ export default {
                 return 'T'
             }
         },
-        yearofbirth () {
+        yearofbirth() {
             let dob = new Date(this.$route.params.birth_date);
             return dob.getFullYear();
         },
-        qrdob () {
+        qrdob() {
             let dob = new Date(this.$route.params.birth_date);
-            return ('0' + dob.getDate()).slice(-2) + '/'
-             + ('0' + (dob.getMonth()+1)).slice(-2) + '/' + dob.getFullYear();
+            return ('0' + dob.getDate()).slice(-2) + '/' +
+                ('0' + (dob.getMonth() + 1)).slice(-2) + '/' + dob.getFullYear();
         }
     },
     methods: {
+        domRendered() {
+            console.log("Dom Has Rendered");
+            this.message.push("Dom has Rendered");
+        },
+        hasDownloaded(blobPdf) {
+            console.log('PDF has downloaded yehey');
+            this.message.push('PDF has downloaded');
+            console.log(blobPdf);
+        },
         generateReport() {
             this.$refs.html2Pdf.generatePdf()
         },
@@ -161,7 +171,7 @@ export default {
             });
         },
         hasGenerated() {
-            this.message = 'PDF Generated'
+            this.message.push('PDF Generated')
         }
     }
 }
