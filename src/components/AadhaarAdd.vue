@@ -169,7 +169,6 @@
                                 West Bengal (
                                 पश्चिम बंगाल) </option>
                         </select>
-                        
                     </div>
                 </div>
                 <div class="field">
@@ -181,7 +180,7 @@
                                 <option v-for="(district, index) in districtList" :key="index" :value="district.district_ID" :data-dist="district.district_name" :data-disthindi="district.district_name_hi">{{district.district_name}} ({{district.district_name_hi}})</option>
                             </select>
                         </div>
-                        <p class="help is-danger" v-show="districtList.length==0" >No district found</p>
+                        <p class="help is-danger" v-show="districtList.length==0">No district found</p>
                         <!-- <input type="text" class="input is-info" v-model="district"> -->
                     </div>
                 </div>
@@ -200,7 +199,7 @@
                                 <option v-for="(block, index) in blockList" :key="index" :value="block.block_id" :data-block="block.block_name" :data-blockhindi="block.block_name_hi">{{block.block_name}} ({{block.block_name_hi}})</option>
                             </select>
                         </div>
-                        <p class="help is-danger" v-show="blockList.length==0" >No blocks found</p>
+                        <p class="help is-danger" v-show="blockList.length==0">No blocks found</p>
                         <!-- <input type="text" class="input is-info" v-model="block"> -->
                     </div>
                 </div>
@@ -252,14 +251,9 @@
         </div>
         <div v-show="agree">
             <div class="card">
-                <div class="card-header">
-                    <p class="card-header-title has-text-info">Convert Language </p>
-                    <a href="#" class="card-header-icon" aria-label="more options">
-                        <span class="icon"><i class="las la-language"></i></span>
-                    </a>
-                </div>
+                
                 <div class="card-content">
-                    <label>Select Language</label>
+                    <label class="label">Select Language to translate</label>
                     <div class="field has-addons">
                         <div class="control is-expanded">
                             <div class="select is-info is-fullwidth">
@@ -277,60 +271,20 @@
                             </div>
                         </div>
                         <div class="control">
-                            <button class="button is-info " v-on:click="changeLang()">Convert</button>
+                            <button class="button is-info " v-on:click="changeLang()">Translate</button>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Profile pic</label>
+                        <image-preview imgId="aadhar_pic" v-on:imageData="base64Photo = $event"></image-preview>
+                        <div class="buttons has-addons">
+                            <button class="button" v-on:click="clearData()">Clear</button>
+                            <button class="button is-success is-expanded" v-bind:class="{'is-loading':submitting}" v-on:click="submitData()">Submit</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-header">
-                    <p class="card-header-title has-text-success">Upload Image</p>
-                    <a href="#" class="card-header-icon" aria-label="more options">
-                        <span class="icon"><i class="las la-image"></i></span>
-                    </a>
-                </div>
-                <div class="card-content">
-                    <label class="label">Select image to upload</label>
-                    <div class="field is-grouped">
-                        <div class="control">
-                            <div class="file has-name is-warning">
-                                <label class="file-label">
-                                    <input type="file" class="file-input" id="inputFileToLoad" accept="image/*" capture="camera" v-on:change="loadImageFileAsURL()">
-                                    <span class="file-cta">
-                                        <span class="file-icon">
-                                            <i class="las la-upload"></i>
-                                        </span>
-                                        <span class="file-label">
-                                            Choose a file…
-                                        </span>
-                                    </span>
-                                    <!-- <span class="file-name" v-text="imgName">
-                                    </span> -->
-                                </label>
-                            </div>
-                        </div>
-                        <div class="control is-expanded">
-                            <button type="button" class="button is-warning is-fullwidth" onclick="cameraGo()"><span class="icon"><i class="las la-camera"></i></span> <span>Camera</span></button>
-                        </div>
-                    </div>
-                    <!-- <p class="is-size-5 has-text-centered has-text-danger">Or</p>
-                    <div class="field">
-                        <label>Capture image and crop before upload</label>
-                        <div class="control">
-                            <button type="button" class="button is-warning is-fullwidth" onclick="cameraGo()"><i class="las la-camera"></i> Camera</button>
-                        </div>
-                    </div> -->
-                    <div class="field">
-                        <div class="image">
-                            <img id="imgPreview">
-                        </div>
-                    </div>
-                    <div class="buttons has-addons">
-                        <button class="button" v-on:click="clearData()">Clear</button>
-                        <button class="button is-success is-expanded" v-bind:class="{'is-loading':submitting}" v-on:click="submitData()">Submit</button>
-                    </div>
-                </div>
-            </div>
+            
         </div>
         <div class="message is-danger" v-show="errors.length>0">
             <div class="message-body">
@@ -351,11 +305,12 @@
 </template>
 <script>
 import axios from 'axios'
+import ImagePreview from '../components/ImagePreview'
 export default {
     name: 'AddAadhaar',
     data() {
         return {
-            componentTitle:'Add Aadhaar Card',
+            componentTitle: 'Add Aadhaar Card',
             name: '',
             userData: '',
             // imgBaseUrl: "https://drsolution.co.in/workspace/dist/img/users/",
@@ -369,7 +324,7 @@ export default {
             state: '',
             stateid: '',
             districtList: [],
-            districtid:'',
+            districtid: '',
             district: '',
             district_hi: '',
             blockList: [],
@@ -388,6 +343,7 @@ export default {
             response: '',
         }
     },
+    components: { ImagePreview },
     mounted: function() {
         window.sessionStorage.removeItem('response');
         this.$emit("loaded", false);
@@ -407,57 +363,57 @@ export default {
         fetchDistrict: function(event) {
             this.state = event.target.selectedOptions[0].dataset.state;
             // console.log(event);
-            this.districtList=[];
-            this.blockList=[];
+            this.districtList = [];
+            this.blockList = [];
             if (this.stateid) {
                 let stateData = JSON.stringify({ state: this.stateid });
                 axios.post('https://thesupercop.com/webapis/stateAjax.php', stateData)
-                .then((response)=>{
-                    if (response.status == 200) {
-                        // console.log(response);
-                        if (response.data.status == 1) {
-                            console.log(response.data.district)
-                            this.districtList = response.data.district;
-                            // this.stateError.district = '';
-                        }else{
-                            // this.stateError.district = response.data.message
+                    .then((response) => {
+                        if (response.status == 200) {
+                            // console.log(response);
+                            if (response.data.status == 1) {
+                                console.log(response.data.district)
+                                this.districtList = response.data.district;
+                                // this.stateError.district = '';
+                            } else {
+                                // this.stateError.district = response.data.message
+                            }
+                        } else {
+                            // this.stateError.district = response.statusText;
                         }
-                    }else{
-                        // this.stateError.district = response.statusText;
-                    }
-                })
-                .catch((error)=>{
-                    console.log(error)
-                })
-            }else {
+                    })
+                    .catch((error) => {
+                        console.log(error)
+                    })
+            } else {
                 // this.stateError.district = ""
             }
         },
         fetchBlock: function(event) {
             this.district = event.target.selectedOptions[0].dataset.dist;
             this.district_hi = event.target.selectedOptions[0].dataset.disthindi;
-            this.blockList=[];
+            this.blockList = [];
             if (this.districtid) {
                 let districtData = JSON.stringify({ district: this.districtid });
                 axios.post('https://thesupercop.com/webapis/stateAjax.php', districtData)
-                .then((response)=>{
-                    if (response.status == 200) {
-                        // console.log(response);
-                        if (response.data.status == 1) {
-                            console.log(response.data.block)
-                            this.blockList = response.data.block;
-                        }else{
-                            // console.warn(response.data.message)
-                            // this.stateError.block = response.data.message
+                    .then((response) => {
+                        if (response.status == 200) {
+                            // console.log(response);
+                            if (response.data.status == 1) {
+                                console.log(response.data.block)
+                                this.blockList = response.data.block;
+                            } else {
+                                // console.warn(response.data.message)
+                                // this.stateError.block = response.data.message
+                            }
+                        } else {
+                            // this.stateError.block = response.statusText;
                         }
-                    }else{
-                        // this.stateError.block = response.statusText;
-                    }
-                })
-                .catch((error)=>{
-                    console.log(error)
-                })
-            }else {
+                    })
+                    .catch((error) => {
+                        console.log(error)
+                    })
+            } else {
                 // this.stateError.block = ""
             }
         },
@@ -471,27 +427,28 @@ export default {
             this.userData = JSON.parse(window.sessionStorage.getItem("user"));
             this.response = JSON.parse(window.sessionStorage.getItem("response"));
         },
-        loadImageFileAsURL: function() {
-            let filesSelected = document.getElementById("inputFileToLoad").files;
-            this.imgName = filesSelected[0].name;
-            if (filesSelected.length > 0) {
-                const fsize = filesSelected[0].size; 
-                const file = Math.round((fsize / 1024)); 
-                // The size of the file. 
-                if (file >= 200) { 
-                    alert( "File too Big, please select a file less than 200kb"); 
-                } else if (file < 10) { 
-                    alert( "File too small, please select a file greater than 10kb"); 
-                } else { 
-                    this.errors.push(file + 'kb');
-                    let fileReader = new FileReader();
-                    fileReader.onloadend = function() {
-                        document.getElementById("imgPreview").src = fileReader.result
-                    };
-                    fileReader.readAsDataURL(filesSelected[0]);
-                }
-            }
-        },
+        /*
+                loadImageFileAsURL: function() {
+                    let filesSelected = document.getElementById("inputFileToLoad").files;
+                    this.imgName = filesSelected[0].name;
+                    if (filesSelected.length > 0) {
+                        const fsize = filesSelected[0].size; 
+                        const file = Math.round((fsize / 1024)); 
+                        // The size of the file. 
+                        if (file >= 200) { 
+                            alert( "File too Big, please select a file less than 200kb"); 
+                        } else if (file < 10) { 
+                            alert( "File too small, please select a file greater than 10kb"); 
+                        } else { 
+                            this.errors.push(file + 'kb');
+                            let fileReader = new FileReader();
+                            fileReader.onloadend = function() {
+                                document.getElementById("imgPreview").src = fileReader.result
+                            };
+                            fileReader.readAsDataURL(filesSelected[0]);
+                        }
+                    }
+                },*/
         changeLang: function() {
             function translate(translateTo, text, translateFrom = 'auto') {
                 return new Promise((resolve, reject) => {
@@ -537,7 +494,7 @@ export default {
         submitData: function() {
             this.submitting = true;
 
-            let imgData = document.getElementById("imgPreview").src;
+            let imgData = document.querySelector("#aadhar_pic").src;
             let submit_data = JSON.stringify({
                 "_action": "YWFkYWRoYXI=",
                 "userUniqueID": this.userData.userUniqueID,

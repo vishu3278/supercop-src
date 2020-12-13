@@ -25,7 +25,7 @@
                     <router-link to="/vleadd" v-show="getUser.user_type != 'suvidha_kendra'" class="button is-text is-fullwidth"> Add VLE</router-link>
                 </div>
                 <div class="buttons">
-                    <router-link to="/aadharadd" v-show="getUser.user_type == 'suvidha_kendra'" class="button is-text is-fullwidth">Add Aadhaar Card</router-link>
+                    <router-link to="/aadhaaradd" v-show="getUser.user_type == 'suvidha_kendra'" class="button is-text is-fullwidth">Add Aadhaar Card</router-link>
                     <router-link to="/aadharlist" class="button is-text is-fullwidth">Aadhaar Cards</router-link>
                 </div>
                 <div class="buttons">
@@ -41,7 +41,7 @@
                     <router-link to="/drivinglist" class="button is-text is-fullwidth">Driving License</router-link>
                 </div>
                 <div class="buttons">
-                    <router-link to="/smartadd" v-show="getUser.user_type == 'suvidha_kendra'" class="button is-text is-fullwidth">Add Smart Card</router-link>
+                    <!-- <router-link to="/smartadd" v-show="getUser.user_type == 'suvidha_kendra'" class="button is-text is-fullwidth">Add Smart Card</router-link> -->
                     <router-link to="/smartlist" class="button is-text is-fullwidth">Smart Cards</router-link>
                 </div>
             </div>

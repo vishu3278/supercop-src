@@ -70,9 +70,9 @@
                         <li>
                             <router-link to="/drivingadd" class="navbar-item has-text-primary-dark"><i class="las la-id-card-alt"></i> Add Driving License </router-link>
                         </li>
-                        <li>
+                        <!-- <li>
                             <router-link to="/smartadd" class="navbar-item has-text-primary-dark"><i class="las la-id-card-alt"></i> Add Smart Card </router-link>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
                 <p class="menu-label">

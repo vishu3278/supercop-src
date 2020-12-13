@@ -8,13 +8,13 @@
                 <p class="card-header-title has-text-info-dark">{{componentTitle}} </p>
             </div>
             <div class="card-content">
-                <form action="">
+                <form action="" v-on:submit.prevent="submitData">
                     <div class="notification is-warning is-light p-2">
                         Hindi fields will be translated by clicking the "Translate" button. You can fill your translated text in the field.
                     </div>
                     <div class="field">
                         <label class="label">Voter ID Number*</label>
-                        <div class="control"><input type="text" class="input is-info" v-model="voterid" required=""></div>
+                        <div class="control"><input type="text" class="input is-info" v-model="voterid" minlength="12" maxlength="12" required=""></div>
                     </div>
                     <div class="field">
                         <label class="label">Date of Birth*</label>
@@ -50,7 +50,7 @@
                         <p class="help">Language will be translated</p>
                     </div>
                     <div class="field">
-                        <label class="label" >State*</label>
+                        <label class="label">State*</label>
                         <div class="control">
                             <select class="input is-info" v-model="stateid" placeholder="State (राज्य) " required="">
                                 <option value="">Select State</option>
@@ -125,23 +125,29 @@
                     </div>
                     <div class="field">
                         <label class="label">Profile Image*</label>
-                        <image-preview imgId="voterPic" v-on:imageData="profilePic = $event"></image-preview>
+                        <image-preview imgId="voter_pic" v-on:imageData="profilePic = $event"></image-preview>
                     </div>
-                    <div class="field">
+                    <!-- <div class="field">
                         <label class="label">Upload ID Proof*</label>
-                        <image-preview imgId="voterProof" v-on:imageData="idproof = $event"></image-preview>
-                    </div>
+                        <image-preview imgId="voter_proof" v-on:imageData="idproof = $event"></image-preview>
+                    </div> -->
                     <div class="field">
                         <label class="checkbox"><input type="checkbox" v-model="agree" required="required" aria-required="true"> I will be responsible for details entered in this form.</label>
                     </div>
+                    <div class="message is-danger" v-show="errors.length>0">
+                        <div class="message-body">
+                            <ul>
+                                <li v-for="(err, index) in errors" v-bind:key="index">{{index}} - {{err}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div v-show="agree">
+                        <div class="buttons has-addons">
+                            <button type="button" class="button" v-on:click="clearData()">Clear</button>
+                            <button type="submit" class="button is-success is-expanded" v-bind:class="{'is-loading':submitting}">Submit</button>
+                        </div>
+                    </div>
                 </form>
-            </div>
-        </div>
-        <div class="message is-danger" v-show="errors.length>0">
-            <div class="message-body">
-                <ul>
-                    <li v-for="(err, index) in errors" v-bind:key="index">{{index}} - {{err}}</li>
-                </ul>
             </div>
         </div>
         <div class="box">
@@ -149,12 +155,6 @@
                 <div class="message-body">
                     <p>{{response.message}}</p>
                 </div>
-            </div>
-        </div>
-        <div v-show="agree" class="box">
-            <div class="buttons has-addons">
-                <button class="button" v-on:click="clearData()">Clear</button>
-                <button class="button is-success is-expanded" v-bind:class="{'is-loading':submitting}" v-on:click="submitData()">Submit</button>
             </div>
         </div>
     </div>
@@ -214,9 +214,10 @@ export default {
         },
         changeLang: function() {
             let self = this;
+
             function translate(translateTo, text, translateFrom = 'auto') {
-                if (text=='' || text == null) {
-                    self.translateError.push("Empty field "+text+" not allowed");
+                if (text == '' || text == null) {
+                    self.translateError.push("Empty field " + text + " not allowed");
                 } else {
                     self.translateError = [];
                     return new Promise((resolve, reject) => {
@@ -242,45 +243,50 @@ export default {
             });
         },
         submitData: function() {
-            this.submitting = true;
+            if (this.profilePic == '') {
+                this.errors.push("Upload photo")
+            } else {
 
-            let submit_data = JSON.stringify({
-                "_action": "dm90ZXItYWRk",
-                "userUniqueID": this.userData.userUniqueID,
-                "birth_day": this.setDate,
-                "voterid_number": this.voterid,
-                "address_line_en": this.address_line_en,
-                "address_line_hi": this.address_line_hi,
-                "address_state_id": this.stateid,
-                "thana": this.thana,
-                "thana_hi": this.thana_hi,
-                "address_pincode": this.pincode,
-                "base64Photo": this.profilePic
-            })
+                this.submitting = true;
 
-            axios.post('https://thesupercop.com/webapis/v2/cards.php', submit_data)
-                .then((response) => {
-                    if (response.data.status == 1) {
-                        // this.response = response.data;
-                        window.sessionStorage.setItem("response", JSON.stringify(response.data));
-                        this.clearData();
-                        this.errors = [];
-                        setTimeout(function() {
-                            this.response = '';
-                        }, 4500)
-                    } else {
+                let submit_data = JSON.stringify({
+                    "_action": "dm90ZXItYWRk",
+                    "userUniqueID": this.userData.userUniqueID,
+                    "birth_day": this.setDate,
+                    "voterid_number": this.voterid,
+                    "address_line_en": this.address_line_en,
+                    "address_line_hi": this.address_line_hi,
+                    "address_state_id": this.stateid,
+                    "thana": this.thana,
+                    "thana_hi": this.thana_hi,
+                    "address_pincode": this.pincode,
+                    "base64Photo": { "photo": this.profilePic }
+                })
+
+                axios.post('https://thesupercop.com/webapis/v2/cards.php', submit_data)
+                    .then((response) => {
+                        if (response.data.status == 1) {
+                            // this.response = response.data;
+                            window.sessionStorage.setItem("response", JSON.stringify(response.data));
+                            this.clearData();
+                            this.errors = [];
+                            setTimeout(function() {
+                                this.response = '';
+                            }, 4500)
+                        } else {
+                            this.submitting = false;
+                            this.errors.push(response.data.message);
+                            window.sessionStorage.setItem("response", JSON.stringify(response.data.message));
+                        }
+                    })
+                    .catch(error => {
                         this.submitting = false;
-                        this.errors.push(response.data.message);
-                        window.sessionStorage.setItem("response", JSON.stringify(response.data.message));
-                    }
-                })
-                .catch(error => {
-                    this.submitting = false;
-                    this.errors.push(error);
-                })
-                .then(() => {
-                    this.submitting = false;
-                })
+                        this.errors.push(error);
+                    })
+                    .then(() => {
+                        this.submitting = false;
+                    })
+            }
         }
     }
 }

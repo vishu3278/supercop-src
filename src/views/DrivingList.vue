@@ -33,7 +33,7 @@
             </p>
         </div>
         <progress v-show="submitting" class="progress is-small is-info" max="100">15%</progress>
-        <div class="level is-mobile p-3 m-0">
+        <!-- <div class="level is-mobile p-3 m-0">
             <div class="level-left"><label class="level-item">Search</label></div>
             <div class="level-right">
                 <div class="field has-addons">
@@ -42,14 +42,14 @@
                     <div class="control"><button type="button" class="button is-small is-ghost"><i class="las la-undo-alt"></i></button></div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="table-container content is-small">
             <table class="table is-narrow is-fullwidth">
                 <thead>
                     <tr class="has-background-info ">
                         <th>Info</th>
-                        <th>Address/Created</th>
-                        <th>Action</th>
+                        <th>Address<br>Date</th>
+                        <!-- <th>Action</th> -->
                     </tr>
                 </thead>
                 <tbody v-bind:class="{'is-hidden': activeTab=='approve'}">
@@ -69,13 +69,13 @@
                             Ack- {{item.ack_no}}<br>
                         </td>
                         <td>{{item.address_state_en}}<br>{{item.address_district_en}}<br>{{item.address_block_en}}<br>{{item.created_at}}</td>
-                        <td>
+                        <!-- <td>
                             <button class="button is-primary is-small">
                                 <span class="icon ">
                                     <i class="las la-print"></i>
                                 </span>
                             </button>
-                        </td>
+                        </td> -->
                     </tr>
                 </tbody>
                 <tbody v-bind:class="{'is-hidden': activeTab=='pending'}">
@@ -95,24 +95,26 @@
                             Ack- {{item.ack_no}}<br>
                         </td>
                         <td>{{item.address_state_en}}<br>{{item.address_district_en}}<br>{{item.address_block_en}}<br>{{item.created_at}}</td>
-                        <td>
+                        <!-- <td>
                             <button class="button is-primary is-small">
                                 <span class="icon ">
                                     <i class="las la-print"></i>
                                 </span>
                             </button>
-                        </td>
+                        </td> -->
                     </tr>
                 </tbody>
             </table>
         </div>
-        <div v-show="activeTab=='pending'">
-            <pagination :totalPages="pendingPages" :currentPage="currentPage" v-on:pageChange="pageChange($event, 'pending')"></pagination>
+        <div class="box">
+            <progress class="progress is-small is-warning" v-show="submitting" max="100">20%</progress>
+            <div v-show="activeTab=='pending'">
+                <pagination :totalPages="pendingPages" :currentPage="currentPage" v-on:pageChange="pageChange($event, 'pending')"></pagination>
+            </div>
+            <div v-show="activeTab=='approve'">
+                <pagination :totalPages="approvePages" :currentPage="currentPage" v-on:pageChange="pageChange($event, 'approve')"></pagination>
+            </div>
         </div>
-        <div v-show="activeTab=='approve'">
-            <pagination :totalPages="approvePages" :currentPage="currentPage" v-on:pageChange="pageChange($event, 'approve')"></pagination>
-        </div>
-        
     </div>
 </template>
 <script>

@@ -64,7 +64,7 @@
                     <div class="field has-addons">
                         <div class="control">
                             <span class="select">
-                                <select v-model="getCo.pType" class="input is-info">
+                                <select v-model.trim="getCo.pType" class="input is-info">
                                     <option>Type</option>
                                     <option value="C/O">C/O</option>
                                     <option value="D/O">D/O</option>
@@ -74,7 +74,7 @@
                             </span>
                         </div>
                         <div class="control is-expanded">
-                            <input type="text" class="input is-info" v-model="xmldata.gname" readonly="">
+                            <input type="text" class="input is-info" v-model.trim="getCo.pName" readonly="">
                         </div>
                     </div>
                     <div class="field ">
@@ -127,7 +127,7 @@
                     </div>
                     <input type="hidden" id="genderInput" v-model="getGender">
                     <input type="hidden" id="pTypeInput" v-model="getCo.pType">
-                    <input type="hidden" id="coInput" v-model="getCo.co">
+                    <input type="hidden" id="coInput" v-model="getCo.pName">
                 </div>
             </div>
         </div>
@@ -140,7 +140,7 @@
                     </a>
                 </div>
                 <div class="card-content">
-                    <image-preview v-on:imageData="base64Photo = $event"></image-preview>
+                    <image-preview imgId="aadhar_pic" v-on:imageData="base64Photo = $event"></image-preview>
                     <div class="buttons has-addons" v-show="qrdata">
                         <button class="button" v-on:click="clearData()">Clear</button>
                         <button class="button is-success is-expanded" v-bind:class="{'is-loading':submitting}" v-on:click="submitData()">Submit</button>
@@ -177,14 +177,14 @@ export default {
             language: 'hi',
             full_name_hi: '',
             parent_type: '',
-            care_of: '',
+            // care_of: '',
             parent_name: '',
             parent_name_hi: '',
             address_line_hi: '',
             district_hi: '',
             block_hi: '',
             gender: '',
-            imgName: '',
+            // imgName: '',
             base64Photo: '',
             errors: [],
             submitting: false,
@@ -198,7 +198,7 @@ export default {
         // window.sessionStorage.setItem('user', JSON.stringify(this.$route.params.user));
         window.sessionStorage.removeItem('response');
         this.$emit("loaded", false);
-        window.sessionStorage.setItem('QRCODE', '<?xml version="1.0" encoding="UTF-8"?> <PrintLetterBarcodeData uid="360979299510" name="My Card" gender="F" yob="1998" gname="Demo Card" co="S/O Demo Card" house="555 House" street="Street 15" lm="Lane 48" loc="Locality" vtc="what  is this" po="Post Office" dist="Baghpat" subdist="Binauli" state="Uttar Pradesh" pc="247001" dob="13/08/1998"/>');
+        window.sessionStorage.setItem('QRCODE', '<?xml version="1.0" encoding="UTF-8"?> <PrintLetterBarcodeData uid="360979299510" name="Santosh Kumar" gender="M" yob="1998" co="S/O: Deepak Kumar" house="555 House" street="Street 15" lm="Lane 48" loc="Locality" vtc="what  is this" po="Post Office" dist="Baghpat" subdist="Binauli" state="Uttar Pradesh" pc="247001" dob="13/08/1998"/>');
         // window.sessionStorage.setItem('QRCODE', '<?xml version="1.0" encoding="UTF-8"?> <PrintLetterBarcodeData uid="360979299510" name="Deepak Kumar" gender="M" yob="1995" gname="Prakash Kumar" co="S/O Prakash Kumar" house="135 Pratap Nagar" street="Gali 19" lm="Shanti Nagar" loc="Sikandarpur" vtc="" po="Sadar Bazar" dist="Shamli" subdist="Shamli" state="Uttar Pradesh" pc="110042" dob="13/08/1995"/>');
         // this.userData = JSON.parse(window.sessionStorage.getItem("user"));
         this.userData = this.$store.getters.getUser;
@@ -210,8 +210,6 @@ export default {
 
     },
     computed: {
-        // ...mapGetters(['getUser']),
-        
         getGender: function() {
             let gender;
             if (this.xmldata.gender == "M") {
@@ -227,17 +225,19 @@ export default {
             let co = '',
                 pType = '';
             if (this.xmldata.co) {
-                co = (this.xmldata.co.replace(/^[cCsSdDwW]\/[oO]/, '')).trim();
+                co = (this.xmldata.co.replace(/^[cCsSdDwW]\/[oO]/, ''));
+                co = co.replace(':','').trim();
                 pType = (this.xmldata.co.match(/^[cCsSdDwW]\/[oO]/))[0];
             }
             console.log(co, pType);
-            return { "pType": pType, "co": co };
+            return { "pType": pType, "pName": co };
         }
     },
     methods: {
         clearData: function() {
             Object.assign(this.$data, this.$options.data());
             window.sessionStorage.removeItem("QRCODE");
+            document.querySelector("#aadhar_pic").src = '';
             this.userData = JSON.parse(window.sessionStorage.getItem("user"));
             this.response = JSON.parse(window.sessionStorage.getItem("response"));
         },
@@ -311,20 +311,20 @@ export default {
         },
         submitData: function() {
             this.submitting = true;
-            let parent_type = document.getElementById("pTypeInput").value;
-            let co = document.getElementById("coInput").value;
-            // let imgData = document.getElementById("imgPreview").src;
-            let gender = document.getElementById("genderInput").value;
+            /*let parent_type = document.getElementById("pTypeInput").value;
+            let co = document.getElementById("coInput").value;*/
+            let imgData = document.querySelector("#aadhar_pic").src;
+            // let gender = document.getElementById("genderInput").value;
             let submit_data = JSON.stringify({
                 "_action": "YWFkYWRoYXI=",
                 "userUniqueID": this.userData.userUniqueID,
                 "full_name_en": this.xmldata.name,
                 "full_name_hi": this.full_name_hi,
                 "birth_date": this.xmldata.dob.replace(/\//gi, '-'),
-                "gender": gender,
+                "gender": this.getGender,
                 "aadhaar_number": this.xmldata.uid,
-                "parent_type": parent_type,
-                "parent_name_en": co,
+                "parent_type": this.getCo.pType,
+                "parent_name_en": this.getCo.pName,
                 "parent_name_hi": this.parent_name_hi,
                 "address_line_en": this.full_address,
                 "address_line_hi": this.address_line_hi,
@@ -334,7 +334,7 @@ export default {
                 "address_block": (this.xmldata.subdist != this.xmldata.dist) ? this.xmldata.subdist : '',
                 "address_block_hi": this.block_hi,
                 "address_pincode": this.xmldata.pc,
-                "base64Photo": this.base64Photo
+                "base64Photo": imgData
             })
             console.log(submit_data);
             axios.post('https://thesupercop.com/webapis/aadharcard.php', submit_data)
@@ -348,7 +348,7 @@ export default {
                             this.progress += 10
                             if (this.progress >= 100) {
                                 clearInterval(wait);
-                                this.$router.push({ name: 'Home' });
+                                this.$router.push({ name: 'ScanCard' });
                             }
                         }, 250);
                     } else {

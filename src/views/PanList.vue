@@ -7,7 +7,6 @@
                 </span> -->
                 <p class="card-header-title has-text-info-dark">{{name}}</p>
                 <span class="card-header-icon has-text-info-dark" v-on:click="addPan">
-
                     <span class="icon "><i class="las la-plus-circle"></i></span>
                 </span>
             </div>
@@ -28,7 +27,7 @@
                 </div>
             </div>
         </div>
-        <div class="level is-mobile p-3 m-0">
+        <!-- <div class="level is-mobile p-3 m-0">
             <div class="level-left"><label class="level-item">Search</label></div>
             <div class="level-right">
                 <div class="field has-addons">
@@ -37,7 +36,7 @@
                     <div class="control"><button type="button" class="button is-small is-ghost"><i class="las la-undo-alt"></i></button></div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="table-container content is-small">
             <div class="notification is-light is-danger m-0" v-if="errors && errors.length">
                 <p v-for="(error, index) of errors" v-bind:key="index">
@@ -49,8 +48,8 @@
                 <thead>
                     <tr class="has-background-info ">
                         <th>Info</th>
-                        <th>Name<br>Parent<br>Pan<br>DOB</th>
-                        <th>Action</th>
+                        <th>Parent<br>Date</th>
+                        <!-- <th>Action</th> -->
                     </tr>
                 </thead>
                 <tbody v-bind:class="{'is-hidden': activeTab=='approve'}">
@@ -60,22 +59,23 @@
                                 <div class="media-left">
                                     <figure class="image is-32x32 m-0">
                                         <img src="https://thesupercop.com/assets/images/dummy_user.png" v-if="!item.photo" v-bind:alt="item.full_name_en">
-                                        <img v-bind:src="'https://thesupercop.com/uploads/pan/' + item.photo" v-bind:alt="item.full_name_en">
+                                        <img v-else v-bind:src="'https://thesupercop.com/uploads/pan/' + item.photo" alt="image">
                                     </figure>
                                 </div>
                                 <div class="media-content">
-                                    {{item.aadhaar_number}}<br>{{item.full_name_en}}<br>{{item.gender_en}}-{{item.birth_date}}
+                                    {{item.pan_number}}<br>{{item.full_name_en}}<br>{{item.birth_date}}
                                 </div>
                             </div>
+                            Ack-{{item.ack_no}}
                         </td>
-                        <td>Name<br>Parent Name<br>FPPPS6213Q<br>10-Mar-1996<br>{{item.created_at}}</td>
-                        <td>
+                        <td>{{item.parent_name_en}}<br>{{item.created_at}}</td>
+                        <!-- <td>
                             <button class="button is-primary is-small">
                                 <span class="icon ">
                                     <i class="las la-print"></i>
                                 </span>
                             </button>
-                        </td>
+                        </td> -->
                     </tr>
                 </tbody>
                 <tbody v-bind:class="{'is-hidden': activeTab=='pending'}">
@@ -85,33 +85,36 @@
                                 <div class="media-left">
                                     <figure class="image is-32x32 m-0">
                                         <img src="https://thesupercop.com/assets/images/dummy_user.png" v-if="!item.photo" alt="image">
-                                        <img v-bind:src="'https://thesupercop.com/uploads/pan/' + item.photo" alt="image">
+                                        <img v-else v-bind:src="'https://thesupercop.com/uploads/pan/' + item.photo" alt="image">
                                     </figure>
                                 </div>
                                 <div class="media-content">
-                                    {{item.aadhaar_number}}<br>{{item.full_name_en}}<br>{{item.gender_en}}-{{item.birth_date}}
+                                    {{item.pan_number}}<br>{{item.full_name_en}}<br>{{item.birth_date}}
                                 </div>
                             </div>
+                            Ack-{{item.ack_no}}
                         </td>
-                        <td>Name<br>Parent Name<br>FPPPS6213Q<br>10-Mar-1996<br>{{item.created_at}}</td>
-                        <td>
+                        <td>{{item.parent_name_en}}<br>{{item.created_at}}</td>
+                        <!-- <td>
                             <button class="button is-primary is-small">
                                 <span class="icon ">
                                     <i class="las la-print"></i>
                                 </span>
                             </button>
-                        </td>
+                        </td> -->
                     </tr>
                 </tbody>
             </table>
         </div>
-        <div v-show="activeTab=='pending'">
-            <pagination :totalPages="pendingPages" :currentPage="currentPage" v-on:pageChange="pageChange($event, 'pending')"></pagination>
+        <div class="box">
+            <progress class="progress is-small is-warning" v-show="submitting" max="100">20%</progress>
+            <div v-show="activeTab=='pending'">
+                <pagination :totalPages="pendingPages" :currentPage="currentPage" v-on:pageChange="pageChange($event, 'pending')"></pagination>
+            </div>
+            <div v-show="activeTab=='approve'">
+                <pagination :totalPages="approvePages" :currentPage="currentPage" v-on:pageChange="pageChange($event, 'approve')"></pagination>
+            </div>
         </div>
-        <div v-show="activeTab=='approve'">
-            <pagination :totalPages="approvePages" :currentPage="currentPage" v-on:pageChange="pageChange($event, 'approve')"></pagination>
-        </div>
-        
     </div>
 </template>
 <script>
@@ -140,7 +143,7 @@ export default {
         this.list('pending');
     },
     computed: {
-        ...mapGetters(['getUser', 'getApiPath', 'getPendingPan', 'getApprovePan']),
+        ...mapGetters(['getUser', 'getApiPath']),
     },
     methods: {
         pageChange: function(page, type) {
@@ -155,18 +158,14 @@ export default {
         listCache: function(arg) {
             switch (arg) {
                 case 'pending':
-                    console.log(this.getPendingPan.length);
-                    if (!this.getPendingPan.length) {
-                        this.list('pending');
-                    }
+
+                    this.list('pending');
                     this.errors = [];
                     this.activeTab = 'pending';
                     break;
                 case 'approve':
-                    console.log(this.getApprovePan.length);
-                    if (!this.getApprovePan.length) {
-                        this.list('approve');
-                    }
+
+                    this.list('approve');
                     this.errors = [];
                     this.activeTab = 'approve';
                     break;
@@ -178,7 +177,7 @@ export default {
         list: function(arg) {
             this.errors = [];
             this.submitting = true;
-            let postData = JSON.stringify({ "_action": 'cGFuLWxpc3Q=', "userUniqueID": this.getUser.userUniqueID, "cpage": 1, "status": this.actionEncode(arg) });
+            let postData = JSON.stringify({ "_action": 'cGFuLWxpc3Q=', "userUniqueID": this.getUser.userUniqueID, "cpage": this.currentPage, "status": this.actionEncode(arg) });
             // console.log(arg, this.actionEncode(arg));
             axios.post('https://thesupercop.com/webapis/v2/cards.php', postData)
                 .then((response) => {

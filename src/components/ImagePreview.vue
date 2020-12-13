@@ -4,7 +4,7 @@
             <div class="control mr-1">
                 <div class="file is-boxed is-warning">
                     <label class="file-label">
-                        <input type="file" class="file-input" accept="image/*" v-on:change="loadImageFileAsURL">
+                        <input type="file" class="file-input" v-bind:accept="'image/'+imgType" v-on:change="loadImageFileAsURL">
                         <span class="file-cta ">
                             <span class="file-icon">
                                 <i class="las la-upload"></i>
@@ -33,7 +33,8 @@
         <p class="help" v-show="base64Photo==''">Select image to upload or capture using camera (max file size 200kb) {{imgId}}</p>
         <div class="field mb-3">
             <figure class="image">
-                <img v-bind:src="base64Photo" v-bind:id="imgId">
+                <img v-bind:src="base64Photo" v-bind:id="imgId" >
+                <!-- <input type="hidden" v-bind:id="imgId" v-model="base64Photo" > -->
             </figure>
             <p class="help is-success" v-if="success" v-text="success"></p>
             <div class="help is-danger" v-if="errors.length>0">
@@ -53,7 +54,7 @@ export default {
             success: '',
         }
     },
-    props: { 'imgId': { type: String, required: true } },
+    props: { 'imgId': { type: String, required: true }, imgType: { default: 'jpeg' } },
     methods: {
         loadImageFileAsURL: function(e) {
             this.errors = [];

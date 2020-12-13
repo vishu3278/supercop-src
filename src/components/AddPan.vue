@@ -9,18 +9,18 @@
             </div>
             <div class="card-content">
                 <form action="" v-on:submit.prevent="submitPan">
-                    <div class="field">
+                    <!-- <div class="field">
                         <label class="label">Full Name*</label>
                         <div class="control">
                             <input class="input is-info" type="text" v-model="fullname" placeholder="Full Name" required="">
                         </div>
-                    </div>
-                    <div class="field">
+                    </div> -->
+                    <!-- <div class="field">
                         <label class="label">Father's Name*</label>
                         <div class="control">
                             <input class="input is-info" type="text" v-model="fathername" placeholder="Father's Name" required="">
                         </div>
-                    </div>
+                    </div> -->
                     <div class="field">
                         <label class="label">Date of Birth*</label>
                         <div class="control">
@@ -41,7 +41,7 @@
                         <label class="label">Upload Signature*
                             <small class="has-text-weight-normal has-text-danger-dark">for best results, upload only transparent png file</small>
                         </label>
-                        <ImagePreview imgId="pan_signature" v-on:imageData="base64Photo.pan_sign = $event"></ImagePreview>
+                        <ImagePreview imgId="pan_signature" imgType="png" v-on:imageData="base64Photo.pan_sign = $event"></ImagePreview>
                     </div>
                     <div class="field">
                         <label class="checkbox"><input type="checkbox" v-model="agree" required="required" aria-required="true"> I will be responsible for details entered in this form.</label>
@@ -105,15 +105,17 @@ export default {
         },
         submitPan: function() {
             this.submitting = true;
-            let submit_data = JSON.stringify({
-                "_action": "cGFuLWFkZA==",
-                "userUniqueID": this.userData.userUniqueID,
-                "full_name_en": this.fullname,
-                "father_name": this.fathername,
-                "birth_day": this.setDate,
-                "pan_number": this.pan,
-                "base64Photo": this.base64Photo
-            })
+            let pics = document.querySelector("#pan_picture").src;
+            let sign = document.querySelector("#pan_signature").src;
+            let submit_data;
+            if (pics && sign) {
+                submit_data = JSON.stringify({
+                    "_action": "cGFuLWFkZA==",
+                    "userUniqueID": this.userData.userUniqueID,
+                    "birth_day": this.setDate,
+                    "pan_number": this.pan,
+                    "base64Photo": { "pan_image": pics, "pan_sign": sign }
+                })
 
             axios.post('https://thesupercop.com/webapis/v2/cards.php', submit_data)
                 .then((response) => {
@@ -139,7 +141,9 @@ export default {
                 .then(() => {
                     this.submitting = false;
                 })
-
+            } else {
+                console.log(pics, sign);
+            }
         },
     }
 }

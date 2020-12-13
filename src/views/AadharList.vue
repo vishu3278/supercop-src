@@ -24,7 +24,7 @@
                 </div>
             </div>
         </div>
-        <div class="level is-mobile p-3 m-0">
+        <!-- <div class="level is-mobile p-3 m-0">
             <div class="level-left"><label class="level-item">Search</label></div>
             <div class="level-right">
                 <div class="field has-addons">
@@ -33,7 +33,7 @@
                     <div class="control"><button type="button" class="button is-small is-ghost"><i class="las la-undo-alt"></i></button></div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="table-container content is-small">
             <div class="notification is-light is-danger m-0" v-if="errors && errors.length">
                 <p v-for="(error, index) of errors" v-bind:key="index">
@@ -105,11 +105,14 @@
                 </tbody>
             </table>
         </div>
-        <div v-show="activeTab=='pending'">
-            <pagination :totalPages="pendingPages" :currentPage="currentPage" v-on:pageChange="pageChange($event, 'pending')"></pagination>
-        </div>
-        <div v-show="activeTab=='approve'">
-            <pagination :totalPages="approvePages" :currentPage="currentPage" v-on:pageChange="pageChange($event, 'approve')"></pagination>
+        <div class="box">
+            <progress class="progress is-small is-warning" v-show="submitting" max="100">20%</progress>
+            <div v-show="activeTab=='pending'">
+                <pagination :totalPages="pendingPages" :currentPage="currentPage" v-on:pageChange="pageChange($event, 'pending')"></pagination>
+            </div>
+            <div v-show="activeTab=='approve'">
+                <pagination :totalPages="approvePages" :currentPage="currentPage" v-on:pageChange="pageChange($event, 'approve')"></pagination>
+            </div>
         </div>
     </div>
 </template>
@@ -158,24 +161,14 @@ export default {
         listCache: function(arg) {
             switch (arg) {
                 case 'pending':
-                    // console.log(this.getPendingAadhaar.length);
-                    /*if (!this.getPendingAadhaar.length) {
-                        this.list('pending');
-                    }*/
                     this.errors = [];
                     this.activeTab = 'pending';
                     this.list('pending');
-                    // this.pendingPages = JSON.parse(window.sessionStorage.getItem('pendingPages'));
                     break;
                 case 'approve':
-                    // console.log(this.getApproveAadhaar.length);
-                    /*if (!this.getApproveAadhaar.length) {
-                        this.list('approve');
-                    }*/
                     this.errors = [];
                     this.activeTab = 'approve';
                     this.list('approve');
-                    // this.approvePages = JSON.parse(window.sessionStorage.getItem('approvePages'));
                     break;
                 default:
                     this.list('pending');
@@ -188,41 +181,41 @@ export default {
             let postData = JSON.stringify({ "_action": 'YWFkaGFhci1saXN0', "userUniqueID": this.userData.userUniqueID, "cpage": this.currentPage, "status": this.actionEncode(arg) });
             // console.log(arg, this.actionEncode(arg));
             axios.post('https://thesupercop.com/webapis/v2/cards.php', postData)
-            .then((response) => {
-                if (response.data.status == 1) {
-                    if (arg == 'pending') {
-                        this.pendingList = response.data.data;
-                        this.pendingPages = response.data.total_pages;
-                        window.sessionStorage.setItem('pendingPages', this.pendingPages);
-                        // this.$store.dispatch('updatePendAaadhaar', response.data.data);
+                .then((response) => {
+                    if (response.data.status == 1) {
+                        if (arg == 'pending') {
+                            this.pendingList = response.data.data;
+                            this.pendingPages = response.data.total_pages;
+                            window.sessionStorage.setItem('pendingPages', this.pendingPages);
+                            // this.$store.dispatch('updatePendAaadhaar', response.data.data);
+                        } else {
+                            this.approvedList = response.data.data;
+                            this.approvePages = response.data.total_pages;
+                            window.sessionStorage.setItem('approvePages', this.approvePages);
+                            // this.$store.dispatch('updateApprAaadhaar', response.data.data);
+                        }
                     } else {
-                        this.approvedList = response.data.data;
-                        this.approvePages = response.data.total_pages;
-                        window.sessionStorage.setItem('approvePages', this.approvePages);
-                        // this.$store.dispatch('updateApprAaadhaar', response.data.data);
+                        this.errors.push(response.data.message);
                     }
-                } else {
-                    this.errors.push(response.data.message);
-                }
-            })
-            .catch((error) => {
-                this.errors.push(error);
-            })
-            .then(() => {
-                this.submitting = false;
-                if (arg == 'pending') {
-                    this.activeTab = 'pending';
-                } else {
-                    this.activeTab = 'approve';
-                }
-            })
-            
+                })
+                .catch((error) => {
+                    this.errors.push(error);
+                })
+                .then(() => {
+                    this.submitting = false;
+                    if (arg == 'pending') {
+                        this.activeTab = 'pending';
+                    } else {
+                        this.activeTab = 'approve';
+                    }
+                })
+
         },
         addAadhaar: function() {
             this.$router.push({ name: 'AadhaarAdd' });
         },
         print: function(index) {
-            let cardData = this.approvedList.slice(index, index+1)[0];
+            let cardData = this.approvedList.slice(index, index + 1)[0];
             // console.log(cardData);
             this.$router.push({ name: 'AadharPrint', params: cardData })
         }
