@@ -1,4 +1,4 @@
-# Supercop app
+# Supercop app vue files
 New Supercop app source files
 
 ## Project setup
