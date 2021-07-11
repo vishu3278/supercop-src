@@ -40,7 +40,7 @@
                     {{index}} - {{error}}
                 </p>
             </div>
-            <progress v-show="submitting" class="progress is-small is-info" max="100">15%</progress>
+            <!-- <progress v-show="submitting" class="progress is-small is-info" max="100">15%</progress> -->
             <table class="table is-narrow is-fullwidth">
                 <thead>
                     <tr class="has-background-info ">
@@ -68,7 +68,7 @@
                         </td>
                         <td>{{item.address_state_en}}<br>{{item.address_district_en}}<br>{{item.address_block_en}}<br>{{item.created_at}}</td>
                         <td>
-                            <button class="button is-primary is-small" v-on:click="print(index)">
+                            <button class="button is-primary is-small" v-on:click="print(item.p_id)">
                                 <span class="icon ">
                                     <i class="las la-print"></i>
                                 </span>
@@ -95,7 +95,13 @@
                         </td>
                         <td>{{item.address_state_en}}<br>{{item.address_district_en}}<br>{{item.address_block_en}}<br>{{item.created_at}}</td>
                         <td>
-                            <button class="button is-primary is-small" v-on:click="print(index)">
+                            <!-- <button class="button is-primary is-small" v-on:click="print(index)">
+                                <span class="icon ">
+                                    <i class="las la-print"></i>
+                                </span>
+                            </button> -->
+                            {{item.p_id}}
+                            <button class="button is-primary is-small" v-bind:id="item.p_id" v-on:click="print(item.p_id)">
                                 <span class="icon ">
                                     <i class="las la-print"></i>
                                 </span>
@@ -214,10 +220,35 @@ export default {
         addAadhaar: function() {
             this.$router.push({ name: 'AadhaarAdd' });
         },
-        print: function(index) {
-            let cardData = this.approvedList.slice(index, index + 1)[0];
-            // console.log(cardData);
-            this.$router.push({ name: 'AadharPrint', params: cardData })
+        print: function(cardid) {
+            // let cardData = this.approvedList.slice(index, index + 1)[0];
+            console.log(cardid);
+            this.$router.push({ name: 'AadharPrint', params: {cardid: cardid} })
+            /*let p_id = event.currentTarget.getAttribute("id");
+            var cardids = [];
+            cardids[0] = p_id;
+            let postData = {"o_id":cardids};
+            axios({
+                method: 'post',
+                url: 'https://thesupercop.com/workspace/include/cards/aadhaar-print.php?o_id='+this.cardids,
+                data: postData,
+                responseType: 'document'
+            })
+            .then(response => {
+                console.log(response.status, response.data);
+                this.$router.push({ name: 'AadharPrint', params: {page: response.data} })
+                // openPrint();
+            })
+            .catch(error => {
+                console.log(error);
+            })
+            .then(()=>{
+                let errHtml = '<html><body><h4>This is error page.</h4><p>This error is returned by ajax request.</p></body></html>';
+                // var pageContent = 'data:text/html;base64,' + btoa(errHtml);
+                // console.log(pageContent);
+                this.$router.push({ name: 'AadharPrint', params: {page: errHtml} })
+            })*/
+
         }
     }
 }

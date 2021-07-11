@@ -35,13 +35,13 @@
                     </div>
                     <div class="field">
                         <label class="label">Upload Photo*</label>
-                        <ImagePreview imgId="pan_picture" v-on:imageData="base64Photo.pan_image = $event"></ImagePreview>
+                        <ImagePreview imgId="pan_pic" v-on:imageData="base64Photo.pan_image = $event"></ImagePreview>
                     </div>
                     <div class="field">
                         <label class="label">Upload Signature*
                             <small class="has-text-weight-normal has-text-danger-dark">for best results, upload only transparent png file</small>
                         </label>
-                        <ImagePreview imgId="pan_signature" imgType="png" v-on:imageData="base64Photo.pan_sign = $event"></ImagePreview>
+                        <ImagePreview imgId="pan_sign" imgType="image/jpeg, image/png" v-on:imageData="base64Photo.pan_sign = $event"></ImagePreview>
                     </div>
                     <div class="field">
                         <label class="checkbox"><input type="checkbox" v-model="agree" required="required" aria-required="true"> I will be responsible for details entered in this form.</label>
@@ -102,11 +102,13 @@ export default {
             Object.assign(this.$data, this.$options.data());
             this.userData = JSON.parse(window.sessionStorage.getItem("user"));
             this.response = JSON.parse(window.sessionStorage.getItem("response"));
+            document.querySelector("#pan_pic").src = '';
+            document.querySelector("#pan_sign").src = '';
         },
         submitPan: function() {
             this.submitting = true;
-            let pics = document.querySelector("#pan_picture").src;
-            let sign = document.querySelector("#pan_signature").src;
+            let pics = document.querySelector("#pan_pic").src;
+            let sign = document.querySelector("#pan_sign").src;
             let submit_data;
             if (pics && sign) {
                 submit_data = JSON.stringify({

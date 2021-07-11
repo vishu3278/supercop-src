@@ -60,7 +60,7 @@
                                     </figure>
                                 </div>
                                 <div class="media-content">
-                                    {{item.full_name_en}} ({{item.gender_en}})<br>{{item.parent_name_en}}<br>{{item.voterid_number}}<br>
+                                    {{item.full_name_en}} ({{item.gender_en}})<br>{{item.birth_date}}<br>{{item.parent_name_en}} ({{item.parent_type}})<br><span class="tag is-warning is-light">{{item.voterid_number}}</span>
                                 </div>
                             </div>
                             Ack- {{item.ack_no}}<br>
@@ -86,7 +86,7 @@
                                     </figure>
                                 </div>
                                 <div class="media-content">
-                                    {{item.full_name_en}} ({{item.gender_en}})<br>{{item.parent_name_en}}<br>{{item.voterid_number}}<br>
+                                    {{item.full_name_en}} ({{item.gender_en}})<br>{{item.birth_date}}<br>{{item.parent_name_en}} ({{item.parent_type}})<br><span class="tag is-success is-light">{{item.voterid_number}}</span>
                                 </div>
                             </div>
                             Ack- {{item.ack_no}}<br>

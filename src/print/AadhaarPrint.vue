@@ -1,20 +1,9 @@
 <template>
     <div>
-        <div class="box">
-            <button class="button is-danger is-outlined is-fullwidth" @click="generateReport"><span class="icon"><i class="las la-download"></i></span> <span>Download PDF</span> </button>
-            <article v-show="message.length" class="message is-success">
-                <div class="message-body" >
-                    <span v-for="(m, index) in message" :key="index" >{{m}}</span>
-                </div>
-            </article>
-        </div>
-        <vue-html2pdf :show-layout="false" :float-layout="false" :enable-download="true" :preview-modal="false" :paginate-elements-by-height="1800" filename="card-hee" :pdf-quality="2" :manual-pagination="false" pdf-format="a4" pdf-orientation="portrait" pdf-content-width="210mm" :html-to-pdf-options="html2PDFoptions" @hasGenerated="hasGenerated($event)" @hasDownloaded="hasDownloaded($event)" ref="html2Pdf">
-            <section slot="pdf-content" @domRendered="domRendered()">
-                <div id="preview">
+        <!-- <vue-html2pdf :show-layout="false" :float-layout="false" :enable-download="true" :preview-modal="false" :paginate-elements-by-height="1800" filename="card-hee" :pdf-quality="2" :manual-pagination="false" pdf-format="a4" pdf-orientation="portrait" pdf-content-width="210mm" :html-to-pdf-options="html2PDFoptions" @hasDownloaded="hasDownloaded($event)" ref="html2Pdf">
+            <section slot="pdf-content"> -->
+        <!-- <div id="preview">
                     <div>
-                        <!-- $codeContents = '
-            <?xml version="1.0" encoding="UTF-8"?>
-            <PrintLetterBarcodeData uid="'.$uid.'" name="'.$name.'" gender="'.$gender.'" yob="'.$yob.'" co="'.$co.'" house="." street="'.$address.'" loc="'.$subdist.'" vtc="'.$subdist.'" po="'.$subdist.'" dist="'.$dist.'" subdist="'.$subdist.'" state="'.$state.'" pc="'.$pc.'" dob="'.$dob.'" />'; -->
                         <div class="wrapper">
                             <div id="front" class="artwork">
                                 <div class="card-body"><img src="https://thesupercop.com/workspace/dist/img/aadhaar-front.jpg" class="base" alt="aadhaar">
@@ -36,7 +25,7 @@
                             <div id="back" class="artwork">
                                 <div class="card-body">
                                     <div class="printable"> <img src="https://thesupercop.com/workspace/dist/img/aadhaar-back.jpg" class="base" alt="aadhaar">
-                                        <!-- <div class="date">Date: </div> -->
+                                        <div class="date">Date: </div>
                                         <div class="address-h">
                                             <p><strong>पता:</strong></p>
                                             <p>{{$route.params.parent_type}} {{$route.params.parent_name_hi}}, {{$route.params.address_line_hi}}, {{$route.params.address_district_hi}}</p>
@@ -48,55 +37,58 @@
                                             <p>{{$route.params.address_state_en}}-{{$route.params.address_pincode}}</p>
                                         </div>
                                         <div class="aadhaar">{{$route.params.aadhaar_number}}</div>
-                                        <div class="barcode"><svg id="barcode_10540" width="101px" height="10px" x="0px" y="0px" viewBox="0 0 101 10" xmlns="http://www.w3.org/2000/svg" version="1.1" style="transform: translate(0,0)">
-                                                <rect x="0" y="0" width="101" height="10" style="fill:#ffffff;"></rect>
-                                                <g transform="translate(0, 0)" style="fill:#000000;">
-                                                    <rect x="0" y="0" width="2" height="10"></rect>
-                                                    <rect x="3" y="0" width="1" height="10"></rect>
-                                                    <rect x="6" y="0" width="3" height="10"></rect>
-                                                    <rect x="11" y="0" width="3" height="10"></rect>
-                                                    <rect x="15" y="0" width="2" height="10"></rect>
-                                                    <rect x="18" y="0" width="1" height="10"></rect>
-                                                    <rect x="22" y="0" width="2" height="10"></rect>
-                                                    <rect x="26" y="0" width="2" height="10"></rect>
-                                                    <rect x="30" y="0" width="2" height="10"></rect>
-                                                    <rect x="33" y="0" width="2" height="10"></rect>
-                                                    <rect x="36" y="0" width="2" height="10"></rect>
-                                                    <rect x="40" y="0" width="2" height="10"></rect>
-                                                    <rect x="44" y="0" width="3" height="10"></rect>
-                                                    <rect x="48" y="0" width="1" height="10"></rect>
-                                                    <rect x="50" y="0" width="2" height="10"></rect>
-                                                    <rect x="55" y="0" width="1" height="10"></rect>
-                                                    <rect x="58" y="0" width="1" height="10"></rect>
-                                                    <rect x="60" y="0" width="4" height="10"></rect>
-                                                    <rect x="66" y="0" width="1" height="10"></rect>
-                                                    <rect x="70" y="0" width="4" height="10"></rect>
-                                                    <rect x="75" y="0" width="1" height="10"></rect>
-                                                    <rect x="77" y="0" width="3" height="10"></rect>
-                                                    <rect x="82" y="0" width="1" height="10"></rect>
-                                                    <rect x="84" y="0" width="2" height="10"></rect>
-                                                    <rect x="88" y="0" width="2" height="10"></rect>
-                                                    <rect x="93" y="0" width="3" height="10"></rect>
-                                                    <rect x="97" y="0" width="1" height="10"></rect>
-                                                    <rect x="99" y="0" width="2" height="10"></rect>
-                                                </g>
-                                            </svg>
-                                            <!--<img src="" id="barcode_10540" alt="barcode">-->
+                                        <div class="barcode">
+                                            <barcode :value="aadhaarno" displayValue="false" width="1" height="12" margin="0">
+                                                Show this if the rendering fails.
+                                            </barcode>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div> -->
+        <div class="wrapper">
+            <div class="card">
+                <div class="card-content">
+                    <p class="title has-text-success">
+                        {{$route.params.cardid}}
+                    </p>
+                    <p class="subtitle has-text-success-dark">
+                        Card ID
+                    </p>
                 </div>
-            </section>
-        </vue-html2pdf>
+                <footer class="card-footer">
+                    <a id="openBrowser" class="card-footer-item" v-bind:title="'https://thesupercop.com/workspace/include/cards/aadhaar-print.php?o_id='+this.response.cardid" onclick="openPrint(e)">
+                        Print Card
+                    </a>
+                    <router-link to="/aadharlist" class="card-footer-item">Back</router-link>
+                </footer>
+            </div>
+        </div>
+        <div id="previewcanvas"></div>
+        <!-- <div class="box">
+            <button id="openBrowser" class="button is-info is-outlined" onclick="openPrint('https://thesupercop.com/workspace/include/cards/aadhaar-print.php?o_id='+response.cardid)">Print</button>
+        </div> -->
+        <!-- </section>
+        </vue-html2pdf> -->
+        <!-- <div class="box">
+            <button class="button is-danger is-outlined is-fullwidth" @click="generateReport"><span class="icon"><i class="las la-download"></i></span> <span>Download jpeg</span> </button>
+            <input type="button" onclick="saveImg()" id="pseudobtn" value="pseudo button">
+            <article v-show="message.length" class="message is-success">
+                <div class="message-body">
+                    <span v-for="(m, index) in message" :key="index">{{m}}</span>
+                </div>
+            </article>
+        </div> -->
     </div>
 </template>
 <script>
 import { mapGetters } from 'vuex'
-import VueHtml2pdf from 'vue-html2pdf'
-import QrcodeVue from 'qrcode.vue'
+// import VueHtml2pdf from 'vue-html2pdf'
+// import QrcodeVue from 'qrcode.vue'
+// import VueBarcode from 'vue-barcode'
+import html2canvas from 'html2canvas';
 export default {
     name: 'AadhaarPrint',
     data: function() {
@@ -115,18 +107,25 @@ export default {
                     scale: 3,
                     // foreignObjectRendering: true,
                     useCORS: true
-                }
-            }
+                },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            },
+            response: '',
         }
     },
-    components: { VueHtml2pdf, QrcodeVue },
+    components: { /*VueHtml2pdf,*/ /*QrcodeVue, 'barcode': VueBarcode*/ },
     mounted: function() {
-
+        this.response = this.$route.params;
+        let link = document.querySelector("#openBrowser");
+        link.click();
     },
     computed: {
         ...mapGetters(['getUser', 'getAadhaarImg']),
+        pagehtml() {
+            return atob(this.response.page);
+        },
         qrcode() {
-            let value = '<?xml version="1.0" encoding="UTF-8"?> <PrintLetterBarcodeData uid="360979299510" name="' + this.$route.params.full_name_en + '" gender="' + this.gender + '" yob="' + this.yearofbirth + '" gname="' + this.$route.params.parent_name_en + '" co="' + this.$route.params.parent_type + ' ' + this.$route.params.parent_name_en + '" house="135 Pratap Nagar" street="Gali 19" lm="Shanti Nagar" loc="Sikandarpur" vtc="" po="Sadar Bazar" dist="' + this.$route.params.address_district_en + '" subdist="' + this.$route.params.address_block_en + '" state="' + this.$route.params.address_state_en + '" pc="' + this.$route.params.address_pincode + '" dob="' + this.qrdob + '"/>';
+            let value = '<?xml version="1.0" encoding="UTF-8"?> <PrintLetterBarcodeData uid="' + this.$route.params.aadhaar_number + '" name="' + this.$route.params.full_name_en + '" gender="' + this.gender + '" yob="' + this.yearofbirth + '" gname="' + this.$route.params.parent_name_en + '" co="' + this.$route.params.parent_type + ' ' + this.$route.params.parent_name_en + '" house="135 Pratap Nagar" street="Gali 19" lm="Shanti Nagar" loc="Sikandarpur" vtc="" po="Sadar Bazar" dist="' + this.$route.params.address_district_en + '" subdist="' + this.$route.params.address_block_en + '" state="' + this.$route.params.address_state_en + '" pc="' + this.$route.params.address_pincode + '" dob="' + this.qrdob + '"/>';
             return value;
         },
         gender() {
@@ -146,20 +145,28 @@ export default {
             let dob = new Date(this.$route.params.birth_date);
             return ('0' + dob.getDate()).slice(-2) + '/' +
                 ('0' + (dob.getMonth() + 1)).slice(-2) + '/' + dob.getFullYear();
+        },
+        aadhaarno() {
+            return this.$route.params.aadhaar_number;
         }
     },
     methods: {
-        domRendered() {
-            console.log("Dom Has Rendered");
-            this.message.push("Dom has Rendered");
-        },
-        hasDownloaded(blobPdf) {
+        /*hasDownloaded(blobPdf) {
             console.log('PDF has downloaded yehey');
             this.message.push('PDF has downloaded');
             console.log(blobPdf);
-        },
+        },*/
         generateReport() {
-            this.$refs.html2Pdf.generatePdf()
+            // this.$refs.html2Pdf.generatePdf()
+            html2canvas(document.querySelector("#preview")).then(canvas => {
+                document.querySelector("#previewcanvas").appendChild(canvas);
+                var dataurl = canvas.toDataURL('image/png')
+                window.sessionStorage.setItem('canvas', dataurl);
+                // var pseudobtn = document.querySelector("#pseudobtn");
+                /*setTimeout(function() {
+                    pseudobtn.click();
+                }, 300)*/
+            });
         },
         JsBarcode() {
             ("#barcode_10540", this.aadhaarData.aadhaar_number, {
@@ -170,9 +177,9 @@ export default {
                 margin: 0
             });
         },
-        hasGenerated() {
+        /*hasGenerated() {
             this.message.push('PDF Generated')
-        }
+        }*/
     }
 }
 </script>
@@ -214,7 +221,7 @@ export default {
 
 #preview {
     width: 210mm;
-    height: 297mm;
+    height: 97mm;
     overflow: visible;
 }
 

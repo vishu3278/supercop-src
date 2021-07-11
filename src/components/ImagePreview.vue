@@ -4,7 +4,7 @@
             <div class="control mr-1">
                 <div class="file is-boxed is-warning">
                     <label class="file-label">
-                        <input type="file" class="file-input" v-bind:accept="'image/'+imgType" v-on:change="loadImageFileAsURL">
+                        <input type="file" class="file-input" v-bind:accept="imgType" v-on:change="loadImageFileAsURL">
                         <span class="file-cta ">
                             <span class="file-icon">
                                 <i class="las la-upload"></i>
@@ -16,7 +16,7 @@
                     </label>
                 </div>
             </div>
-            <div class="control is-warning">
+            <div class="control is-warning is-expanded">
                 <div class="file is-boxed">
                     <label class="file-label"><input type="button" onclick="cameraGo(event)" class="file-input" v-bind:value="imgId">
                         <span class="file-cta ">
@@ -30,7 +30,7 @@
                 </div>
             </div>
         </div>
-        <p class="help" v-show="base64Photo==''">Select image to upload or capture using camera (max file size 200kb) {{imgId}}</p>
+        <p class="help" v-show="base64Photo==''">Select image to upload or capture using camera (max file size {{maxsize}}kb) - {{imgId}}</p>
         <div class="field mb-3">
             <figure class="image">
                 <img v-bind:src="base64Photo" v-bind:id="imgId" >
@@ -50,24 +50,26 @@ export default {
         return {
             name: 'Image Preview',
             base64Photo: '',
+            minsize: 5,
+            maxsize: 500,
             errors: [],
             success: '',
         }
     },
-    props: { 'imgId': { type: String, required: true }, imgType: { default: 'jpeg' } },
+    props: { 'imgId': { type: String, required: true }, imgType: { default: 'image/jpeg' } },
     methods: {
         loadImageFileAsURL: function(e) {
             this.errors = [];
             let filesSelected = e.target.files[0];
             let file = Math.round((filesSelected.size / 1024));
-            if (file >= 200) {
+            if (file >= this.maxsize) {
                 this.base64Photo = '';
                 this.success = '';
-                this.errors.push('File too large (' + file + 'kb). Please select a file less than 200kb');
-            } else if (file < 5) {
+                this.errors.push('File too large (' + file + 'kb). Please select a file less than '+this.maxsize+'kb');
+            } else if (file < this.minsize) {
                 this.base64Photo = '';
                 this.success = '';
-                this.errors.push('File too small (' + file + 'kb). Please select a file larger than 5kb');
+                this.errors.push('File too small (' + file + 'kb). Please select a file larger than '+this.minsize+'kb');
             } else {
                 this.errors = [];
                 this.success = 'File size ' + file + 'kb';

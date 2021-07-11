@@ -13,42 +13,19 @@
                         <label class="label">Date of Birth (जन्म तिथि) *</label>
                         <div class="control">
                             <v-date-picker :locale="{masks:{title:'MMM YYYY', L:'DD-MM-YYYY'}}" v-model="dob" color="blue" :max-date="new Date()" :input-props="{class:'input is-info', readonly: 'true', required: 'required'}" is-dark is-required is-expanded />
+                            <p class="help is-danger" v-show="!dob">Date is required</p>
                         </div>
                     </div>
                     <div class="field">
                         <label class="label">Driving Licence No. *</label>
                         <div class="control">
-                            <input v-model="dlno" class="input" type="text" placeholder="Driving Licence No." required="">
+                            <input v-model="dlno" class="input is-info" type="text" placeholder="Driving Licence No." required="">
                         </div>
                         <p class="help is-danger" v-show="!dlno">Please fill this field</p>
                     </div>
-                    <div class="field">
-                        <label class="label">Upload signature* </label>
-                        <div class="file has-name is-warning is-fullwidth">
-                            <label class="file-label">
-                                <input type="file" class="file-input" id="inputFileToLoad" accept="image/png" capture="camera" v-on:change="loadImageFileAsURL()">
-                                <span class="file-cta">
-                                    <span class="file-icon">
-                                        <i class="las la-upload"></i>
-                                    </span>
-                                    <span class="file-label">
-                                        Upload a file…
-                                    </span>
-                                </span>
-                                <span class="file-name">
-                                    {{imgName}}
-                                </span>
-                            </label>
-                        </div>
-                        <p class="help has-text-info">You need to upload transparent png for best results</p>
-                        <p><router-link to="/removebg">Remove Background</router-link></p>
-                    </div>
-                    <div class="field">
-                        <div class="image">
-                            <img id="imgPreview">
-                        </div>
-                        <p class="help " v-bind:class="imgsize.class">{{imgsize.msg}}</p>
-                    </div>
+                    <label class="label">Upload signature*</label>
+                    <image-preview imgId="dl_sign" imgType="image/jpeg, image/png" v-on:imageData="base64Photo = $event" ></image-preview>
+                    
                     <div class="field">
                         <label class="checkbox"><input type="checkbox" v-model="agree" required="required" aria-required="true"> I will be responsible for details entered in this form.</label>
                     </div>
@@ -64,10 +41,6 @@
                             <button type="button" class="button" v-on:click="clearData()">Clear</button>
                             <button type="submit" class="button is-success is-expanded" v-bind:class="{'is-loading':submitting}">Submit</button>
                         </div>
-                        <!-- <label class="label">Upload Signature</label>
-                        <ImagePreview v-on:imageData="signature = $event"></ImagePreview> -->
-                        <!-- <label class="label">Upload ID Proof</label>
-                        <image-preview v-on:imageData="idproof = $event"></image-preview> -->
                     </div>
                 </form>
             </div>
@@ -84,6 +57,7 @@
 </template>
 <script>
 import axios from 'axios'
+import ImagePreview from '../components/ImagePreview'
 export default {
     name: 'DrivingAdd',
     data() {
@@ -96,12 +70,15 @@ export default {
             idproof: '',
             agree: false,
             errors: [],
-            imgName: '',
+            base64Photo: '',
+            minsize: 5,
+            maxsize: 500,
             imgsize: { class: '', msg: ''},
             submitting: false,
             response: '',
         }
     },
+    components: { ImagePreview },
     mounted: function() {
         this.$emit("loaded", false);
         this.userData = this.$store.getters.getUser;
@@ -114,41 +91,15 @@ export default {
         }
     },
     methods: {
-        loadImageFileAsURL: function() {
-            let filesSelected = document.querySelector("#inputFileToLoad").files;
-            this.imgName = filesSelected[0].name;
-            if (filesSelected.length > 0) {
-                let fsize = filesSelected[0].size;
-                let file = Math.round((fsize / 1024));
-                // The size of the file. 
-                if (file >= 200) {
-                    this.imgsize.class = 'is-danger';
-                    this.imgsize.msg = "File too Big "+file+"kb, please select a file less than 200kb";
-                    document.querySelector("#imgPreview").src = '';
-                } else if (file < 2) {
-                    this.imgsize.class = 'is-danger';
-                    this.imgsize.msg = "File too small "+file+"kb, please select a file greater than 2kb";
-                    document.querySelector("#imgPreview").src = '';
-                } else {
-                    // this.imgsize = file + 'kb';
-                    this.imgsize.class = 'is-success';
-                    this.imgsize.msg = file+'kb';
-                    let fileReader = new FileReader();
-                    fileReader.onloadend = function() {
-                        document.querySelector("#imgPreview").src = fileReader.result;
-                    };
-                    fileReader.readAsDataURL(filesSelected[0]);
-                }
-            }
-        },
         clearData: function() {
             Object.assign(this.$data, this.$options.data());
             // window.sessionStorage.removeItem("QRCODE");
+            document.querySelector("#dl_sign").src = '';
             this.userData = JSON.parse(window.sessionStorage.getItem("user"));
             this.response = JSON.parse(window.sessionStorage.getItem("response"));
         },
         submitForm: function() {
-            let postImg = document.querySelector("#imgPreview").src;
+            let postImg = document.querySelector("#dl_sign").src;
             let postData = JSON.stringify({
                 "_action": "ZGwtYWRk",
                 "userUniqueID": this.userData.userUniqueID,

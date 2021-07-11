@@ -58,12 +58,12 @@
                             <div class="media">
                                 <div class="media-left">
                                     <figure class="image is-32x32 m-0">
-                                        <img src="https://thesupercop.com/assets/images/dummy_user.png" v-if="!item.photo" v-bind:alt="item.full_name_en">
-                                        <img v-else v-bind:src="'https://thesupercop.com/uploads/driving/'+item.photo" alt="image">
+                                        <img src="https://thesupercop.com/assets/images/dummy_user.png" v-if="!item.driving_licence_sign" v-bind:alt="item.full_name_en">
+                                        <img v-else v-bind:src="'https://thesupercop.com/uploads/driving/'+item.driving_licence_sign" alt="image">
                                     </figure>
                                 </div>
                                 <div class="media-content">
-                                    {{item.full_name_en}} ({{item.gender_en}})<br>{{item.parent_name_en}}<br>{{item.voterid_number}}<br>
+                                    {{item.full_name_en}} <br>{{item.birth_date}}<br>{{item.parent_type}} {{item.parent_name_en}}<br><span class="tag is-warning is-light">{{item.driving_licence_no}}</span>
                                 </div>
                             </div>
                             Ack- {{item.ack_no}}<br>
@@ -84,12 +84,12 @@
                             <div class="media">
                                 <div class="media-left">
                                     <figure class="image is-32x32 m-0">
-                                        <img src="https://thesupercop.com/assets/images/dummy_user.png" v-if="!item.photo" v-bind:alt="item.full_name_en">
-                                        <img v-else v-bind:src="'https://thesupercop.com/uploads/driving/'+item.photo" alt="image">
+                                        <img src="https://thesupercop.com/assets/images/dummy_user.png" v-if="!item.driving_licence_sign" v-bind:alt="item.full_name_en">
+                                        <img v-else v-bind:src="'https://thesupercop.com/uploads/driving/'+item.driving_licence_sign" alt="image">
                                     </figure>
                                 </div>
                                 <div class="media-content">
-                                    {{item.full_name_en}} ({{item.gender_en}})<br>{{item.parent_name_en}}<br>{{item.voterid_number}}<br>
+                                    {{item.full_name_en}} <br>{{item.birth_date}}<br>{{item.parent_type}} {{item.parent_name_en}}<br><span class="tag is-success is-light">{{item.driving_licence_no}}</span>
                                 </div>
                             </div>
                             Ack- {{item.ack_no}}<br>

@@ -58,12 +58,12 @@
                             <div class="media">
                                 <div class="media-left">
                                     <figure class="image is-32x32 m-0">
-                                        <img src="https://thesupercop.com/assets/images/dummy_user.png" v-if="!item.photo" v-bind:alt="item.full_name_en">
-                                        <img v-else v-bind:src="'https://thesupercop.com/uploads/pan/' + item.photo" alt="image">
+                                        <img src="https://thesupercop.com/assets/images/dummy_user.png" v-if="!item.pan_image" v-bind:alt="item.full_name_en">
+                                        <img v-else v-bind:src="'https://thesupercop.com/uploads/pan/' + item.pan_image" alt="image">
                                     </figure>
                                 </div>
                                 <div class="media-content">
-                                    {{item.pan_number}}<br>{{item.full_name_en}}<br>{{item.birth_date}}
+                                    {{item.full_name_en}}<br>{{item.birth_date}}<br><span class="tag is-warning is-light">{{item.pan_number}}</span>
                                 </div>
                             </div>
                             Ack-{{item.ack_no}}
@@ -84,12 +84,12 @@
                             <div class="media">
                                 <div class="media-left">
                                     <figure class="image is-32x32 m-0">
-                                        <img src="https://thesupercop.com/assets/images/dummy_user.png" v-if="!item.photo" alt="image">
-                                        <img v-else v-bind:src="'https://thesupercop.com/uploads/pan/' + item.photo" alt="image">
+                                        <img src="https://thesupercop.com/assets/images/dummy_user.png" v-if="!item.pan_image" alt="image">
+                                        <img v-else v-bind:src="'https://thesupercop.com/uploads/pan/' + item.pan_image" alt="image">
                                     </figure>
                                 </div>
                                 <div class="media-content">
-                                    {{item.pan_number}}<br>{{item.full_name_en}}<br>{{item.birth_date}}
+                                    {{item.full_name_en}}<br>{{item.birth_date}}<br><span class="tag is-success is-light">{{item.pan_number}}</span>
                                 </div>
                             </div>
                             Ack-{{item.ack_no}}

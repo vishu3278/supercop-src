@@ -14,7 +14,7 @@
                     </div>
                     <div class="field">
                         <label class="label">Voter ID Number*</label>
-                        <div class="control"><input type="text" class="input is-info" v-model="voterid" minlength="12" maxlength="12" required=""></div>
+                        <div class="control"><input type="text" class="input is-info" v-model="voterid" required=""></div>
                     </div>
                     <div class="field">
                         <label class="label">Date of Birth*</label>
